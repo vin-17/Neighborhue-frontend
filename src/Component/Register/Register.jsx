@@ -1,0 +1,337 @@
+// <<<<<<< HEAD
+// import React from 'react'
+// import { Link } from 'react-router-dom'
+// import registerVector from '../../Assets/registerVector.png'
+// import googleIcon from '../../Assets/iconGoogle.svg'
+// import mail from '../../Assets/mailGrey.svg'
+// import key from '../../Assets/key.svg'
+// import eye from '../../Assets/eye.svg'
+
+// import './Register.css'
+
+// const Register = () => {
+//     return (
+//         <div className='registerContainer' id='registerTop'>
+//             <div className="registerFormContainer">
+
+//                 <div className="registerHeader">
+//                     <h1>Register Now!</h1>
+//                     <p>Welcome to Nidaan, Please enter your details</p>
+//                 </div>
+                
+//                 <div className="registerForm">
+
+//                     <button><img src={googleIcon} alt="" />Continue with google</button>
+
+//                     <div className="or">
+//                         <hr />
+//                         <p>Or</p>
+//                         <hr />
+//                     </div>
+
+//                     <form className='register' action="">
+
+//                         <div className="registerInputContainer" id='registerInputEmail'>
+//                             <img src={mail} alt="" className='lIcon' />
+//                             <input type="text" placeholder='Enter Your Email' />
+//                         </div>
+
+//                         <div className="registerInputContainer">
+//                             <img src={key} alt="" className='lIcon' />
+//                             <input type="password" placeholder='Enter Password' />
+//                             <img src={eye} alt="" className='key' />
+//                         </div>
+
+//                         <div className="registerInputContainer">
+//                             <img src={key} alt="" className='lIcon' />
+//                             <input type="password" placeholder='Confirm Password' />
+//                             <img src={eye} alt="" className='key' />
+//                         </div>
+
+//                         <button>Register Now</button>
+//                     </form>
+                    
+//                     <p className="switch">Alread have account? <Link to='/signin'>Sign in</Link></p>
+//                 </div>
+
+//             </div>
+
+//             <div className="registerImg">
+//                 <div className="imgText">
+//                     <h4>Nidaan</h4>
+//                     <p>One and only Advance AI healthcare Solution</p>
+//                 </div>
+//                 <img src={registerVector} alt="" />
+//             </div>
+//         </div>
+//     )
+// }
+
+// export default Register
+// =======
+import React, { useEffect, useState } from "react";
+import { Link, resolvePath } from "react-router-dom";
+import axios from "axios";
+import registerVector from "../../Assets/reg2.png";
+import googleIcon from "../../Assets/iconGoogle.svg";
+import mail from "../../Assets/mailGrey.svg";
+import key from "../../Assets/key.svg";
+import eye from "../../Assets/eye.svg";
+import google_logo from "../../Assets/google_logo.png";
+import { useDispatch } from "react-redux";
+import { saveuser } from "../../features/User";
+import { useSelector } from "react-redux";
+import {
+  GoogleOAuthProvider,
+  googleLogout,
+  useGoogleLogin,
+  GoogleLogin,
+} from "@react-oauth/google";
+import "./Register.css";
+import jwt_decode from "jwt-decode";
+
+const Register = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmpassword, setconfirmpassword] = useState("");
+  const [errormessage, seterrormessage] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const dispatch = useDispatch();
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+  let user = useSelector((state) => state.user);
+  console.log(user);
+
+  // -----------Have to uncomment later for registration----------
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const userData = {
+  //     email: email,
+  //     password: password,
+  //   };
+  //   if (userData.email && userData.password) {
+  //     if (confirmpassword == password) {
+  //       try {
+  //         const response = await axios.post(
+  //           "https://nidaan15.onrender.com/register",
+  //           userData
+  //         );
+  //         const user = {
+  //           email: response.data.email,
+  //           token: response.data.token,
+  //           type: response.data.type,
+  //         };
+  //         localStorage.setItem("user", JSON.stringify(user));
+  //         dispatch(
+  //           saveuser({
+  //             email: response.data.email,
+  //             token: response.data.token,
+  //             type: response.data.type,
+  //           })
+  //         );
+  //         window.location.href = "/";
+  //       } catch (error) {
+  //         console.error("Error sending data:", error.message);
+  //         seterrormessage(error.response.data);
+  //       }
+  //     } else {
+  //       seterrormessage("Passwords doesn't match");
+  //     }
+  //   } else {
+  //     seterrormessage("Please enter email and password");
+  //   }
+  // };
+
+
+  // client id =40479294399-kp15176gefinpslttft8opq43qahu968.apps.googleusercontent.com
+  // s=client secret =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
+  // api key = AIzaSyDdEQ8HEndw4bOXYdgTrkMJxmQnpuV-v8o
+
+
+  // const google = () => {
+  //   window.open("http://localhost:5000/auth/google", "_self");
+  // };
+
+
+
+  return (
+    <div className="registerContainer">
+      <div className="registerFormContainer">
+        <div className="registerHeader">
+          <h1>Register Now!</h1>
+          <p>Welcome to Neighborhue, Please enter your details</p>
+        </div>
+
+        <div className="registerForm">
+          {/* <GoogleOAuthProvider clientId="40479294399-kp15176gefinpslttft8opq43qahu968.apps.googleusercontent.com">
+            <GoogleLogin
+              onSuccess={(credentialResponse) => {
+                console.log(credentialResponse);
+                const decoded = jwt_decode(credentialResponse.credential);
+
+                const decodeduser = {
+                  email: decoded.email,
+                  token: credentialResponse,
+                };
+                const register = async () => {
+                  try {
+                    const response = await axios.post(
+                      "https://nidaan15.onrender.com/register",
+                      decodeduser
+                    );
+                    const user = {
+                      email: response.data.email,
+                      token: response.data.token,
+                      type: response.data.type,
+                    };
+                    const userJSON = JSON.stringify(user);
+                    localStorage.setItem("user", userJSON);
+
+                    dispatch(
+                      saveuser({
+                        email: user.email,
+                        token: user.token,
+                        type: user.type,
+                      })
+                    );
+                    window.location.href = "/";
+                  } catch (error) {
+                    console.error("Error sending data:", error.message);
+                    seterrormessage(error.response.data);
+                  }
+                };
+                register();
+              }}
+              onError={() => {
+                seterrormessage("signup failed");
+              }}
+            />
+          </GoogleOAuthProvider> */}
+
+          {/* trial of googleauth */}
+          
+          <GoogleLogin
+            onSuccess={(credentialResponse) => {
+              console.log(credentialResponse);
+              const decoded = jwt_decode(credentialResponse.credential);
+
+              const decodeduser = {
+                email: decoded.email,
+                token: credentialResponse,
+              };
+              const register = async () => {
+                try {
+                  const response = await axios.post(
+                    "https://nidaan15.onrender.com/register",
+                    decodeduser
+                  );
+                  const user = {
+                    email: response.data.email,
+                    token: response.data.token,
+                    type: response.data.type,
+                  };
+                  const userJSON = JSON.stringify(user);
+                  localStorage.setItem("user", userJSON);
+
+                  dispatch(
+                    saveuser({
+                      email: user.email,
+                      token: user.token,
+                      type: user.type,
+                    })
+                  );
+                  window.location.href = "/";
+                } catch (error) {
+                  console.error("Error sending data:", error.message);
+                  seterrormessage(error.response.data);
+                }
+              };
+              register();
+            }}
+            onError={() => {
+              seterrormessage("signup failed");
+            }}
+          />
+          
+
+          {/* <div className="googleButton" onClick={google}>
+            <img src={google_logo}/>
+
+          </div> */}
+
+          <div className="or">
+            <hr />
+            <p>Or</p>
+            <hr />
+          </div>
+          <form className="register" action="">
+            <div className="registerInputContainer" id="registerInputEmail">
+              <img src={mail} alt="" className="lIcon" />
+              <input
+                type="text"
+                placeholder="Enter Your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+
+            <div className="registerInputContainer">
+              <img src={key} alt="" className="lIcon" />
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Enter Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <img
+                src={eye}
+                className={`key ${showPassword ? "show" : ""}`}
+                onClick={togglePasswordVisibility}
+                alt=""
+              />
+            </div>
+
+            <div className="registerInputContainer">
+              <img src={key} alt="" className="lIcon" />
+
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Confirm Password"
+                value={confirmpassword}
+                onChange={(e) => setconfirmpassword(e.target.value)}
+              />
+              <img
+                src={eye}
+                alt=""
+                className={`key ${showPassword ? "show" : ""}`}
+                onClick={togglePasswordVisibility}
+              />
+            </div>
+            <p className="register-error-message">{errormessage}</p>
+
+            {/* <button onClick={handleSubmit}>Register Now</button> */}
+            <button className="comingBtn" style={{background: "linear-gradient(90deg, rgba(212,65,23,0.7988445378151261) 24%, rgba(84,24,207,0.8016456582633054) 100%)",border:"none",borderRadius:"7px",padding:"12px 18px",color:"#ffff",fontSize:"clamp(12px, 2vw, 18px)",display:"flex",justifyContent:"center"}}>
+            Register Now
+                    </button>
+          </form>
+          <p className="switch">
+            Already have account? <Link to="/signin">Sign in</Link>
+          </p>
+        </div>
+      </div>
+
+      <div className="registerImg">
+        <div className="imgText">
+          <h4>Neighborhue</h4>
+          <p>Lorem ipsum dolor sit amet consectetur</p>
+        </div>
+        <img src={registerVector} alt="" />
+      </div>
+    </div>
+  );
+};
+
+export default Register;
+// >>>>>>> 0914021175b667caf2bffeb3c66fb886b8a68867
