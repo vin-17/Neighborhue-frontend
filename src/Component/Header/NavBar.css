@@ -312,10 +312,21 @@
     }
 }
 
-.profile-icon{
-    width: 50px; /* Adjust the width as needed */
-    height: 50px; /* Adjust the height as needed */
-    border-radius: 50%; /* Makes the image circular */
-    border: 2px solid #ea0b0b77; /* Optional: Add a white border */
+
+.navbar-user-info {
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.navbar-user-info p {
+    margin-right: 10px; /* Add right margin to create space between elements */
+    font-size: 14px; /* Adjust font size */
+}
+
+.navbar-user-info .profile-icon {
+    width: 50px; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
+    border-radius: 50%; /* Make the image circular */
+    margin-right: 10px; /* Add right margin to create space between elements */
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
 }

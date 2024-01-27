@@ -114,13 +114,17 @@ const NavBar = () => {
                 </>
               ) : (
                 <>
-                  <p>Signed in as {user.user.username}</p>
+                  <div className="navbar-user-info">
+
+                  <p className="">Signed in as {user.user.username}</p>
+                  {/* user profile picture */}
                   <img 
                         src={user.user.profilePicture}
                         className="profile-icon"
                         alt=""
                         
-                    />
+                        />
+                  </div>
                   <button className="registerBtn" onClick={logoutf}>
                     Logout
                   </button>
