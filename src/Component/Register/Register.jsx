@@ -156,7 +156,7 @@ const Register = () => {
   //   window.open("http://localhost:5000/auth/google", "_self");
   // };
 
-  const serverUrl = "";
+  const serverUrl = "https://neighborhue-backend.vercel.app";
 
   return (
     <div className="registerContainer">
@@ -183,7 +183,7 @@ const Register = () => {
                 const register = async () => {
                   try {
                     const response = await axios.post(
-                      "http://localhost:5000/register/signin",
+                      `${serverUrl}/register/signin`,
                       decodeduser
                     );
                     console.log("response after fetch: ", response);
@@ -283,8 +283,11 @@ const Register = () => {
             Register Now
                     </button>
           </form>
-          <p className="switch">
+          {/* <p className="switch">
             Already have account? <Link to="/signin">Sign in</Link>
+          </p> */}
+          <p className="switch">
+            Already have account? <Link >Sign in</Link>
           </p>
         </div>
       </div>

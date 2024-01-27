@@ -20,7 +20,7 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const user = useSelector((state) => state.user);
   // const user = useSelector((state) => state.user);
-  console.log("User:", user);
+  // console.log("User:", user);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -46,6 +46,8 @@ const NavBar = () => {
     dispatch(logout());
     localStorage.removeItem("user");
   };
+
+  const serverURL = "";
 
   return (
     <nav className="navBar">
@@ -133,14 +135,14 @@ const NavBar = () => {
             </>
           ) : (
             <div className="registerSection">
-              <Link to="/signin">
+              {/* <Link to="/signin">
                 <button className="signInBtn" onClick={handleLinkClick}>
                   Sign In
                 </button>
-              </Link>
+              </Link> */}
               <Link to="/register">
                 <button className="registerBtn" onClick={handleLinkClick}>
-                  Register Now
+                  Register / Login Now
                 </button>
               </Link>
             </div>

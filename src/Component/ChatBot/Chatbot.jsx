@@ -86,12 +86,14 @@ const Chatbot = () => {
   //     setLoading(false); // Set loading to false, regardless of success or failure
   //   }
   // };
+  const serverURL = "https://neighborhue-backend.vercel.app";
+  const localURL = "http://localhost:5000";
 
   const onSubmit = async () => {
     try {
       setLoading(true); // Set loading to true
   
-      const response = await axios.post("http://localhost:5000/api/ai-chat/chatbot", {
+      const response = await axios.post(`${serverURL}/api/ai-chat/chatbot`, {
         message: formData.problem,
       });
   

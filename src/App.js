@@ -62,9 +62,11 @@ function App() {
   //user register new
   const [user, setUser] = useState(null);
 
+  const serverUrl = "https://neighborhue-backend.vercel.app";
+
   useEffect(() => {
     const getUser = () => {
-      fetch("http://localhost:5000/auth/login/success", {
+      fetch(`${serverUrl}/auth/login/success`, {
         method: "GET",
         credentials: "include",
         headers: {

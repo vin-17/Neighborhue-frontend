@@ -11,7 +11,7 @@ const GoogleLoginButton = () => {
       const { tokenId } = response;
       
       // Send the tokenId to your server for verification
-      const serverResponse = await axios.post('http://localhost:5000/auth/google/verify', { tokenId });
+      const serverResponse = await axios.post('https://neighborhue-backend.vercel.app/auth/google/verify', { tokenId });
 
       // Handle the server response as needed
       console.log(serverResponse.data);
