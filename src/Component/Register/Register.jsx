@@ -89,6 +89,7 @@ import {
 } from "@react-oauth/google";
 import "./Register.css";
 import jwt_decode from "jwt-decode";
+import GoogleLoginButton from "./googleLoginButton";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -154,7 +155,7 @@ const Register = () => {
   //   window.open("http://localhost:5000/auth/google", "_self");
   // };
 
-
+  const serverUrl = "";
 
   return (
     <div className="registerContainer">
@@ -165,22 +166,25 @@ const Register = () => {
         </div>
 
         <div className="registerForm">
-          {/* <GoogleOAuthProvider clientId="40479294399-kp15176gefinpslttft8opq43qahu968.apps.googleusercontent.com">
+          
             <GoogleLogin
               onSuccess={(credentialResponse) => {
                 console.log(credentialResponse);
                 const decoded = jwt_decode(credentialResponse.credential);
 
                 const decodeduser = {
+                  username: decoded.name,
                   email: decoded.email,
+                  profilePic: decoded.picture,
                   token: credentialResponse,
                 };
                 const register = async () => {
                   try {
                     const response = await axios.post(
-                      "https://nidaan15.onrender.com/register",
+                      "http://localhost:5000/register/signin",
                       decodeduser
                     );
+                    console.log(response);
                     const user = {
                       email: response.data.email,
                       token: response.data.token,
@@ -208,52 +212,11 @@ const Register = () => {
                 seterrormessage("signup failed");
               }}
             />
-          </GoogleOAuthProvider> */}
+          
 
           {/* trial of googleauth */}
           
-          <GoogleLogin
-            onSuccess={(credentialResponse) => {
-              console.log(credentialResponse);
-              const decoded = jwt_decode(credentialResponse.credential);
-
-              const decodeduser = {
-                email: decoded.email,
-                token: credentialResponse,
-              };
-              const register = async () => {
-                try {
-                  const response = await axios.post(
-                    "https://nidaan15.onrender.com/register",
-                    decodeduser
-                  );
-                  const user = {
-                    email: response.data.email,
-                    token: response.data.token,
-                    type: response.data.type,
-                  };
-                  const userJSON = JSON.stringify(user);
-                  localStorage.setItem("user", userJSON);
-
-                  dispatch(
-                    saveuser({
-                      email: user.email,
-                      token: user.token,
-                      type: user.type,
-                    })
-                  );
-                  window.location.href = "/";
-                } catch (error) {
-                  console.error("Error sending data:", error.message);
-                  seterrormessage(error.response.data);
-                }
-              };
-              register();
-            }}
-            onError={() => {
-              seterrormessage("signup failed");
-            }}
-          />
+          {/* <GoogleLoginButton /> */}
           
 
           {/* <div className="googleButton" onClick={google}>

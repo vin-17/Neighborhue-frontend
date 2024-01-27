@@ -18,7 +18,7 @@ import "./NavBar.css";
 const NavBar = () => {
   const dispatch = useDispatch();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  let user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -36,6 +36,13 @@ const NavBar = () => {
     localStorage.removeItem("user");
     dispatch(logout());
     googleLogout();
+  };
+  const handleLogout = () => {
+    if (user.user.type === "Google") {
+      googleLogout();
+    }
+    dispatch(logout());
+    localStorage.removeItem("user");
   };
 
   return (
@@ -63,11 +70,12 @@ const NavBar = () => {
             </HashLink>
           </div>
 
+          
           {user.user.email ? (
             user.user.type === "Google" ? (
               <>
                 <p>signed in with google via {user.user.email}</p>
-                <button className="registerBtn" onClick={handlegooglelogout}>
+                <button className="registerBtn" onClick={handleLogout}>
                   Logout
                 </button>
               </>
