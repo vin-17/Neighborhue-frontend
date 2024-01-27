@@ -19,6 +19,8 @@ const NavBar = () => {
   const dispatch = useDispatch();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const user = useSelector((state) => state.user);
+  // const user = useSelector((state) => state.user);
+  console.log("User:", user);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -71,7 +73,7 @@ const NavBar = () => {
           </div>
 
           
-          {user.user.email ? (
+          {/* {user.user.email ? (
             user.user.type === "Google" ? (
               <>
                 <p>signed in with google via {user.user.email}</p>
@@ -87,6 +89,44 @@ const NavBar = () => {
                 </button>
               </>
             )
+          ) : (
+            <div className="registerSection">
+              <Link to="/signin">
+                <button className="signInBtn" onClick={handleLinkClick}>
+                  Sign In
+                </button>
+              </Link>
+              <Link to="/register">
+                <button className="registerBtn" onClick={handleLinkClick}>
+                  Register Now
+                </button>
+              </Link>
+            </div>
+          )} */}
+          {user.user.email ? (
+            <>
+              {user.user.type === "Google" ? (
+                <>
+                  <p>signed in with google via {user.user.email}</p>
+                  <button className="registerBtn" onClick={handlegooglelogout}>
+                    Logout
+                  </button>
+                </>
+              ) : (
+                <>
+                  <p>Signed in as {user.user.username}</p>
+                  <img 
+                        src={user.user.profilePicture}
+                        className="profile-icon"
+                        alt=""
+                        
+                    />
+                  <button className="registerBtn" onClick={logoutf}>
+                    Logout
+                  </button>
+                </>
+              )}
+            </>
           ) : (
             <div className="registerSection">
               <Link to="/signin">

@@ -29,7 +29,7 @@ const BlogDetail = () => {
         <div className="share">
           <h5>Share Now</h5>
           <Link to={"#"}>
-          <i class="fa-solid fa-share-nodes fa-lg" style={{ color: "#DC6745" }}></i>
+          <i className="fa-solid fa-share-nodes fa-lg" style={{ color: "#DC6745" }}></i>
           </Link>
         </div>
         </div>

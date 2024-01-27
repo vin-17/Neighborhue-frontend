@@ -90,6 +90,7 @@ import {
 import "./Register.css";
 import jwt_decode from "jwt-decode";
 import GoogleLoginButton from "./googleLoginButton";
+import { store } from "../../app/store.js";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -169,7 +170,7 @@ const Register = () => {
           
             <GoogleLogin
               onSuccess={(credentialResponse) => {
-                console.log(credentialResponse);
+                // console.log(credentialResponse);
                 const decoded = jwt_decode(credentialResponse.credential);
 
                 const decodeduser = {
@@ -178,28 +179,31 @@ const Register = () => {
                   profilePic: decoded.picture,
                   token: credentialResponse,
                 };
+                console.log("decodeduser: ",decodeduser)
                 const register = async () => {
                   try {
                     const response = await axios.post(
                       "http://localhost:5000/register/signin",
                       decodeduser
                     );
-                    console.log(response);
+                    console.log("response after fetch: ", response);
                     const user = {
-                      email: response.data.email,
-                      token: response.data.token,
-                      type: response.data.type,
+                      email: response.data.user.email,
+                      username: response.data.user.username,
+                      profilePicture: response.data.user.profilePic,
                     };
+                    console.log("user after fetch before dispatch: ", user);
                     const userJSON = JSON.stringify(user);
                     localStorage.setItem("user", userJSON);
 
                     dispatch(
                       saveuser({
                         email: user.email,
-                        token: user.token,
-                        type: user.type,
+                        username: user.username,
+                        profilePicture: user.profilePicture,
                       })
                     );
+                    localStorage.setItem("reduxState", JSON.stringify(store.getState()));
                     window.location.href = "/";
                   } catch (error) {
                     console.error("Error sending data:", error.message);

@@ -3,8 +3,8 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 const initialState = {
   user: {
     email: "",
-    token: "",
-    type:""
+    username: "",
+    profilePicture:""
   },
 };
 

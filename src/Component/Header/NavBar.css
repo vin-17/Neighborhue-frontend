@@ -311,3 +311,11 @@
         display: block;
     }
 }
+
+.profile-icon{
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+    border-radius: 50%; /* Makes the image circular */
+    border: 2px solid #ea0b0b77; /* Optional: Add a white border */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+}
