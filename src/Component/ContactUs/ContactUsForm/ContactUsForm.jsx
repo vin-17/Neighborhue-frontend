@@ -4,6 +4,7 @@ import bg from '../../../Assets/formBg.webp'
 import send from '../../../Assets/send.svg'
 import axios from "axios";
 import { toast } from "react-hot-toast";
+import Loader from "./Loader"
 
 import './ContactUsForm.css'
 
@@ -169,7 +170,7 @@ const ContactUsForm = () => {
                         <input type="text" name="" id="" placeholder='Your name' value={username} onChange={(e) => setUsername(e.target.value)} required />
                         <input type="email" name="" id="" placeholder='Your @Email ID' value={userEmail} onChange={(e) => setUserEmail(e.target.value)} required />
                         <input type="text" name="" id="" placeholder='Tell us your problem' value={problemDescription} onChange={(e) => setProblemDescription(e.target.value)} className='formFeedback' required />
-                        <button type="submit">Submit now <img src={send} alt="" className='submitIcon' /></button>
+                        <button type="submit">{loading ? <Loader /> : "Submit now"}<img src={send} alt="" className='submitIcon' /></button>
                     </form>
                 </div>
 
