@@ -122,12 +122,14 @@ const ContactUsForm = () => {
     //     }
     //   };
 
+    const serverURL = "https://neighborhue-backend.vercel.app";
+    
     const submitHandler = async (e) => {
         e.preventDefault();
         try {
           setLoading(true);
           const response = await axios.post(
-            `http://localhost:5000/api/inquiry/send-inquiry`,
+            `${serverURL}/api/inquiry/send-inquiry`,
             {
               username,
               userEmail,
