@@ -46,11 +46,8 @@ const Chatbot = () => {
 
   const [chatHistory, setChatHistory] = useState([{role:"chatbot" , content : "How may i assist you ?"}]);
   const [formData, setFormData] = useState({
-    age: "",
-    gender: "",
-    name: "",
-    days: "",
     problem: "",
+    location: "",
   });
   const handleChange = (field, value) => {
     setFormData((prevData) => ({
@@ -90,11 +87,20 @@ const Chatbot = () => {
   const localURL = "http://localhost:5000";
 
   const onSubmit = async () => {
+    if (!formData.problem) {
+      alert("Please write something in the textarea.");
+      return;
+    }
+    if (!formData.location) {
+      alert("Please provide location.");
+      return;
+    }
     try {
       setLoading(true); // Set loading to true
   
       const response = await axios.post(`${serverURL}/api/ai-chat/chatbot`, {
         message: formData.problem,
+        location: formData.location,
       });
   
       if (response.data.message) {
@@ -106,6 +112,8 @@ const Chatbot = () => {
   
         setChatHistory(newChatHistory);
         setChatReply(response.data.message); // Set chatReply for the bot's immediate response
+
+        handleChange("problem", "");
       }
     } catch (error) {
       seterror(error.message || "Error submitting message.");
@@ -189,7 +197,13 @@ const Chatbot = () => {
           </div>
           <div className="locationSearch">
           <i class="fa-solid fa-location-dot fa-lg" style={{color:"#DD6745"}}></i>
-            <input type="text" name="search" placeholder="Your Location" ></input>
+            <input 
+              type="text" 
+              name="search" 
+              placeholder="Your Location" 
+              value={formData.location}  
+              onChange={(e) => handleChange("location", e.target.value)}
+            ></input>
           </div>
         </div>
         
