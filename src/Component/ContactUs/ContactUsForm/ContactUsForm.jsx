@@ -8,6 +8,7 @@ import Loader from "./Loader"
 
 import './ContactUsForm.css'
 
+
 const About = () => {
     
 
@@ -124,13 +125,14 @@ const ContactUsForm = () => {
     //   };
 
     const serverURL = "https://neighborhue-backend.vercel.app";
+    const devUrl = "http://localhost:5000";
     
     const submitHandler = async (e) => {
         e.preventDefault();
         try {
           setLoading(true);
           const response = await axios.post(
-            `${serverURL}/api/inquiry/send-inquiry`,
+            `${process.env.REACT_APP_serverUrl}/api/inquiry/send-inquiry`,
             {
               username,
               userEmail,

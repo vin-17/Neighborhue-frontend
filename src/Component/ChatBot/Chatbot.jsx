@@ -35,6 +35,7 @@ import Readchats from "../Readchats/Readchats";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 const Chatbot = () => {
   const [error, seterror] = useState("");
   // const [flag, setflag] = useState(false);
@@ -84,7 +85,7 @@ const Chatbot = () => {
   //   }
   // };
   const serverURL = "https://neighborhue-backend.vercel.app";
-  const localURL = "http://localhost:5000";
+  const devUrl = "http://localhost:5000";
 
   const onSubmit = async () => {
     if (!formData.problem) {
@@ -98,7 +99,7 @@ const Chatbot = () => {
     try {
       setLoading(true); // Set loading to true
   
-      const response = await axios.post(`${serverURL}/api/ai-chat/chatbot`, {
+      const response = await axios.post(`${process.env.REACT_APP_serverUrl}/api/ai-chat/chatbot`, {
         message: formData.problem,
         location: formData.location,
       });

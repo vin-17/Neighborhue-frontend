@@ -15,6 +15,7 @@ import {
 
 import "./NavBar.css";
 
+
 const NavBar = () => {
   const dispatch = useDispatch();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,6 +49,7 @@ const NavBar = () => {
   };
 
   const serverURL = "";
+  const devUrl = "http://localhost:5000";
 
   return (
     <nav className="navBar">

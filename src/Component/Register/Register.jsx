@@ -92,6 +92,7 @@ import jwt_decode from "jwt-decode";
 import GoogleLoginButton from "./googleLoginButton";
 import { store } from "../../app/store.js";
 
+
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -157,6 +158,7 @@ const Register = () => {
   // };
 
   const serverUrl = "https://neighborhue-backend.vercel.app";
+  const devUrl = "http://localhost:5000";
 
   return (
     <div className="registerContainer">
@@ -183,7 +185,7 @@ const Register = () => {
                 const register = async () => {
                   try {
                     const response = await axios.post(
-                      `${serverUrl}/register/signin`,
+                      `${process.env.REACT_APP_serverUrl}/register/signin`,
                       decodeduser
                     );
                     console.log("response after fetch: ", response);

@@ -44,6 +44,7 @@ import { useDispatch } from "react-redux";
 import { saveuser } from "./features/User";
 import { useSelector } from "react-redux";
 
+
 function App() {
   const location = useLocation();
   const dispatch = useDispatch();
@@ -63,10 +64,11 @@ function App() {
   const [user, setUser] = useState(null);
 
   const serverUrl = "https://neighborhue-backend.vercel.app";
+  // const devUrl = "http://localhost:5000";
 
   useEffect(() => {
     const getUser = () => {
-      fetch(`${serverUrl}/auth/login/success`, {
+      fetch(`${process.env.REACT_APP_serverUrl}/auth/login/success`, {
         method: "GET",
         credentials: "include",
         headers: {
