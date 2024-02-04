@@ -15,6 +15,9 @@ import { useSelector } from "react-redux";
 import Readchats from "../Readchats/Readchats";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+// import { useDispatch } from "react-redux";
+import { saveuser } from "../../features/User";
+// import { useSelector } from "react-redux";
 
 
 const Chatbot = () => {
@@ -53,7 +56,7 @@ const Chatbot = () => {
   const devUrl = "http://localhost:5000";
 
   const onSubmit = async () => {
-    if(!user.email){
+    if(!user.user.email){
       alert("Please log in to chat with Hue")
       return;
     }
@@ -65,14 +68,21 @@ const Chatbot = () => {
       alert("Please provide your location.");
       return;
     }
+    if(user.user.tokens_available <= 0){
+      alert("Please make a purchase first to continue chatting.")
+      window.location.href = "/pricing";
+    }
     try {
       setLoading(true); // Set loading to true
   
       const response = await axios.post(`${process.env.REACT_APP_serverUrl}/api/ai-chat/chatbot`, {
+        userEmail: user.user.email,
         message: formData.problem,
         location: formData.location,
       });
-  
+      console.log("response from chatbot: ", response);
+      const updated_user_data = response.data.user;
+      
       if (response.data.message) {
         const newChatHistory = [
           ...chatHistory,
@@ -84,6 +94,16 @@ const Chatbot = () => {
         setChatReply(response.data.message); // Set chatReply for the bot's immediate response
 
         handleChange("problem", "");
+        dispatch(
+          saveuser({
+            email: user.user.email,
+            username: user.user.username,
+            profilePicture: user.user.profilePicture,
+            tokens_available: updated_user_data.tokens_available,
+            tokens_used: updated_user_data.tokens_used,
+            is_premium: user.user.is_premium,
+          })
+        );
       }
     } catch (error) {
       seterror(error.message || "Error submitting message.");
@@ -143,6 +163,7 @@ const Chatbot = () => {
             required
             placeholder="Eg: type here about your problem"
           />
+          
           <button
             type="button"
             onClick={onSubmit}
@@ -155,6 +176,17 @@ const Chatbot = () => {
           </button>
           <ToastContainer bodyClassName="custom-toast-text" />
         </div>
+        {user.user.email ? (
+          <div className="tokens_available">
+            <p >Tokens available : {user.user.tokens_available}</p>
+          </div>
+        ) : (
+        <div className="tokens_available">
+          <p >Please log in to chat with Hue</p>
+        </div>
+      )}
+        
+        
         {user.user.email ? (
           <div className="chatbotContainer-bottom">
             <Link to="/chathistory">History</Link>

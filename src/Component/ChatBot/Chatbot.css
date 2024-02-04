@@ -388,3 +388,10 @@
 
 /* loader css */
 /* Add this to your existing CSS file or create a new one */
+.tokens_available {
+  /* background-color: red; */
+  margin-top: 10px;
+  /* margin-bottom: ; */
+  font-weight: 700;
+  /* text-align: left; */
+}
