@@ -4,7 +4,10 @@ const initialState = {
   user: {
     email: "",
     username: "",
-    profilePicture:""
+    profilePicture:"",
+    tokens_available: 0, // Initial value for tokens_available
+    tokens_used: 0, // Initial value for tokens_used
+    is_premium: false // Initial value for is_premium
   },
 };
 

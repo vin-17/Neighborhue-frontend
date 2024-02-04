@@ -78,15 +78,18 @@ function App() {
         },
       })
         .then((response) => {
-          console.log("Response headers:", response.headers);
+          // console.log("Response headers:", response.headers);
           if (response.status === 200) return response.json();
           throw new Error("authentication has been failed!");
+          
         })
         .then((resObject) => {
           setUser(resObject.user);
+         
         })
         .catch((err) => {
           console.log(err);
+          
         });
     };
     getUser();

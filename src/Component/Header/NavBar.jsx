@@ -21,7 +21,7 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const user = useSelector((state) => state.user);
   // const user = useSelector((state) => state.user);
-  // console.log("User:", user);
+  console.log("User:", user);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

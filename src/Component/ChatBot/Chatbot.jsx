@@ -1,22 +1,3 @@
-// <<<<<<< HEAD
-// import React from 'react'
-// import './Chatbot.css'
-
-// const Chatbot = () => {
-//     return (<>
-//         <div className='chatbotSectionContainer' id='chatBot'>
-//             <h2 className="chatbotSectionHeader">
-//                 Meet with Neo
-//             </h2>
-//             <p className="chatbotIntro">Our AI chatbot is just a message away, providing you with instant medical guidance right when you need it, 24/7</p>
-//             <div className="chatbotContainer"></div>
-//         </div>
-//     </>
-//     )
-// }
-
-// export default Chatbot
-// =======
 import React, { useState, useEffect } from "react";
 import "./Chatbot.css";
 import "./Loader.css";
@@ -63,37 +44,25 @@ const Chatbot = () => {
   // }, [flag]);
 
   let allchats = useSelector((state) => state.chats.chats);
-  let user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user);
+  // const user = useSelector((state) => state.user);
+  console.log("User in chatbot:", user);
 
-  // const onSubmit = async () => {
-  //   try {
-  //     setChatReply(""); // Clear any previous chat replies
-  //     setLoading(true); // Set loading to true
-  
-  //     const response = await axios.post("http://localhost:4000/api/chatbot", {
-  //       message: formData.problem,
-  //     });
-  
-  //     if (response.data.message) {
-  //       setChatReply(response.data.message);
-  //     }
-  //   } catch (error) {
-  //     seterror(error.message || "Error submitting message.");
-  //     notify();
-  //   } finally {
-  //     setLoading(false); // Set loading to false, regardless of success or failure
-  //   }
-  // };
+
   const serverURL = "https://neighborhue-backend.vercel.app";
   const devUrl = "http://localhost:5000";
 
   const onSubmit = async () => {
+    if(!user.email){
+      alert("Please log in to chat with Hue")
+      return;
+    }
     if (!formData.problem) {
       alert("Please write something in the textarea.");
       return;
     }
     if (!formData.location) {
-      alert("Please provide location.");
+      alert("Please provide your location.");
       return;
     }
     try {
@@ -125,64 +94,6 @@ const Chatbot = () => {
   };
 
 
-  // const handleSubmit = async () => {
-  //   if (formData.problem) {
-  //     try {
-  //       const openaiInstance = new OpenAI({
-  //         apiKey: process.env.REACT_APP_OPENAI_API_KEY,
-  //         dangerouslyAllowBrowser: true,
-  //       });
-  //       const completion = await openaiInstance.chat.completions.create({
-  //         messages: [
-  //           ...allchats,
-  //           { role: "user", content: formData.problem },
-  //           {
-  //             role: "system",
-  //             content: `If ${formData.problem} is not related to a health problem, strictly return "Please enter your health problem" and end the conversation. Otherwise, if ${formData.problem} is related to a health problem, refer to chat history for patient age, gender, and patient health problem. If you don't find all these details, ask the user for these details. If you find these details, then diagnose the patient.`,
-  //           },
-  //         ],
-  //         model: "gpt-3.5-turbo",
-  //       });
-  //       const completionText = completion.choices[0].message.content;
-  //       let userchat = {
-  //         role: "user",
-  //         content: formData.problem,
-  //       };
-
-  //       dispatch(addChat(userchat));
-  //       let assistantchat = {
-  //         role: "assistant",
-  //         content: completionText,
-  //       };
-  //       dispatch(addChat(assistantchat));
-
-  //       setFormData((prevData) => ({
-  //         ...prevData,
-  //         problem: "",
-  //       }));
-  //       if (user.user.email) {
-  //         const dataToSend = {
-  //           userchat: { role: "user", content: formData.problem },
-  //           assistantchat: { role: "assistant", content: completionText },
-  //           userData: { email: user.user.email, token: user.user.token },
-  //         };
-
-  //         await axios.post("https://nidaan15.onrender.com/chat", dataToSend);
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //       seterror("Error! Please try again later");
-  //       setFormData((prevData) => ({
-  //         ...prevData,
-  //         problem: "",
-  //       }));
-  //       notify();
-  //     }
-  //   } else {
-  //     seterror("please enter your problem");
-  //     notify();
-  //   }
-  // };
   return (
     <div className="chatbotSectionContainer" id='chatBot'>
       <h2 className="chatbotSectionHeader">Meet with Hue</h2>
