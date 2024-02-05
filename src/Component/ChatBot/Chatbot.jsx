@@ -68,10 +68,11 @@ const Chatbot = () => {
       alert("Please provide your location.");
       return;
     }
-    if(user.user.tokens_available <= 0){
-      alert("Please make a purchase first to continue chatting.")
+    if(user.user.daily_tokens_available <= 0 && user.user.purchased_tokens_available <= 0){
+      alert("You do not have any tokens right now. Please make a purchase first to continue chatting.")
       window.location.href = "/pricing";
     }
+
     try {
       setLoading(true); // Set loading to true
   
@@ -99,7 +100,8 @@ const Chatbot = () => {
             email: user.user.email,
             username: user.user.username,
             profilePicture: user.user.profilePicture,
-            tokens_available: updated_user_data.tokens_available,
+            daily_tokens_available: updated_user_data.daily_tokens_available,
+            purchased_tokens_available: updated_user_data.purchased_tokens_available,
             tokens_used: updated_user_data.tokens_used,
             is_premium: user.user.is_premium,
           })
@@ -178,7 +180,8 @@ const Chatbot = () => {
         </div>
         {user.user.email ? (
           <div className="tokens_available">
-            <p >Tokens available : {user.user.tokens_available}</p>
+            <p >Daily tokens available : {user.user.daily_tokens_available}</p>
+            <p >Purchased tokens available : {user.user.purchased_tokens_available}</p>
           </div>
         ) : (
         <div className="tokens_available">

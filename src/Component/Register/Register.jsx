@@ -193,7 +193,8 @@ const Register = () => {
                       email: response.data.user.email,
                       username: response.data.user.username,
                       profilePicture: response.data.user.profilePic,
-                      tokens_available: response.data.user.tokens_available,
+                      daily_tokens_available: response.data.user.daily_tokens_available,
+                      purchased_tokens_available: response.data.user.purchased_tokens_available,
                       tokens_used: response.data.user.tokens_used,
                       is_premium: response.data.user.is_premium,
                     };
@@ -206,7 +207,8 @@ const Register = () => {
                         email: user.email,
                         username: user.username,
                         profilePicture: user.profilePicture,
-                        tokens_available: user.tokens_available,
+                        daily_tokens_available: user.daily_tokens_available,
+                        purchased_tokens_available: user.purchased_tokens_available,
                         tokens_used: user.tokens_used,
                         is_premium: user.is_premium,
                       })
