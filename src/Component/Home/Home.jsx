@@ -7,6 +7,9 @@ import ShareSection from '../ShareSection/ShareSection'
 import Chatbot from '../ChatBot/Chatbot'
 import Reviews from '../Reviews/Reviews'
 import FAQ from '../FAQ/FAQ'
+import { useDispatch } from "react-redux";
+import { saveuser } from "../../features/User";
+import { useSelector } from "react-redux";
 
 
 
