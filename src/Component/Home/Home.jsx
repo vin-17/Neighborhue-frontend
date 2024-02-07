@@ -62,11 +62,11 @@ const Home = () => {
                 }
         }
         
-            
+        fetchUserDetails();
         };
 
         // Call the fetchUserDetails function when the component mounts
-        fetchUserDetails();
+        
     }, []); // Empty dependency array ensures this effect runs only once, on mount
     
 
