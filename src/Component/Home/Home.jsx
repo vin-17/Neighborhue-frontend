@@ -21,6 +21,7 @@ const Home = () => {
     useEffect(() => {
         // Fetch user details from the backend
         if(user.user.email){
+            const email = user.user.email;
             const fetchUserDetails = async () => {
                 try {
                     const response = await fetch(`${process.env.REACT_APP_serverUrl}/api/register/getUser`, {
