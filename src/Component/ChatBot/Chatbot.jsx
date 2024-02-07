@@ -178,12 +178,17 @@ const Chatbot = () => {
           </button>
           <ToastContainer bodyClassName="custom-toast-text" />
         </div>
-        {user.user.email ? (
+        { user.user.email ? ( user.user.is_premium ? (
+          <div className="tokens_available">
+          <p >You have unlimited tokens as part of your premium plan.</p>
+          
+        </div>
+        ) : (
           <div className="tokens_available">
             <p >Daily tokens available : {user.user.daily_tokens_available}</p>
             <p >Purchased tokens available : {user.user.purchased_tokens_available}</p>
           </div>
-        ) : (
+        )) : (
         <div className="tokens_available">
           <p >Please log in to chat with Hue</p>
         </div>
