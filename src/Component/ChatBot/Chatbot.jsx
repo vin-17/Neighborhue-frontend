@@ -90,7 +90,7 @@ const Chatbot = () => {
           { role: "user", content: formData.problem },
           { role: "chatbot", content: response.data.message },
         ];
-  
+        
         setChatHistory(newChatHistory);
         setChatReply(response.data.message); // Set chatReply for the bot's immediate response
 

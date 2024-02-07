@@ -12,6 +12,9 @@ export default function Chathistory() {
     email: user.user.email,
     token: user.user.token,
   };
+  
+  
+
   console.log(user.user.email);
   useEffect(() => {
     if (userData.email && userData.token) {
@@ -19,7 +22,7 @@ export default function Chathistory() {
       const fetchData = async () => {
         try {
           const response = await axios.post(
-            "https://nidaan15.onrender.com/chathistory",
+            `${process.env.serverUrl}/chathistory`,
             {
               user: userData,
             }

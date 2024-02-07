@@ -6,7 +6,8 @@ import recomendedBg from '../../../Assets/premiumSmallBg.svg'
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { saveuser } from "../../../features/User";
-import Checkout from "./Checkout"
+import OnetimeCheckout from "../OnetimePurchase/OnetimeCheckout"
+import PremiumCheckout from "../PremiumPurchase/PremiumCheckout"
 import './PriceOption.css'
 
 // const stripe = new Stripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
@@ -211,7 +212,7 @@ const PriceOption = () => {
                     
                     {/* pay per use purchase button  */}
                     
-                    <Checkout />
+                    <OnetimeCheckout />
                     {/* <button className="purchaseBtn" onClick={makePayment}>Purchase Now</button> */}
                     
                     
@@ -250,7 +251,7 @@ const PriceOption = () => {
                             <img src={greenTick} alt="tick" />
                             <p className="service">Faster<span className="fadeService"> Response speed</span></p>
                         </div>
-                        <div className='basicPlanOptions serviceContainer'>
+                        {/* <div className='basicPlanOptions serviceContainer'>
                             <img src={greenTick} alt="tick" />
                             <p className="service">Early Access <span className="fadeService">to new features</span></p>
                         </div>
@@ -261,26 +262,17 @@ const PriceOption = () => {
                         <div className='basicPlanOptions serviceContainer'>
                             <img src={greenTick} alt="tick" />
                             <p className="service"><span className="fadeService">Standard</span> Customer Care</p>
-                        </div>
+                        </div> */}
                     </div>
 
-                    <div className="togglePremiumPlanContainer">
-
-                        <div className="monthlyPlan">Monthly</div>
-                        <div className="toggleBtn" id='toggleBtn' onClick={togglePlan}>
-                            <div className="toggleDisk" id='toggleDisk'></div>
-                        </div>
-                        <div className="yearlyPlan">Yearly
-                            <span className="discount">-{discount}% off</span>
-                        </div>
-
-                    </div>
+                    
 
                     <hr className='premiumHr2 hr2 hr' />
 
 
                     {/* premium purchase button  */}
-                    <button className="purchaseBtn premiumPurchaseBtn">Purchase Now</button>
+                    {/* <button className="purchaseBtn premiumPurchaseBtn">Purchase Now</button> */}
+                    <PremiumCheckout />
                 </div>
 
                 <div className="recomendedBar">

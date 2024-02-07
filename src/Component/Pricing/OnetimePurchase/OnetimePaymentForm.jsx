@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { useSelector } from "react-redux";
-import "./Checkout.css"; // Import CSS file
+import "./OnetimeCheckout.css"; // Import CSS file
 
-const PaymentForm = () => {
+const OnetimePaymentForm = () => {
   const stripe = useStripe();
   const elements = useElements();
   const [paymentError, setPaymentError] = useState(null);
@@ -53,4 +53,4 @@ const PaymentForm = () => {
   );
 };
 
-export default PaymentForm;
+export default OnetimePaymentForm;
