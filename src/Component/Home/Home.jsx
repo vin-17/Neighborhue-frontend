@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import axios from "axios";
 import Intro from '../Intro/Intro'
 import Solutions from '../Solutions/Solutions'
 import Upcoming from '../Upcoming/Upcoming'
@@ -20,20 +20,12 @@ const Home = () => {
 
     useEffect(() => {
         // Fetch user details from the backend
+        // console.log(" fetch has been started ... ");
         if(user.user.email){
             const email = user.user.email;
             const fetchUserDetails = async () => {
                 try {
-                    const response = await fetch(`${process.env.REACT_APP_serverUrl}/api/register/getUser`, {
-                        method: 'POST', // Change to POST method since we're sending data
-                        headers: {
-                            'Content-Type': 'application/json',
-                            // Add any additional headers if needed
-                        },
-                        // Include credentials if your backend requires them
-                        credentials: 'include',
-                        body: JSON.stringify({ email }), // Send the email in the request body
-                    });
+                    const response = await axios.post(`${process.env.REACT_APP_serverUrl}/api/register/getUser`, { email });
                     const data = await response.json();
                     console.log("\nhome page data", data);
                     const user = {
