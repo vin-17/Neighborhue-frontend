@@ -1,0 +1,56 @@
+import React, { useState } from 'react';
+import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { useSelector } from "react-redux";
+import "./Checkout.css"; // Import CSS file
+
+const PaymentForm = () => {
+  const stripe = useStripe();
+  const elements = useElements();
+  const [paymentError, setPaymentError] = useState(null);
+  const user = useSelector((state) => state.user);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      // Create a Checkout session on the server
+      const response = await fetch(`${process.env.REACT_APP_serverUrl}/api/payment/checkout-session-onetime`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          amount: 199, // replace with the actual amount in cents (e.g., $1.99 = 199 cents)
+          email: user.user.email,
+        }),
+      });
+      
+      const { sessionId } = await response.json();
+
+      // Redirect to Stripe Checkout
+      const { error } = await stripe.redirectToCheckout({
+        sessionId: sessionId,
+      });
+
+      if (error) {
+        console.error(error);
+        setPaymentError('Payment failed');
+      }
+    } catch (error) {
+      console.error(error);
+      setPaymentError('An error occurred while processing the payment');
+    }
+  };
+
+  return (
+    <div className='PaymentForm'>
+      <form onSubmit={handleSubmit}>
+        
+        <button type="submit">Pay</button>
+        
+      </form>
+    </div>
+  );
+};
+
+export default PaymentForm;

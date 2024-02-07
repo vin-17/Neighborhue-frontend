@@ -3,9 +3,14 @@ import BlueDiamond from '../../../Assets/baseDiamond.png'
 import YellowDiamond from '../../../Assets/premiumDiamond.png'
 import greenTick from '../../../Assets/greenTick.png'
 import recomendedBg from '../../../Assets/premiumSmallBg.svg'
-
-
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { saveuser } from "../../../features/User";
+import Checkout from "./Checkout"
 import './PriceOption.css'
+
+// const stripe = new Stripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
+// const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
 const PriceOption = () => {
 
@@ -22,10 +27,15 @@ const PriceOption = () => {
     };
     const monthPrice = 999;
     const yearPrice = 9999;
-
     const [monthlyPlan, setMonthlyPlan] = useState(true);
-
     const [cost, setCost] = useState(499);
+
+    
+    const [paymentError, setPaymentError] = useState(null);
+    
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.user);
+    console.log("User in pricing page : ", user);
 
     function planSelected(e) {
         const credit = e.target.value;
@@ -44,6 +54,76 @@ const PriceOption = () => {
         setMonthlyPlan(!monthlyPlan);
     }
 
+    
+
+    async function makePayment() {
+        
+        // if(!user.user.email){
+        //     alert("Please login to purchase item");
+        //     window.location.href = "/register";
+        //     return;
+        // }
+
+        // const { token, error } = await stripe.createToken(elements.getElement(CardElement));
+    
+        // if (error) {
+        //   console.error(error);
+        //   setPaymentError('Payment failed');
+        // } else {
+        //   // Send token to your server
+        //   const response = await fetch(`${process.env.REACT_APP_serverUrl}/api/payment/create-payment-intent-onetime`, {
+        //     method: 'POST',
+        //     headers: {
+        //       'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify({ 
+        //         product: '8 additional tokens',
+        //         amount: 1.99 * 100, 
+        //     }),
+        //   });
+    
+        //   console.log("response object in payemnt: " , response);
+        //   const { clientSecret } = await response.json();
+          
+        //   console.log("this is user in the response return after payment", user);
+
+    
+        //   // Confirm the payment on the client-side
+        //   const result = await stripe.confirmCardPayment(clientSecret, {
+        //     payment_method: {
+        //       card: elements.getElement(CardElement),
+        //       billing_details: {
+        //         // Include any additional billing details if needed
+        //       },
+        //     },
+        //   });
+    
+        //   if (result.error) {
+        //     console.error(result.error);
+        //     setPaymentError('Payment failed');
+        //     alert("The payment failed please try again.");
+        //     window.location.href = "/pricing";
+        //   } else if (result.paymentIntent.status === 'succeeded') {
+        //     // Payment succeeded
+        //     // Payment succeeded
+        //     alert('Payment successful! 8 additional tokens added to your account.');
+        //     //   dispatch(
+        //     //     saveuser({
+        //     //       email: user.user.email,
+        //     //       username: user.user.username,
+        //     //       profilePicture: user.user.profilePicture,
+        //     //       daily_tokens_available: updated_user_data.daily_tokens_available,
+        //     //       purchased_tokens_available: updated_user_data.purchased_tokens_available,
+        //     //       tokens_used: updated_user_data.tokens_used,
+        //     //       is_premium: user.user.is_premium,
+        //     //     })
+        //     //   );
+        //     //   window.location.href = "/";
+        //     setPaymentError(null);
+        //   }
+        // }
+      };
+    
 
     return (
         <div className='planContainer'>
@@ -52,18 +132,19 @@ const PriceOption = () => {
 
             <div className="planCardContainer">
 
+                
                 <div className="basePlanContainer planCard">
                     <div className="basePlanHeader">
                         <img src={BlueDiamond} alt="diamond" />
                         <div className="basePlanHeading">
                             <h2 className='cardHeading'>Pay as you go</h2>
-                            <p className="cardFeature"><span className='tokenRem'>07</span> type tokens</p>
+                            <p className="cardFeature"><span className='tokenRem'>08</span> additional tokens</p>
                         </div>
                     </div>
 
                     <hr className='hr1 hr' />
 
-                    <div className="basicPlanContainer" onChange={planSelected}>
+                    {/* <div className="basicPlanContainer" onChange={planSelected}>
                         <div className='basicPlanOptions'>
                             <input type="radio" name="basicPlan" className='radioBtn' id="basicPlan1" value="1cr" />
                             <label htmlFor="basicPlan1">
@@ -120,16 +201,22 @@ const PriceOption = () => {
                                 <span className="basicPlanPrice">&#8377; 499</span>
                             </label>
                         </div>
-                    </div>
+                    </div> */}
 
                     <p className="gstLine">
                         ₹ {cost} one time payment. Price incl. GST, if applicable
                     </p>
 
                     <hr className='hr2 hr' />
-
-                    <button className="purchaseBtn">Purchase Now</button>
+                    
+                    {/* pay per use purchase button  */}
+                    
+                    <Checkout />
+                    {/* <button className="purchaseBtn" onClick={makePayment}>Purchase Now</button> */}
+                    
+                    
                 </div>
+                
 
                 <div className="premiumPlanContainer planCard">
                     <div className="basePlanHeader">
@@ -191,6 +278,8 @@ const PriceOption = () => {
 
                     <hr className='premiumHr2 hr2 hr' />
 
+
+                    {/* premium purchase button  */}
                     <button className="purchaseBtn premiumPurchaseBtn">Purchase Now</button>
                 </div>
 
