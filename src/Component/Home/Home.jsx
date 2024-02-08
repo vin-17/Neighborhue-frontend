@@ -26,8 +26,8 @@ const Home = () => {
             const fetchUserDetails = async () => {
                 try {
                     const response = await axios.post(`${process.env.REACT_APP_serverUrl}/register/getUser`, { email });
-                    const data = await response.json();
-                    console.log("\nhome page data", data);
+                    const data = await response.data;
+                    console.log("\nhome page data", response);
                     const user = {
                         email: response.data.user.email,
                         username: response.data.user.username,
