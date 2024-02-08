@@ -22,7 +22,7 @@ export default function Chathistory() {
       const fetchData = async () => {
         try {
           const response = await axios.post(
-            `${process.env.serverUrl}/api/ai-chat/chathistory`,
+            `${process.env.REACT_APP_serverUrl}/api/ai-chat/chathistory`,
             {
               user: userData,
             }
