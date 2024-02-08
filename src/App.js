@@ -110,6 +110,7 @@ function App() {
         <Route path='/contact' element={<ContactUs />} />
         <Route path='/register' element={<Register />} />
         <Route path='/signin' element={<SignIn />} />
+        <Route path="/chathistory" element={<Chathistory />} />
         {/* <Route path='/login' element={<Login />} /> */}
         <Route path='*' element={<div>404! Page Not Found</div>} />
       </Routes>
