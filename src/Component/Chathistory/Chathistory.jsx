@@ -10,7 +10,7 @@ export default function Chathistory() {
   let user = useSelector((state) => state.user);
   const userData = {
     email: user.user.email,
-    token: user.user.token,
+    // token: user.user.token,
   };
   
   
@@ -22,7 +22,7 @@ export default function Chathistory() {
       const fetchData = async () => {
         try {
           const response = await axios.post(
-            `${process.env.serverUrl}/chathistory`,
+            `${process.env.serverUrl}/api/ai-chat/chathistory`,
             {
               user: userData,
             }
@@ -34,7 +34,7 @@ export default function Chathistory() {
       };
       fetchData();
     }
-  }, [userData]);
+  }, []);
 
   return (
     <div className="chatbotSectionContainer">
@@ -52,7 +52,7 @@ export default function Chathistory() {
             <span
               key={index}
               className={`chat-message ${
-                chat.role === "assistant" ? "left" : "right"
+                chat.role === "user" ? "right" : "left"
               }`}
             >
               <strong>{chat.role}: </strong>
