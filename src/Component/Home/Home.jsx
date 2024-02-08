@@ -25,7 +25,7 @@ const Home = () => {
             const email = user.user.email;
             const fetchUserDetails = async () => {
                 try {
-                    const response = await axios.post(`${process.env.REACT_APP_serverUrl}/api/register/getUser`, { email });
+                    const response = await axios.post(`${process.env.REACT_APP_serverUrl}/register/getUser`, { email });
                     const data = await response.json();
                     console.log("\nhome page data", data);
                     const user = {
