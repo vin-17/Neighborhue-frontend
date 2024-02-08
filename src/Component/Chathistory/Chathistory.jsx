@@ -17,7 +17,7 @@ export default function Chathistory() {
 
   console.log(user.user.email);
   useEffect(() => {
-    if (userData.email && userData.token) {
+    if (userData.email) {
       console.log(userData);
       const fetchData = async () => {
         try {
@@ -27,6 +27,7 @@ export default function Chathistory() {
               user: userData,
             }
           );
+          console.log(" chats ", response.data.chats);
           setChatHistory(response.data.chats);
         } catch (error) {
           console.log(error.message);
