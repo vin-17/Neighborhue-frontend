@@ -61,41 +61,16 @@ function App() {
 
 
   //user register new
-  let user = useSelector((state) => state.user);
-  // const [user, setUser] = useState(null);
+  let userData = useSelector((state) => state.user);
+  const [user, setUser] = useState(null);
 
   const serverUrl = "https://neighborhue-backend.vercel.app";
   // const devUrl = "http://localhost:5000";
 
   useEffect(() => {
-    const getUser = () => {
-      fetch(`${process.env.REACT_APP_serverUrl}/auth/login/success`, {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          // "Access-Control-Allow-Credentials": true,
-          
-        },
-        body: JSON.stringify({ user }),
-
-      })
-        .then((response) => {
-          // console.log("Response headers:", response.headers);
-          if (response.status === 200) return response.json();
-          throw new Error("authentication has been failed!");
-          
-        })
-        .then((resObject) => {
-          setUser(resObject.user);
-         
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
-    getUser();
+    if(userData.user.email){
+      setUser(userData.user);
+    }
   }, []);
 
 
