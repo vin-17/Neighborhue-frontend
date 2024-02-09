@@ -154,7 +154,7 @@ const PriceOption = () => {
                     <div className="basicPlanContainer" id='premiumServiceContainer' onChange={planSelected}>
                         <div className='basicPlanOptions serviceContainer'>
                             <img src={yellowTick} alt="tick" />
-                            <p className="basic_service">08 Additional token for a month</p>
+                            <p className="basic_service">08 Additional token</p>
                         </div>
                         <div className='basicPlanOptions serviceContainer'>
                             <img src={yellowCross} alt="tick" />
@@ -166,7 +166,7 @@ const PriceOption = () => {
                         </div>
                         <div className='basicPlanOptions serviceContainer'>
                             <img src={yellowCross} alt="tick" />
-                            <p className="basic_service">Faster Response</p>
+                            <p className="basic_service">Fast Response</p>
                         </div>
                     </div>
                     {/* <p>₹ 499 one time payment. Price incl. GST, if applicable</p> */}
@@ -195,19 +195,19 @@ const PriceOption = () => {
                     <div className="basicPlanContainer" id='premiumServiceContainer' onChange={planSelected}>
                         <div className='basicPlanOptions serviceContainer'>
                             <img src={greenTick} alt="tick" />
-                            <p className="service">Unlimited chat <span className="fadeService">with Hue</span></p>
+                            <p className="service">Unlimited token for 1 month</p>
                         </div>
                         <div className='basicPlanOptions serviceContainer'>
                             <img src={greenTick} alt="tick" />
-                            <p className="service"><span className="fadeService">Chat</span> history</p>
+                            <p className="service">Unlimited Chat</p>
                         </div>
                         <div className='basicPlanOptions serviceContainer'>
                             <img src={greenTick} alt="tick" />
-                            <p className="service">Always available<span className="fadeService"> for you</span></p>
+                            <p className="service">History Access</p>
                         </div>
                         <div className='basicPlanOptions serviceContainer'>
                             <img src={greenTick} alt="tick" />
-                            <p className="service">Faster<span className="fadeService"> Response speed</span></p>
+                            <p className="service">Faster Response</p>
                         </div>
                         {/* <div className='basicPlanOptions serviceContainer'>
                             <img src={greenTick} alt="tick" />
