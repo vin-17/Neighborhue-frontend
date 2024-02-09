@@ -61,7 +61,8 @@ function App() {
 
 
   //user register new
-  const [user, setUser] = useState(null);
+  let user = useSelector((state) => state.user);
+  // const [user, setUser] = useState(null);
 
   const serverUrl = "https://neighborhue-backend.vercel.app";
   // const devUrl = "http://localhost:5000";
@@ -69,13 +70,16 @@ function App() {
   useEffect(() => {
     const getUser = () => {
       fetch(`${process.env.REACT_APP_serverUrl}/auth/login/success`, {
-        method: "GET",
+        method: "POST",
         credentials: "include",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
           // "Access-Control-Allow-Credentials": true,
+          
         },
+        body: JSON.stringify({ user }),
+
       })
         .then((response) => {
           // console.log("Response headers:", response.headers);
@@ -89,7 +93,6 @@ function App() {
         })
         .catch((err) => {
           console.log(err);
-          
         });
     };
     getUser();
