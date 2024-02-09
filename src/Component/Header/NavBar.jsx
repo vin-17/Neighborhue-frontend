@@ -54,7 +54,7 @@ const NavBar = () => {
   return (
     <nav className="navBar">
       <div className="logo">
-        <HashLink to="/#homeTop">
+        <HashLink to="/">
           <img src={logo} alt="NIDAAN" className="navLogo" />
         </HashLink>
       </div>
