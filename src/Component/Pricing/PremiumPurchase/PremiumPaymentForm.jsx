@@ -46,7 +46,7 @@ const PremiumPaymentForm = () => {
     <div className='PaymentForm'>
       <form onSubmit={handleSubmit}>
         
-        <button type="submit">Pay</button>
+        <button className='purchaseBtn' type="submit">Pay Now</button>
         
       </form>
     </div>

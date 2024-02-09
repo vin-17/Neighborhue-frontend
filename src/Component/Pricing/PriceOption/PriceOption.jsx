@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import BlueDiamond from '../../../Assets/baseDiamond.png'
 import YellowDiamond from '../../../Assets/premiumDiamond.png'
 import greenTick from '../../../Assets/greenTick.png'
+import yellowTick from '../../../Assets/yellow_tick.png'
 import recomendedBg from '../../../Assets/premiumSmallBg.svg'
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
@@ -26,14 +27,14 @@ const PriceOption = () => {
         '200cr': 375,
         '500cr': 499,
     };
-    const monthPrice = 999;
+    const monthPrice = 9.99;
     const yearPrice = 9999;
     const [monthlyPlan, setMonthlyPlan] = useState(true);
-    const [cost, setCost] = useState(499);
+    const [cost, setCost] = useState(1.99);
 
-    
+
     const [paymentError, setPaymentError] = useState(null);
-    
+
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user);
     console.log("User in pricing page : ", user);
@@ -55,10 +56,10 @@ const PriceOption = () => {
         setMonthlyPlan(!monthlyPlan);
     }
 
-    
+
 
     async function makePayment() {
-        
+
         // if(!user.user.email){
         //     alert("Please login to purchase item");
         //     window.location.href = "/register";
@@ -66,7 +67,7 @@ const PriceOption = () => {
         // }
 
         // const { token, error } = await stripe.createToken(elements.getElement(CardElement));
-    
+
         // if (error) {
         //   console.error(error);
         //   setPaymentError('Payment failed');
@@ -82,13 +83,13 @@ const PriceOption = () => {
         //         amount: 1.99 * 100, 
         //     }),
         //   });
-    
+
         //   console.log("response object in payemnt: " , response);
         //   const { clientSecret } = await response.json();
-          
+
         //   console.log("this is user in the response return after payment", user);
 
-    
+
         //   // Confirm the payment on the client-side
         //   const result = await stripe.confirmCardPayment(clientSecret, {
         //     payment_method: {
@@ -98,7 +99,7 @@ const PriceOption = () => {
         //       },
         //     },
         //   });
-    
+
         //   if (result.error) {
         //     console.error(result.error);
         //     setPaymentError('Payment failed');
@@ -123,8 +124,8 @@ const PriceOption = () => {
         //     setPaymentError(null);
         //   }
         // }
-      };
-    
+    };
+
 
     return (
         <div className='planContainer'>
@@ -133,91 +134,47 @@ const PriceOption = () => {
 
             <div className="planCardContainer">
 
-                
+
                 <div className="basePlanContainer planCard">
                     <div className="basePlanHeader">
                         <img src={BlueDiamond} alt="diamond" />
                         <div className="basePlanHeading">
                             <h2 className='cardHeading'>Pay as you go</h2>
-                            <p className="cardFeature"><span className='tokenRem'>08</span> additional tokens</p>
+                            <p className="cardFeature token"><span className='tokenRem'>08</span> additional tokens</p>
+                        </div>
+                        <div className="basicPriceContainer">
+                            <h2>$ {cost}</h2>
+                            <p className="cardFeature token">one time payment</p>
                         </div>
                     </div>
 
                     <hr className='hr1 hr' />
 
-                    {/* <div className="basicPlanContainer" onChange={planSelected}>
-                        <div className='basicPlanOptions'>
-                            <input type="radio" name="basicPlan" className='radioBtn' id="basicPlan1" value="1cr" />
-                            <label htmlFor="basicPlan1">
-                                <span className="credit">1 Credit</span>
-
-                                <span className="basicPlanPrice">&#8377; 5</span>
-
-                            </label>
+                    <div className="basicPlanContainer" id='premiumServiceContainer' onChange={planSelected}>
+                        <div className='basicPlanOptions serviceContainer'>
+                            <img src={yellowTick} alt="tick" />
+                            <p className="basic_service">08 Additional token for a month</p>
                         </div>
-                        <div className='basicPlanOptions'>
-                            <input type="radio" name="basicPlan" className='radioBtn' id="basicPlan2" value="10cr" />
-                            <label htmlFor="basicPlan2">
-                                <span className="credit">10 Credit</span>
-
-                                <span className="basicPlanPrice">&#8377; 20</span>
-
-                            </label>
+                        <div className='basicPlanOptions serviceContainer'>
+                            <img src={yellowTick} alt="tick" />
+                            <p className="basic_service">Unlimited Chat</p>
                         </div>
-                        <div className='basicPlanOptions'>
-                            <input type="radio" name="basicPlan" className='radioBtn' id="basicPlan3" value="50cr" />
-                            <label htmlFor="basicPlan3">
-                                <span className="credit">50 Credit</span>
-
-                                <span className="basicPlanPrice">&#8377; 40</span>
-
-                            </label>
+                        <div className='basicPlanOptions serviceContainer'>
+                            <img src={yellowTick} alt="tick" />
+                            <p className="basic_service">History Access</p>
                         </div>
-                        <div className='basicPlanOptions'>
-                            <input type="radio" name="basicPlan" className='radioBtn' id="basicPlan4" value="75cr" />
-                            <label htmlFor="basicPlan4">
-                                <span className="credit">75 Credit</span>
-                                <span className="basicPlanPrice">&#8377; 75</span>
+                        <div className='basicPlanOptions serviceContainer'>
+                            <img src={yellowTick} alt="tick" />
+                            <p className="basic_service">Faster Response</p>
+                        </div>
+                    </div>
+                    {/* <p>₹ 499 one time payment. Price incl. GST, if applicable</p> */}
+                    <hr className='hr1 hr' />
 
-                            </label>
-                        </div>
-                        <div className='basicPlanOptions'>
-                            <input type="radio" name="basicPlan" className='radioBtn' id="basicPlan5" value="100cr" />
-                            <label htmlFor="basicPlan5">
-                                <span className="credit">100 Credit</span>
-                                <span className="basicPlanPrice">&#8377; 200</span>
-                            </label>
-                        </div>
-                        <div className='basicPlanOptions'>
-                            <input type="radio" name="basicPlan" className='radioBtn' id="basicPlan6" value="200cr" />
-                            <label htmlFor="basicPlan6">
-                                <span className="credit">200 Credit</span>
-                                <span className="basicPlanPrice">&#8377; 375</span>
-                            </label>
-                        </div>
-                        <div className='basicPlanOptions'>
-                            <input type="radio" name="basicPlan" className='radioBtn' id="basicPlan7" value="500cr" defaultChecked />
-                            <label htmlFor="basicPlan7">
-                                <span className="credit">500 Credit</span>
-                                <span className="basicPlanPrice">&#8377; 499</span>
-                            </label>
-                        </div>
-                    </div> */}
-
-                    <p className="gstLine">
-                        ₹ {cost} one time payment. Price incl. GST, if applicable
-                    </p>
-
-                    <hr className='hr2 hr' />
-                    
                     {/* pay per use purchase button  */}
-                    
                     <OnetimeCheckout />
-                    {/* <button className="purchaseBtn" onClick={makePayment}>Purchase Now</button> */}
-                    
-                    
                 </div>
-                
+
 
                 <div className="premiumPlanContainer planCard">
                     <div className="basePlanHeader">
@@ -227,8 +184,8 @@ const PriceOption = () => {
                             <p className="premiumCardService cardFeature token"><span className='serviceNumber'>07</span> services</p>
                         </div>
                         <div className="premiumPriceContainer">
-                            <h2>&#8377; {monthlyPlan ? monthPrice : yearPrice}</h2>
-                            <p className="cardFeature token">{monthlyPlan ? "Per Month" : "Per Year"}</p>
+                            <h2>$ {monthlyPlan ? monthPrice : yearPrice}</h2>
+                            <p className="cardFeature token">{monthlyPlan ? "Unlimited Token / Month" : "Unlimited Token / Year"}</p>
                         </div>
                     </div>
 
@@ -265,7 +222,7 @@ const PriceOption = () => {
                         </div> */}
                     </div>
 
-                    
+
 
                     <hr className='premiumHr2 hr2 hr' />
 

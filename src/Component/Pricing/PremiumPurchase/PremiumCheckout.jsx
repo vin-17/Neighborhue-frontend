@@ -10,7 +10,6 @@ const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 const PremiumCheckout = () => {
   return (
     <div className='CheckoutContainer'>
-      <h1 className='CheckoutTitle'>Click to proceed your payment</h1>
       <Elements stripe={stripePromise}>
         <PremiumPaymentForm />
       </Elements>

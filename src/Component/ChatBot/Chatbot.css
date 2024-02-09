@@ -412,9 +412,11 @@
   align-self: flex-end;
 }
 
-.chat-history{
+.chat-history {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 /* >>>>>>> 0914021175b667caf2bffeb3c66fb886b8a68867 */
 
