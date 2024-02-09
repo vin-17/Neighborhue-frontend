@@ -3,6 +3,7 @@ import BlueDiamond from '../../../Assets/baseDiamond.png'
 import YellowDiamond from '../../../Assets/premiumDiamond.png'
 import greenTick from '../../../Assets/greenTick.png'
 import yellowTick from '../../../Assets/yellow_tick.png'
+import yellowCross from '../../../Assets/yellow_cross.png'
 import recomendedBg from '../../../Assets/premiumSmallBg.svg'
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
@@ -156,15 +157,15 @@ const PriceOption = () => {
                             <p className="basic_service">08 Additional token for a month</p>
                         </div>
                         <div className='basicPlanOptions serviceContainer'>
-                            <img src={yellowTick} alt="tick" />
+                            <img src={yellowCross} alt="tick" />
                             <p className="basic_service">Unlimited Chat</p>
                         </div>
                         <div className='basicPlanOptions serviceContainer'>
-                            <img src={yellowTick} alt="tick" />
+                            <img src={yellowCross} alt="tick" />
                             <p className="basic_service">History Access</p>
                         </div>
                         <div className='basicPlanOptions serviceContainer'>
-                            <img src={yellowTick} alt="tick" />
+                            <img src={yellowCross} alt="tick" />
                             <p className="basic_service">Faster Response</p>
                         </div>
                     </div>
