@@ -29,7 +29,7 @@ const Chatbot = () => {
   const dispatch = useDispatch();
   const notify = () => toast(error);
 
-  const [chatHistory, setChatHistory] = useState([{role:"chatbot" , content : "How may i assist you ?"}]);
+  const [chatHistory, setChatHistory] = useState([{ role: "chatbot", content: "How may i assist you ?" }]);
   const [formData, setFormData] = useState({
     problem: "",
     location: "",
@@ -56,7 +56,7 @@ const Chatbot = () => {
   const devUrl = "http://localhost:5000";
 
   const onSubmit = async () => {
-    if(!user.user.email){
+    if (!user.user.email) {
       alert("Please log in to chat with Hue")
       return;
     }
@@ -68,14 +68,14 @@ const Chatbot = () => {
       alert("Please provide your location.");
       return;
     }
-    if(user.user.daily_tokens_available <= 0 && user.user.purchased_tokens_available <= 0){
+    if (user.user.daily_tokens_available <= 0 && user.user.purchased_tokens_available <= 0) {
       alert("You do not have any tokens right now. Please make a purchase first to continue chatting.")
       window.location.href = "/pricing";
     }
 
     try {
       setLoading(true); // Set loading to true
-  
+
       const response = await axios.post(`${process.env.REACT_APP_serverUrl}/api/ai-chat/chatbot`, {
         userEmail: user.user.email,
         message: formData.problem,
@@ -83,14 +83,14 @@ const Chatbot = () => {
       });
       console.log("response from chatbot: ", response);
       const updated_user_data = response.data.user;
-      
+
       if (response.data.message) {
         const newChatHistory = [
           ...chatHistory,
           { role: "user", content: formData.problem },
           { role: "chatbot", content: response.data.message },
         ];
-        
+
         setChatHistory(newChatHistory);
         setChatReply(response.data.message); // Set chatReply for the bot's immediate response
 
@@ -120,7 +120,7 @@ const Chatbot = () => {
     <div className="chatbotSectionContainer" id='chatBot'>
       <h2 className="chatbotSectionHeader">Meet with Hue</h2>
       <p className="chatbotIntro">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae
       </p>
       <div className="chatbotContainer">
         <div className="chatbotContainer-top">
@@ -130,19 +130,19 @@ const Chatbot = () => {
             <p>Online</p>
           </div>
           <div className="locationSearch">
-          <i class="fa-solid fa-location-dot fa-lg" style={{color:"#DD6745"}}></i>
-            <input 
-              type="text" 
-              name="search" 
-              placeholder="Your Location" 
-              value={formData.location}  
+            <i class="fa-solid fa-location-dot fa-lg" style={{ color: "#DD6745" }}></i>
+            <input
+              type="text"
+              name="search"
+              placeholder="Your Location"
+              value={formData.location}
               onChange={(e) => handleChange("location", e.target.value)}
             ></input>
           </div>
         </div>
-        
+
         <div className="chatbotContainer-chatarea">
-          
+
           <Readchats chatHistory={chatHistory} />
           {/* {chatReply && (
             <div className="chatbot-reply">
@@ -156,7 +156,7 @@ const Chatbot = () => {
               </div>
             </div>
           )}
-          
+
         </div>
         <div className="chatbotContainer-textarea">
           <textarea
@@ -165,7 +165,7 @@ const Chatbot = () => {
             required
             placeholder="Eg: type here about your problem"
           />
-          
+
           <button
             type="button"
             onClick={onSubmit}
@@ -178,42 +178,71 @@ const Chatbot = () => {
           </button>
           <ToastContainer bodyClassName="custom-toast-text" />
         </div>
-        { user.user.email ? ( user.user.is_premium ? (
+        {user.user.email ? (user.user.is_premium ? (
           <div className="tokens_available">
-          <p >You have unlimited tokens as part of your premium plan.</p>
-          
-        </div>
+            <p >You have unlimited tokens as part of your premium plan.</p>
+
+          </div>
         ) : (
           <div className="tokens_available">
             <p >Daily tokens available : {user.user.daily_tokens_available}</p>
             <p >Purchased tokens available : {user.user.purchased_tokens_available}</p>
           </div>
         )) : (
-        <div className="tokens_available">
-          <p >Please log in to chat with Hue</p>
-        </div>
-      )}
-        
-        
-        {user.user.email ? (
+          <div className="chatbotContainer-bottom">
+            <p className="chatbotContainer-bottom-title ">
+              {/* In the Demo chat, you have 2 messages left. Register now and get: */}
+              Please log in to chat with Hue
+            </p>
+            <div>
+              <div style={{ display: "flex" }}>
+                <div>
+                  <img src={message} alt="More Messages" />
+                  <Link to="/register">
+                    <p>More Messages</p>
+                  </Link>
+                </div>
+                <div>
+                  <img src={clock} alt="chat History" />
+                  <Link to="/register">
+                    <p>chat History</p>
+                  </Link>
+                </div>
+              </div>
+              <div>
+                <img src={credit_card} alt="" />
+                <Link to="/pricing">
+                  <p> No credit card required</p>
+                </Link>
+              </div>
+            </div>
+            <Link to="/register">
+              <button className="registerButton">Login Now</button>
+            </Link>
+          </div>
+        )}
+
+
+        {/* {user.user.email ? (
           <div className="chatbotContainer-bottom">
             <Link to="/chathistory">History</Link>
           </div>
         ) : (
           <div className="chatbotContainer-bottom">
             <p className="chatbotContainer-bottom-title">
-              In the Demo chat, you have 2 messages left. Register now and get:
-            </p>
-            <div>
-              <div style={{display:"flex"}}>
-              <div>
-                <img src={message} alt="" />
-                <p>More Messages</p>
-              </div>
-              <div>
-                <img src={clock} alt="" />
-                <p>chat History</p>
-              </div>
+              {/* In the Demo chat, you have 2 messages left. Register now and get: */}
+              {/* Please log in to chat with Hue */}
+            {/* </p> */}
+            {/* <div>
+              <div style={{ display: "flex" }}>
+                <div>
+                  <img src={message} alt="" />
+                  <p>More Messages</p>
+                </div>
+                <div>
+                  <img src={clock} alt="" />
+                  <p>chat History</p>
+                </div>
               </div>
               <div>
                 <img src={credit_card} alt="" />
@@ -224,7 +253,7 @@ const Chatbot = () => {
               <button className="registerButton">Register Now</button>
             </Link>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
