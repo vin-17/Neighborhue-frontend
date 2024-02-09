@@ -4,12 +4,10 @@
   flex-direction: column;
   align-items: center;
 }
-
 .planHeading {
   font-size: 3.881vw;
   margin: 1%;
 }
-
 .token {
   text-align: center;
   color: grey;
@@ -17,11 +15,9 @@
   margin: 1%;
   font-size: 1.386vw;
 }
-
 .tokenRem {
   color: black;
 }
-
 .planCardContainer {
   margin-top: 5%;
   width: 90%;
@@ -31,7 +27,6 @@
   gap: 5%;
   position: relative;
 }
-
 .planCard {
   width: 100%;
   height: 57.141vw;
@@ -42,58 +37,48 @@
   display: flex;
   flex-direction: column;
 }
-
 .hr {
   margin: 7% 0;
   background-color: #bdbdbd6d;
 }
-
 .basePlanContainer {
   background-image: url("../../../Assets/basicCard.webp");
   background-size: 100% 100%;
 }
-
 .premiumPlanContainer {
   background-size: 100% 100%;
   background-image: url("../../../Assets/premiumCard.webp");
 }
-
 .basePlanHeader {
   margin-top: 12%;
   display: flex;
   gap: 1%;
   height: 5vw;
 }
-
 .basePlanHeading {
   width: 15vw;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-
 .cardHeading {
   font-size: 1.6vw;
 }
-
 .cardFeature {
   font-size: 1.2vw;
   text-align: left;
 }
-
 .basicPlanContainer {
   margin: 7% 0;
   display: flex;
   flex-direction: column;
   gap: 2.4vw;
 }
-
 .radioBtn {
   height: 2vw;
   width: 2vw;
   vertical-align: middle;
 }
-
 .basicPlanOptions {
   display: flex;
   align-items: center;
@@ -107,11 +92,9 @@
     font-weight: 500;
   }
 }
-
 .credit {
   width: 45%;
 }
-
 .gstLine {
   font-size: 1.109vw;
   font-weight: 500;
@@ -119,7 +102,6 @@
   color: grey;
   font-style: italic;
 }
-
 .purchaseBtn {
   width: 100%;
   padding: 3% 30%;
@@ -130,7 +112,6 @@
   background-image: linear-gradient(to right, #008fbe, #0357f8);
   color: white;
 }
-
 .serviceContainer {
   height: 4.1vw;
 
@@ -139,19 +120,15 @@
     width: 2.079vw;
   }
 }
-
 .premiunCardHeading {
   color: white;
 }
-
 .premiumCardService {
   color: rgba(255, 255, 255, 0.742);
 }
-
 .serviceNumber {
   color: white;
 }
-
 .basicPriceContainer {
   flex-grow: 2;
   color: black;
