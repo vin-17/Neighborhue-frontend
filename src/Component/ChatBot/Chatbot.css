@@ -172,6 +172,10 @@
   top: 5px;
   animation: plane 0.8s linear;
 }
+.chatbotContainer-textarea p{
+  font-size: 1.111vw;
+  margin-right: 4px;
+}
 
 @keyframes plane {
   0% {

@@ -172,7 +172,7 @@ const Chatbot = () => {
             className="app-submitbutton"
           >
             {/* {window.innerWidth > 900 ? <p style={{fontSize:"1.111vw",marginRight:"4px"}}>Send</p> : ""} */}
-            <p style={{fontSize:"1.111vw",marginRight:"4px"}}>Send</p>
+            <p>Send</p>
             {/* <img src={send} alt="" /> */}
             <i class="fa-regular fa-paper-plane"></i>
           </button>
