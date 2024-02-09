@@ -53,31 +53,31 @@ const NavBar = () => {
 
   return (
     <nav className="navBar">
-    <div className="logo">
-    <HashLink to="/#homeTop">
-        <img src={logo} alt="NIDAAN" className="navLogo" />
-      </HashLink>
-    </div>
-    <div className="links">
-    <div className={`navHiddenContainer ${isMenuOpen ? "open" : ""}`}>
-        <div className="navLinkConatiner">
-          <div className="navLink">
-            <HashLink smooth to="/#chatBot" onClick={handleLinkClick}>
-              Home
-            </HashLink>
-            <HashLink smooth to="/blogs#blog-top" onClick={handleLinkClick}>
-              Blogs
-            </HashLink>
-            <HashLink smooth to="/pricing#priceTop" onClick={handleLinkClick}>
-              Pricing
-            </HashLink>
-            <HashLink smooth to="/contact#contactTop" onClick={handleLinkClick}>
-              Contact Us
-            </HashLink>
-          </div>
+      <div className="logo">
+        <HashLink to="/#homeTop">
+          <img src={logo} alt="NIDAAN" className="navLogo" />
+        </HashLink>
+      </div>
+      <div className="links">
+        <div className={`navHiddenContainer ${isMenuOpen ? "open" : ""}`}>
+          <div className="navLinkConatiner">
+            <div className="navLink">
+              <HashLink smooth to="/#chatBot" onClick={handleLinkClick}>
+                Home
+              </HashLink>
+              <HashLink smooth to="/blogs#blog-top" onClick={handleLinkClick}>
+                Blogs
+              </HashLink>
+              <HashLink smooth to="/pricing#priceTop" onClick={handleLinkClick}>
+                Pricing
+              </HashLink>
+              <HashLink smooth to="/contact#contactTop" onClick={handleLinkClick}>
+                Contact Us
+              </HashLink>
+            </div>
 
-          
-          {/* {user.user.email ? (
+
+            {/* {user.user.email ? (
             user.user.type === "Google" ? (
               <>
                 <p>signed in with google via {user.user.email}</p>
@@ -107,51 +107,51 @@ const NavBar = () => {
               </Link>
             </div>
           )} */}
-          {user.user.email ? (
-            <>
-              {user.user.type === "Google" ? (
-                <>
-                  <p>signed in with google via {user.user.email}</p>
-                  <button className="registerBtn" onClick={handlegooglelogout}>
-                    Logout
-                  </button>
-                </>
-              ) : (
-                <>
-                  <div className="navbar-user-info">
+            {user.user.email ? (
+              <>
+                {user.user.type === "Google" ? (
+                  <>
+                    <p>signed in with google via {user.user.email}</p>
+                    <button className="registerBtn" onClick={handlegooglelogout}>
+                      Logout
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <div className="navbar-user-info">
 
-                  <p className="">Signed in as {user.user.username}</p>
-                  {/* user profile picture */}
-                  <img 
+                      <p className="">Signed in as {user.user.username}</p>
+                      {/* user profile picture */}
+                      <img
                         src={user.user.profilePicture}
                         className="profile-icon"
                         alt=""
-                        
-                        />
-                  </div>
-                  <button className="registerBtn" onClick={logoutf}>
-                    Logout
-                  </button>
-                </>
-              )}
-            </>
-          ) : (
-            <div className="registerSection">
-              {/* <Link to="/signin">
+
+                      />
+                    </div>
+                    <button className="registerBtn" onClick={logoutf}>
+                      Logout
+                    </button>
+                  </>
+                )}
+              </>
+            ) : (
+              <div className="registerSection">
+                {/* <Link to="/signin">
                 <button className="signInBtn" onClick={handleLinkClick}>
                   Sign In
                 </button>
               </Link> */}
-              <Link to="/register">
-                <button className="registerBtn" onClick={handleLinkClick}>
-                  Register / Login Now
-                </button>
-              </Link>
-            </div>
-          )}
+                <Link to="/register">
+                  <button className="registerBtn" onClick={handleLinkClick}>
+                    Sign In
+                  </button>
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
       </div>
-    </div>
       <img
         src={menu}
         alt=""
