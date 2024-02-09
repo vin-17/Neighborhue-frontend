@@ -85,36 +85,31 @@ ul.list_style li {
   text-align: justify;
 }
 
-/* .or {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.or {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 33px;
 
+  > hr {
+    width: 45%;
+  }
 
-    width: 46.3px;
-    height: 33px;
+  > p {
+    display: inline;
 
+    color: #8e8e8e;
 
-    >hr {
-        width: 45%;
-    }
+    font-family: Inter;
 
-    >p {
-        display: inline;
-
-        color: #8e8e8e;
-
-        font-family: Inter;
-
-        font-size: 1.109vw;
-        font-weight: 500;
-        line-height: 1.663vw;
-        letter-spacing: 0em;
-        text-align: center;
-
-    }
-} */
+    font-size: 1.109vw;
+    font-weight: 500;
+    line-height: 1.663vw;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+}
 
 .register {
   width: 100%;
