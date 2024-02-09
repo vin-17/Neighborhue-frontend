@@ -2,6 +2,7 @@
   "name": "nidaan",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://neighborhue-backend.vercel.app",
   "dependencies": {
     "@react-oauth/google": "^0.11.1",
     "@reduxjs/toolkit": "^1.9.6",

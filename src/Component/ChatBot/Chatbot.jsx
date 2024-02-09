@@ -76,7 +76,7 @@ const Chatbot = () => {
     try {
       setLoading(true); // Set loading to true
   
-      const response = await axios.post(`${process.env.REACT_APP_serverUrl}/api/ai-chat/chatbot`, {
+      const response = await axios.post(`/api/ai-chat/chatbot`, {
         userEmail: user.user.email,
         message: formData.problem,
         location: formData.location,
