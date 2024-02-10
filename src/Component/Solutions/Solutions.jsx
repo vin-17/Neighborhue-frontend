@@ -3,7 +3,6 @@ import solution1 from '../../Assets/solutions1.svg'
 import solution2 from '../../Assets/solutions2.svg'
 import solution3 from '../../Assets/solutions3.svg'
 import './Solutions.css'
-
 import iic from '../../Assets/IIC.jpg'
 import bit from '../../Assets/bit logo.png'
 import techavatar from '../../Assets/techavatar.png'
@@ -21,13 +20,13 @@ const OldCustomers = () => {
             <h5>Trusted by 15+ companies</h5>
 
             <div className="customersLogo">
-                <img src={bit} alt="" />
-                <img src={iic} alt="" />
-                <img src={techavatar} alt="" />
-                <img src={dristi} alt="" />
-                <img src={degree} alt="" />
-                <img src={leo} alt="" />
-                <img src={unesquo} alt="" />
+                <img src={bit} alt="" loading='lazy' />
+                <img src={iic} alt="" loading='lazy' />
+                <img src={techavatar} alt="" loading='lazy' />
+                <img src={dristi} alt="" loading='lazy' />
+                <img src={degree} alt="" loading='lazy' />
+                <img src={leo} alt="" loading='lazy' />
+                <img src={unesquo} alt="" loading='lazy' />
             </div>
         </div>
     )
@@ -36,31 +35,31 @@ const OldCustomers = () => {
 const Solutions = () => {
     return (
         <>
-        <div className='solutionsContainer'>
-            
-            <div className="solutionIntro">
-                <p className='boldSolutionIntro'>Lorem ipsum dolor <br /> <span className='boldSolutionIntro boldSolutionIntroBg'>Sit amet consectetur</span></p>
-                <p className='lightSolutionIntro'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium</p>
-                <p id="lightSolutionMobile">Experience our AI chatbot's instant, personalized excellence, loved by 86% of users</p>
-            </div>
+            <div className='solutionsContainer'>
 
-            <div className="solutionItems">
-                <div className="solution">
-                    <img src={solution1} alt="" className='solutionImage'/>
-                    <p className='alignCenter'>Advertisement 1<br />Lorem ipsum</p>
+                <div className="solutionIntro">
+                    <p className='boldSolutionIntro'>Lorem ipsum dolor <br /> <span className='boldSolutionIntro boldSolutionIntroBg'>Sit amet consectetur</span></p>
+                    <p className='lightSolutionIntro'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium</p>
+                    <p id="lightSolutionMobile">Experience our AI chatbot's instant, personalized excellence, loved by 86% of users</p>
                 </div>
-                <div className="solution">
-                    <img src={solution2} alt="" className='solutionImage'/>
-                    <p className='alignCenter'>Advertisement 1<br />Lorem ipsum</p>
-                </div>
-                <div className="solution">
-                    <img src={solution3} alt="" className='solutionImage'/>
-                    <p className='alignCenter'>Advertisement 1<br />Lorem ipsum</p>
-                </div>
-            </div>
 
-        </div>
-        <OldCustomers />
+                <div className="solutionItems">
+                    <div className="solution">
+                        <img src={solution1} alt="" className='solutionImage' />
+                        <p className='alignCenter'>Advertisement 1<br />Lorem ipsum</p>
+                    </div>
+                    <div className="solution">
+                        <img src={solution2} alt="" className='solutionImage' />
+                        <p className='alignCenter'>Advertisement 1<br />Lorem ipsum</p>
+                    </div>
+                    <div className="solution">
+                        <img src={solution3} alt="" className='solutionImage' />
+                        <p className='alignCenter'>Advertisement 1<br />Lorem ipsum</p>
+                    </div>
+                </div>
+
+            </div>
+            <OldCustomers />
         </>
     )
 }

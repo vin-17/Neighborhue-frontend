@@ -10,7 +10,6 @@ const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 const OnetimeCheckout = () => {
   return (
     <div className='CheckoutContainer'>
-      <h1 className='OnetimeCheckoutTitle'>Click to proceed your payment</h1>
       <Elements stripe={stripePromise}>
         <OnetimePaymentForm />
       </Elements>

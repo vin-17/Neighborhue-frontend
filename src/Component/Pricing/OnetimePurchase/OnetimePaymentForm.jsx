@@ -24,7 +24,7 @@ const OnetimePaymentForm = () => {
           email: user.user.email,
         }),
       });
-      
+
       const { sessionId } = await response.json();
 
       // Redirect to Stripe Checkout
@@ -45,9 +45,9 @@ const OnetimePaymentForm = () => {
   return (
     <div className='PaymentForm'>
       <form onSubmit={handleSubmit}>
-        
-        <button type="submit">Pay</button>
-        
+
+        <button className='purchaseBtn' type="submit">Pay Now</button>
+
       </form>
     </div>
   );
