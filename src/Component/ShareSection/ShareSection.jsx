@@ -44,12 +44,10 @@ const ShareSection = () => {
             <p className="shareData">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi</p>
 
             <div className="shareActionContainer">
-                {/* <button className="shareLink" onClick={handleShareButtonClick}>Share Link <img src={shareIcon} alt="" className='shareLogo' /></button> */}
                 <button className="comingBtn" style={{ background: "linear-gradient(90deg, rgba(212,65,23,0.7988445378151261) 24%, rgba(84,24,207,0.8016456582633054) 100%)", border: "none", borderRadius: "7px", padding: "12px 18px", color: "#ffff", fontSize: "clamp(12px, 2vw, 18px)" }}>
                     Share Link
                     <i class="fa-solid fa-share-nodes fa-lg" style={{ color: "#ffffff" }}></i>
                 </button>
-                {/* <button className="copyLink" onClick={copyURL}>Copy Link <img src={linkIcon} alt="" className='shareLogo' /></button> */}
                 <button className="comingBtn" style={{ background: "linear-gradient(90deg, rgba(212,65,23,0.7988445378151261) 24%, rgba(84,24,207,0.8016456582633054) 100%)", border: "none", borderRadius: "7px", padding: "12px 18px", color: "#ffff", fontSize: "clamp(12px, 2vw, 18px)" }}>
                     Copy Link
                     <i class="fa-solid fa-link fa-lg" style={{ color: "#ffffff" }}></i>
