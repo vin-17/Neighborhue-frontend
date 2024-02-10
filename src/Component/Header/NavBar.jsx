@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import logo from "../../Assets/logo.png";
@@ -8,9 +8,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { logout } from "../../features/User";
 import {
-  GoogleOAuthProvider,
   googleLogout,
-  GoogleLogin,
 } from "@react-oauth/google";
 
 import "./NavBar.css";
@@ -20,7 +18,6 @@ const NavBar = () => {
   const dispatch = useDispatch();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const user = useSelector((state) => state.user);
-  // const user = useSelector((state) => state.user);
   console.log("User:", user);
 
   const toggleMenu = () => {
@@ -39,13 +36,6 @@ const NavBar = () => {
     localStorage.removeItem("user");
     dispatch(logout());
     googleLogout();
-  };
-  const handleLogout = () => {
-    if (user.user.type === "Google") {
-      googleLogout();
-    }
-    dispatch(logout());
-    localStorage.removeItem("user");
   };
 
   const serverURL = "";
@@ -75,38 +65,6 @@ const NavBar = () => {
                 Contact Us
               </HashLink>
             </div>
-
-
-            {/* {user.user.email ? (
-            user.user.type === "Google" ? (
-              <>
-                <p>signed in with google via {user.user.email}</p>
-                <button className="registerBtn" onClick={handleLogout}>
-                  Logout
-                </button>
-              </>
-            ) : (
-              <>
-                <p>Signed in as {user.user.email}</p>
-                <button className="registerBtn" onClick={logoutf}>
-                  Logout
-                </button>
-              </>
-            )
-          ) : (
-            <div className="registerSection">
-              <Link to="/signin">
-                <button className="signInBtn" onClick={handleLinkClick}>
-                  Sign In
-                </button>
-              </Link>
-              <Link to="/register">
-                <button className="registerBtn" onClick={handleLinkClick}>
-                  Register Now
-                </button>
-              </Link>
-            </div>
-          )} */}
             {user.user.email ? (
               <>
                 {user.user.type === "Google" ? (
@@ -137,11 +95,6 @@ const NavBar = () => {
               </>
             ) : (
               <div className="registerSection">
-                {/* <Link to="/signin">
-                <button className="signInBtn" onClick={handleLinkClick}>
-                  Sign In
-                </button>
-              </Link> */}
                 <Link to="/register">
                   <button className="registerBtn" onClick={handleLinkClick}>
                     Sign In
