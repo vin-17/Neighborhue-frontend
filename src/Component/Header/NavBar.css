@@ -40,7 +40,7 @@
   > a {
     text-decoration: none;
     color: #5418cf;
-    font-size: 1.111vw;
+    /* font-size: 1.111vw; */
     font-weight: 600;
     line-height: 1.667vw;
     transition: background-color 0.3s ease-in-out;
@@ -147,6 +147,7 @@
     align-items: center;
     gap: 8.533vw;
     height: unset;
+    margin-left: initial;
 
     > a {
       color: #051052;
@@ -248,6 +249,7 @@
     align-items: center;
     gap: 2.604vw;
     height: unset;
+    margin-left: initial;
 
     > a {
       color: #051052;
