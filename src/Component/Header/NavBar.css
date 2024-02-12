@@ -35,6 +35,7 @@
 .navLink {
   display: flex;
   gap: 2.778vw;
+  margin-left: auto;
 
   > a {
     text-decoration: none;
