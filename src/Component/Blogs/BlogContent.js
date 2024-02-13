@@ -4,7 +4,7 @@ import img4 from "../../Assets/blog4.svg";
 const blogs = [
   {
     id: 1,
-    title: 'Beacon Hill: Historic Elegance and Cobblestone Streets',
+    title: 'New York',
     content: "Beacon Hill, one of Boston's oldest neighborhoods, exudes historic elegance with its Federal-style rowhouses, gas lanterns, and cobblestone streets. Nestled near the State House, this charming enclave offers a glimpse into Boston's colonial past. Acorn Street, often considered one of the most picturesque streets in the United States, exemplifies Beacon Hill's timeless appeal. Residents and visitors alike are drawn to the neighborhood's rich history and architectural beauty.",
     imageUrl: img4,
     author:"xyz",
@@ -13,7 +13,7 @@ const blogs = [
   },
   {
     id: 2,
-    title: 'Back Bay: Victorian Splendor and Newbury Street',
+    title: 'Chicago',
     content: "Back Bay, known for its Victorian brownstones and tree-lined streets, is a thriving neighborhood in the heart of Boston. The iconic Newbury Street is lined with upscale shops, cafes, and art galleries, creating a vibrant atmosphere. The Boston Public Garden and the Esplanade along the Charles River offer green spaces for relaxation. Back Bay attracts a diverse mix of professionals, students, and those seeking a cosmopolitan lifestyle in a historic setting.",
     imageUrl: img4,
     author:"xyz",
@@ -22,7 +22,7 @@ const blogs = [
   },
   {
     id: 3,
-    title: 'South End: Artsy Vibes and Victorian Brownstones',
+    title: 'Los Angeles',
     content: "The South End, Boston's artsy and diverse neighborhood, is characterized by its Victorian brownstones, trendy boutiques, and art galleries. The SoWa Arts District hosts a bustling arts market, reflecting the area's creative energy. The South End is a melting pot of cultures, attracting a diverse community of artists, professionals, and residents who appreciate the neighborhood's bohemian charm.",
     imageUrl: img4,
     author:"xyz",
