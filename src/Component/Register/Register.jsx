@@ -319,7 +319,7 @@ const Register = () => {
       <div className="registerImg">
         <div className="imgText">
           <h4>Neighborhue</h4>
-          <p>Lorem ipsum dolor sit amet consectetur</p>
+          <p>Find your perfect neighborhood  today</p>
         </div>
         <img src={registerVector} alt="" />
       </div>
