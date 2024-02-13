@@ -35,6 +35,8 @@
 .navLink {
   display: flex;
   gap: 2.778vw;
+  margin-left: auto;
+  margin-right: 20px;
 
   > a {
     text-decoration: none;
@@ -144,6 +146,7 @@
   .navLink {
     flex-direction: column;
     align-items: center;
+    display: contents;
     gap: 8.533vw;
     height: unset;
 
@@ -247,6 +250,7 @@
     align-items: center;
     gap: 2.604vw;
     height: unset;
+    display: contents;
 
     > a {
       color: #051052;
