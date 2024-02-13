@@ -77,7 +77,7 @@ const PriceOption = () => {
                     <div className="basicPlanContainer" id='premiumServiceContainer' onChange={planSelected}>
                         <div className='basicPlanOptions serviceContainer'>
                             <img src={yellowTick} alt="tick" />
-                            <p className="basic_service">08 Additional token</p>
+                            <p className="basic_service">08 Additional Tokens</p>
                         </div>
                         <div className='basicPlanOptions serviceContainer'>
                             <img src={yellowCross} alt="tick" />
@@ -85,11 +85,11 @@ const PriceOption = () => {
                         </div>
                         <div className='basicPlanOptions serviceContainer'>
                             <img src={yellowCross} alt="tick" />
-                            <p className="basic_service">History Access</p>
+                            <p className="basic_service">Chat History </p>
                         </div>
                         <div className='basicPlanOptions serviceContainer'>
                             <img src={yellowCross} alt="tick" />
-                            <p className="basic_service">Fast Response</p>
+                            <p className="basic_service">Faster Response</p>
                         </div>
                     </div>
                     {/* <p>₹ 499 one time payment. Price incl. GST, if applicable</p> */}
@@ -102,18 +102,18 @@ const PriceOption = () => {
                         <img src={YellowDiamond} alt="diamond" />
                         <div className="basePlanHeading">
                             <h2 className='premiunCardHeading cardHeading'>Premium</h2>
-                            <p className="premiumCardService cardFeature token"><span className='serviceNumber'>07</span> services</p>
+                            <p className="premiumCardService cardFeature token"><span className='serviceNumber'></span> Unlimited usage</p>
                         </div>
                         <div className="premiumPriceContainer">
                             <h2>$ {monthlyPlan ? monthPrice : yearPrice}</h2>
-                            <p className="cardFeature token">{monthlyPlan ? "Unlimited Token / Month" : "Unlimited Token / Year"}</p>
+                            <p className="cardFeature token">{monthlyPlan ? "Per Month" : "Unlimited Token / Year"}</p>
                         </div>
                     </div>
                     <hr className='hr1 hr' />
                     <div className="basicPlanContainer" id='premiumServiceContainer' onChange={planSelected}>
                         <div className='basicPlanOptions serviceContainer'>
                             <img src={greenTick} alt="tick" />
-                            <p className="service">Unlimited token for 1 month</p>
+                            <p className="service">Unlimited usage</p>
                         </div>
                         <div className='basicPlanOptions serviceContainer'>
                             <img src={greenTick} alt="tick" />
@@ -121,7 +121,7 @@ const PriceOption = () => {
                         </div>
                         <div className='basicPlanOptions serviceContainer'>
                             <img src={greenTick} alt="tick" />
-                            <p className="service">History Access</p>
+                            <p className="service">Chat History</p>
                         </div>
                         <div className='basicPlanOptions serviceContainer'>
                             <img src={greenTick} alt="tick" />
