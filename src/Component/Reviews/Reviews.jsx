@@ -35,7 +35,7 @@ const Reviews = () => {
                     </div>
 
                     <p className="review">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium</p>
-                    <p className="reviewer">Great Website</p>
+                    <p className="reviewer">Amazing Functionality</p>
                     <div className="rating">
                         <img src={StarYellow} alt="" className='star'/>
                         <img src={StarYellow} alt="" className='star'/>
