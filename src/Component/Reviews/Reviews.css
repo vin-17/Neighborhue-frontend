@@ -55,7 +55,7 @@
 
 .reviewer {
     color: #051052;
-    margin-top: 10%;
+    margin-top: 4%;
     margin-bottom: 1%;
 
     /* font-family: Poppins; */
@@ -64,6 +64,8 @@
     line-height: 2.703vw;
     text-align: left;
 }
+
+
 
 .star {
     margin-right: 1%;
@@ -82,6 +84,9 @@
         width: 10.534vw;
         height: 10.534vw;
     }
+}
+.rating{
+    margin-bottom: 7%;
 }
 
 @media screen and (max-device-width:500px) {
