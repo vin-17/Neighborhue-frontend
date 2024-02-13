@@ -30,7 +30,7 @@ const FAQ = () => {
                 </div>
 
                 <div className="needHelp">
-                    <img src={msgVector} alt="" />&nbsp;  Still need help? &nbsp; <a href="https://wa.me/9234129799" target='_blank'> Chat with us</a>
+                    <img src={msgVector} alt="" />&nbsp;  Still need help? &nbsp; <a href="https://wa.me/9234129799" target='_blank'> Email us</a>
                 </div>
             
             </div>
