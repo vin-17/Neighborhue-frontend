@@ -11,7 +11,10 @@ const OnetimePaymentForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+    if(!user.user.email){
+      alert("Please sign in first.");
+      window.location.href = "/register";
+    }
     try {
       // Create a Checkout session on the server
       const response = await fetch(`${process.env.REACT_APP_serverUrl}/api/payment/checkout-session-onetime`, {
