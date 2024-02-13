@@ -181,45 +181,56 @@ const Register = () => {
                     token: credentialResponse,
                   };
                   console.log("decodeduser: ", decodeduser)
-                  const register = async () => {
-                    try {
-                      const response = await axios.post(
-                        `${process.env.REACT_APP_serverUrl}/register/signin`,
-                        decodeduser
-                      );
-                      console.log("response after fetch: ", response);
-                      const user = {
-                        email: response.data.user.email,
-                        username: response.data.user.username,
-                        profilePicture: response.data.user.profilePic,
-                        daily_tokens_available: response.data.user.daily_tokens_available,
-                        purchased_tokens_available: response.data.user.purchased_tokens_available,
-                        tokens_used: response.data.user.tokens_used,
-                        is_premium: response.data.user.is_premium,
-                      };
-                      console.log("user after fetch before dispatch: ", user);
-                      const userJSON = JSON.stringify(user);
-                      localStorage.setItem("user", userJSON);
+                  // const register = async () => {
+                  //   try {
+                  //     const response = await axios.post(
+                  //       `${process.env.REACT_APP_serverUrl}/register/signin`,
+                  //       decodeduser
+                  //     );
+                  //     console.log("response after fetch: ", response);
+                  //     const user = {
+                  //       email: response.data.user.email,
+                  //       username: response.data.user.username,
+                  //       profilePicture: response.data.user.profilePic,
+                  //       daily_tokens_available: response.data.user.daily_tokens_available,
+                  //       purchased_tokens_available: response.data.user.purchased_tokens_available,
+                  //       tokens_used: response.data.user.tokens_used,
+                  //       is_premium: response.data.user.is_premium,
+                  //     };
+                  //     console.log("user after fetch before dispatch: ", user);
+                  //     const userJSON = JSON.stringify(user);
+                  //     localStorage.setItem("user", userJSON);
 
-                      dispatch(
-                        saveuser({
-                          email: user.email,
-                          username: user.username,
-                          profilePicture: user.profilePicture,
-                          daily_tokens_available: user.daily_tokens_available,
-                          purchased_tokens_available: user.purchased_tokens_available,
-                          tokens_used: user.tokens_used,
-                          is_premium: user.is_premium,
-                        })
-                      );
-                      localStorage.setItem("reduxState", JSON.stringify(store.getState()));
-                      window.location.href = "/";
-                    } catch (error) {
-                      console.error("Error sending data:", error.message);
-                      seterrormessage(error.response.data);
-                    }
-                  };
-                  register();
+                  //     dispatch(
+                  //       saveuser({
+                  //         email: user.email,
+                  //         username: user.username,
+                  //         profilePicture: user.profilePicture,
+                  //         daily_tokens_available: user.daily_tokens_available,
+                  //         purchased_tokens_available: user.purchased_tokens_available,
+                  //         tokens_used: user.tokens_used,
+                  //         is_premium: user.is_premium,
+                  //       })
+                  //     );
+                  //     localStorage.setItem("reduxState", JSON.stringify(store.getState()));
+                  //     window.location.href = "/";
+                  //   } catch (error) {
+                  //     console.error("Error sending data:", error.message);
+                  //     seterrormessage(error.response.data);
+                  //   }
+                  // };
+                  // register();
+                  dispatch(
+                    saveuser({
+                      email: decodeduser.email,
+                      username: decodeduser.username,
+                      profilePicture: decodeduser.profilePic,
+                      daily_tokens_available: 12,
+                      purchased_tokens_available: 1,
+                      tokens_used: 1,
+                      is_premium: false,
+                    })
+                  );
                 }}
                 onError={() => {
                   seterrormessage("signup failed");
