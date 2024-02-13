@@ -2,7 +2,7 @@
     border: 1px solid grey;
     padding: 15px;
     border-radius: 10px;
-    width: calc(43% - 18px);
+    width: calc(43% - 13px);
     margin: 0.5%;
     box-sizing: border-box; 
     margin-bottom: 5px;
@@ -25,8 +25,8 @@
   }
 
   @media (max-width: 500px) {
-    .sug_box{
-     padding: 8px;
+    .sug_outer{
+    margin-right: 14px;
     }
    }
   
