@@ -37,7 +37,7 @@ const Upcoming = () => {
         <div className='upcomingContainer'>
             <img src={neighbour} alt="" loading='lazy' />
             <div className="upcomingText">
-                <p id='upcomingHeading'>Lorem ipsum , dolor sit amet</p>
+                <p id='upcomingHeading'>Learn more about the city, read our blogs</p>
                 <p id='upcomingMain'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentiumoptio, eaque rerum!</p>
                 <a href="#" id='comingSoon'>
                     <button className="comingBtn">
