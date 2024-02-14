@@ -6,7 +6,7 @@ export default function Suggestion({ suggestions }) {
     <div className='sug_outer'>
       {suggestions && suggestions.map((suggestion, index) => (
         <div className='sug_box' key={index}>
-          <h5 style={{ color: "black" }}>{suggestion.suggestion}</h5>
+          <h6 style={{ color: "black" }}>{suggestion.suggestion}</h6>
         </div>
       ))}
     </div>

@@ -54,11 +54,11 @@ const Chatbot = () => {
 
   let suggestions=[{
     sno:"1",
-    suggestion:"Best Hotels"
+    suggestion:"Recommend me a neighborhood known for street art"
   },
   {
     sno:"2",
-    suggestion:"Best Resorts"
+    suggestion:"Where is the best nightlife"
   },
   {
     sno:"3",

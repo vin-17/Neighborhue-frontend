@@ -17,10 +17,17 @@
   }
   
 
-  @media (max-width: 800px) {
+  @media (max-width: 920px) {
    .sug_box{
     font-size: small;
     padding: 8px;
+   }
+  }
+
+  @media (max-width: 730px) {
+   .sug_box{
+    font-size: 11.3px;
+height: 36px;
    }
   }
 
