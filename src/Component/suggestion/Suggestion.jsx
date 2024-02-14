@@ -7,7 +7,7 @@ export default function Suggestion({ suggestions }) {
       {suggestions && suggestions.map((suggestion, index) => (
         <div className='sug_box' key={index}>
           <h5 style={{ color: "#1e1e1e" }}>{suggestion.suggestion}</h5>
-          <button><i class="fa-solid fa-circle-xmark" style={{color: "#FFD43B"}}></i></button>
+          <button><i class="fa-solid fa-circle-xmark" style={{ color: "#DD6745", fontSize: "x-large" }}></i></button>
         </div>
       ))}
     </div>
