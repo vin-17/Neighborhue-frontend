@@ -201,15 +201,20 @@ const Chatbot = () => {
         {user.user.email ? (user.user.is_premium ? (
           <div className="tokens_available chatbotContainer-bottom">
             <p>You have unlimited tokens as part of your premium plan.</p>
-
+            <div className="chat-history">
+                  <img src={clock} alt="chat History" />
+                  <Link to="/chathistory">
+                    <p>chat History</p>
+                  </Link>
+            </div>
           </div>
         ) : (
           <div className="tokens_available chatbotContainer-bottom">
           <div style={{display:"flex",gap:"50px"}}>
-          <p >Daily tokens available : {user.user.daily_tokens_available}</p>
+            <p >Daily tokens available : {user.user.daily_tokens_available}</p>
             <p >Purchased tokens available : {user.user.purchased_tokens_available}</p>
           </div>
-            <div className="chat-history">
+                <div className="chat-history">
                   <img src={clock} alt="chat History" />
                   <Link to="/chathistory">
                     <p>chat History</p>
