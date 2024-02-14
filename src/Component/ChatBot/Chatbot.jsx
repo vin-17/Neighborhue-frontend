@@ -54,20 +54,12 @@ const Chatbot = () => {
 
   let suggestions=[{
     sno:"1",
-    suggestion:"Best Hotels"
+    suggestion:"Recommend me a neighbourhood known for street art"
   },
   {
     sno:"2",
-    suggestion:"Best Resorts"
-  },
-  {
-    sno:"3",
-    suggestion:"Recommended places"
-  },
-  {
-    sno:"4",
-    suggestion:"Recommended Flights"
-  },
+    suggestion:"Where is the best nightlife"
+  }
 ]
 
   const serverURL = "https://neighborhue-backend.vercel.app";
