@@ -27,7 +27,7 @@ const Home = () => {
                 try {
                     const response = await axios.post(`${process.env.REACT_APP_serverUrl}/register/getUser`, { email });
                     const data = await response.data;
-                    console.log("\nhome page data", response);
+                    // console.log("\nhome page data", response);
                     const user = {
                         email: response.data.user.email,
                         username: response.data.user.username,
