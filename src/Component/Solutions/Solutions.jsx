@@ -3,34 +3,7 @@ import solution1 from '../../Assets/solutions1.svg'
 import solution2 from '../../Assets/solutions2.svg'
 import solution3 from '../../Assets/solutions3.svg'
 import './Solutions.css'
-import iic from '../../Assets/IIC.jpg'
-import bit from '../../Assets/bit logo.png'
-import techavatar from '../../Assets/techavatar.png'
-import leo from '../../Assets/leo.webp'
-import degree from '../../Assets/180deg.webp'
-import unesquo from '../../Assets/unesquo.webp'
-import dristi from '../../Assets/dristi.jpg'
 
-const OldCustomers = () => {
-
-    // yahan pr motion lgana h aur ek naya component bna k us m sare customers k data/logo ko bhejna h aur wahan pr hi render krna h
-    return (
-
-        <div className='oldCustomersContainer'>
-            <h5>Trusted by 15+ companies</h5>
-
-            <div className="customersLogo">
-                <img src={bit} alt="" loading='lazy' />
-                <img src={iic} alt="" loading='lazy' />
-                <img src={techavatar} alt="" loading='lazy' />
-                <img src={dristi} alt="" loading='lazy' />
-                <img src={degree} alt="" loading='lazy' />
-                <img src={leo} alt="" loading='lazy' />
-                <img src={unesquo} alt="" loading='lazy' />
-            </div>
-        </div>
-    )
-}
 
 const Solutions = () => {
     return (
@@ -59,7 +32,7 @@ const Solutions = () => {
                 </div>
 
             </div>
-            <OldCustomers />
+            {/* <OldCustomers /> */}
         </>
     )
 }

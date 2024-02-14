@@ -13,13 +13,13 @@ const Intro = () => {
                 <div className="introArea">
                     <div className="introText">
                         <span className='neo'>Hue</span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                        <p>Geo-data AI model Neighborhood recommendations</p>
                     </div>
                     <div className="introActions">
                         <img src={arrow} alt="arrow" className="arrow" loading='lazy' />
                         <div className="introText2">
                             <p className="lightText">
-                                Ipsa laudantium molestias eos sapiente officiis modi at sunt excepturi expedita
+                                Ask Hue to help find the perfect neighborhood based on what you find most important
                             </p>
 
                             <div className="introActionContainer">

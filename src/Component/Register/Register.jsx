@@ -220,6 +220,17 @@ const Register = () => {
                     }
                   };
                   register();
+                  // dispatch(
+                  //   saveuser({
+                  //     email: decodeduser.email,
+                  //     username: decodeduser.username,
+                  //     profilePicture: decodeduser.profilePic,
+                  //     daily_tokens_available: 12,
+                  //     purchased_tokens_available: 1,
+                  //     tokens_used: 1,
+                  //     is_premium: false,
+                  //   })
+                  // );
                 }}
                 onError={() => {
                   seterrormessage("signup failed");
@@ -319,7 +330,7 @@ const Register = () => {
       <div className="registerImg">
         <div className="imgText">
           <h4>Neighborhue</h4>
-          <p>Lorem ipsum dolor sit amet consectetur</p>
+          <p>Find your perfect neighborhood  today</p>
         </div>
         <img src={registerVector} alt="" />
       </div>

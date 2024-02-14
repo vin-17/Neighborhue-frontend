@@ -322,7 +322,6 @@
   font-style: normal;
   font-weight: 500;
   line-height: 1.5;
-  animation: scaleIn 2s ease-in-out infinite;
 }
 
 @keyframes scaleIn {
@@ -429,3 +428,4 @@
   font-weight: 700;
   /* text-align: left; */
 }
+

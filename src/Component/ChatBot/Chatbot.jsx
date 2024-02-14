@@ -17,6 +17,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // import { useDispatch } from "react-redux";
 import { saveuser } from "../../features/User";
+import Suggestion from "../suggestion/Suggestion";
 // import { useSelector } from "react-redux";
 
 
@@ -51,6 +52,23 @@ const Chatbot = () => {
   // const user = useSelector((state) => state.user);
   console.log("User in chatbot:", user);
 
+  let suggestions=[{
+    sno:"1",
+    suggestion:"Best Hotels"
+  },
+  {
+    sno:"2",
+    suggestion:"Best Resorts"
+  },
+  {
+    sno:"3",
+    suggestion:"Recommended places"
+  },
+  {
+    sno:"4",
+    suggestion:"Recommended Flights"
+  },
+]
 
   const serverURL = "https://neighborhue-backend.vercel.app";
   const devUrl = "http://localhost:5000";
@@ -158,6 +176,8 @@ const Chatbot = () => {
           )}
 
         </div>
+        
+          <Suggestion suggestions={suggestions}/>
         <div className="chatbotContainer-textarea">
           <textarea
             value={formData.problem}
