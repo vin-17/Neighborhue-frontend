@@ -14,22 +14,11 @@
 
 .upcomingText {
   display: flex;
-  width: 60%;
+  /* width: 60%; */
   flex-direction: column;
   padding: 5% 5%;
 
-  > button {
-    background: linear-gradient(
-      90deg,
-      rgba(212, 65, 23, 0.7988445378151261) 24%,
-      rgba(84, 24, 207, 0.8016456582633054) 100%
-    );
-    border: none;
-    border-radius: 7px;
-    padding: 12px 18px;
-    color: #ffff;
-    font-size: clamp(12px, 2vw, 18px);
-  }
+  
 }
 
 #upcomingHeading {
@@ -59,7 +48,6 @@
   align-items: center;
   border: none;
   border-radius: 0.277vw;
-  cursor: not-allowed;
 
   > p {
     font-size: 1.109vw;
@@ -71,6 +59,7 @@
 #comingSoon {
   text-decoration: none;
   cursor: pointer;
+  display: inline-block;
 }
 
 @media screen and (max-device-width: 500px) {
@@ -143,7 +132,6 @@
   }
 }
 
-
 /* old customer */
 
 .oldCustomersContainer {
@@ -156,13 +144,13 @@
   overflow: hidden;
   margin: 50px 0 50px 0;
 
-  >h5 {
-      padding: 2% 0;
-      text-align: center;
-      /* font-family: Poppins; */
-      font-size: 1.386vw;
-      font-weight: 600;
-      line-height: 2.079vw;
+  > h5 {
+    padding: 2% 0;
+    text-align: center;
+    /* font-family: Poppins; */
+    font-size: 1.386vw;
+    font-weight: 600;
+    line-height: 2.079vw;
   }
 }
 
@@ -170,41 +158,38 @@
   display: flex;
   justify-content: space-evenly;
 
-  >img {
-      height: 7.550vw;
+  > img {
+    height: 7.55vw;
   }
 }
 
-
 @media screen and (max-device-width: 500px) {
-  
   .oldCustomersContainer {
-      max-height: unset;
-      min-width: unset;
+    max-height: unset;
+    min-width: unset;
 
-      margin-top: 21.333vw;
-      margin-bottom: 12.8vw;
+    margin-top: 21.333vw;
+    margin-bottom: 12.8vw;
 
-      >h5 {
-          padding: 0;
-          /* font-family: Poppins; */
-          font-size: 5.333vw;
-          font-weight: 600;
-          line-height: 8vw;
-          letter-spacing: 0em;
-          text-align: center;
-
-      }
+    > h5 {
+      padding: 0;
+      /* font-family: Poppins; */
+      font-size: 5.333vw;
+      font-weight: 600;
+      line-height: 8vw;
+      letter-spacing: 0em;
+      text-align: center;
+    }
   }
 
   .customersLogo {
-      margin-top: 5.333vw;
-      display: flex;
-      gap: 4.8vw;
+    margin-top: 5.333vw;
+    display: flex;
+    gap: 4.8vw;
 
-      >img {
-          width: 21.333vw;
-          height: 12.8vw;
-      }
+    > img {
+      width: 21.333vw;
+      height: 12.8vw;
+    }
   }
 }

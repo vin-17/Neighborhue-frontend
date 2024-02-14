@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import neighbour from '../../Assets/neighbour.png'
 import './Upcoming.css'
 import iic from '../../Assets/IIC.jpg'
@@ -39,12 +40,14 @@ const Upcoming = () => {
             <div className="upcomingText">
                 <p id='upcomingHeading'>Learn more about the city, read our blogs</p>
                 <p id='upcomingMain'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentiumoptio, eaque rerum!</p>
-                <a href="#" id='comingSoon'>
-                    <button className="comingBtn">
+                <div className='button'>
+                <Link to="/blogs#blog-top" id='comingSoon'>
+                    <button className='comingBtn'>
                         Coming Soon
                         <i class="fa-solid fa-arrow-right fa-rotate-by fa-lg" style={{rotate:"-45deg"}}></i>
                     </button>
-                </a>
+                </Link>
+                </div>
             </div>
         </div>
         <OldCustomers/>
