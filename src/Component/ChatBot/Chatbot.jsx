@@ -128,7 +128,7 @@ const Chatbot = () => {
 
   return (
     <div className="chatbotSectionContainer" id='chatBot'>
-      <h2 className="chatbotSectionHeader">Meet with Hue</h2>
+      <h2 className="chatbotSectionHeader">Meet Hue</h2>
       <p className="chatbotIntro">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae
       </p>
