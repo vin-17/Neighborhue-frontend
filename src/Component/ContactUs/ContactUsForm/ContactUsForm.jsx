@@ -131,7 +131,7 @@ const ContactUsForm = () => {
 
     return (
         <div className='ContactFormContainer'>
-            <img src={bg} alt="" className="formBg" />
+            <img src={bg} alt="" className="formBg" loading="lazy" />
             <div className="formAboutContainer">
                 <div className="formContainer">
                     <div className="formHeader">
@@ -142,7 +142,7 @@ const ContactUsForm = () => {
                         <input type="text" name="" id="" placeholder='Your name' value={username} onChange={(e) => setUsername(e.target.value)} required />
                         <input type="email" name="" id="" placeholder='Your @Email ID' value={userEmail} onChange={(e) => setUserEmail(e.target.value)} required />
                         <input type="text" name="" id="" placeholder='Tell us your problem' value={problemDescription} onChange={(e) => setProblemDescription(e.target.value)} className='formFeedback' required />
-                        <button type="submit">{loading ? <Loader /> : "Submit now"}<img src={send} alt="" className='submitIcon' /></button>
+                        <button type="submit">{loading ? <Loader /> : "Submit now"}<img src={send} alt="" className='submitIcon' loading="lazy" /></button>
                     </form>
                 </div>
 
