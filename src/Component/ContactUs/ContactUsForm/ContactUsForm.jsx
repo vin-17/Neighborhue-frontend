@@ -48,40 +48,6 @@ const About = () => {
                     </li>
                 </ul>
             </div>
-            <div className="abouts">
-                <h3 className="aboutSubHeading">Meet our Team</h3>
-                <ul className="aboutDetail">
-                    <li className='aboutList'>
-                        <a href="https://www.linkedin.com/" target='_blank'>
-                            ABC
-                        </a>
-                        - Co-founder, Marketing & Operation Head
-                    </li>
-                    <li className='aboutList'>
-                        <a href="https://www.linkedin.com/" target='_blank'>
-                            XYZ
-                        </a>
-                        - Co-founder & Executive Head
-                    </li>
-                    <li className='aboutList'>
-                        <a href="https://www.linkedin.com/" target='_blank'>
-                            DEF
-                        </a> - Mentor and Guide
-                    </li>
-                    <li className='aboutList'>
-                        <a href="https://www.linkedin.com/" target='_blank'>
-                            GHI
-                        </a>
-                        - Tech Head
-                    </li>
-                    <li className='aboutList'>
-                        <a href="https://www.linkedin.com/" target='_blank'>
-                            JKL
-                        </a>
-                        - Tech Developer
-                    </li>
-                </ul>
-            </div>
         </div>
     )
 }
