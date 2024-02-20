@@ -21,7 +21,7 @@ const ContactOptions = () => {
                     </div>
                     <h2 className="contactCardHeading">Chat with us</h2>
                     <p className="contactCardInfo">Direct message on whatsapp!</p>
-                    <a href='https://wa.me/' target='_blank' className="contactLink">+91 000XXX0000</a>
+                    <a href='https://wa.me/' target='_blank' rel='noreferrer' className="contactLink">+91 000XXX0000</a>
                 </div>
                 <div className="contactCard">
                     <div className="iconHolder">
