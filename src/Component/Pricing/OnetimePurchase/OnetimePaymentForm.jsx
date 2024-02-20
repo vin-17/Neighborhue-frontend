@@ -17,7 +17,7 @@ const OnetimePaymentForm = () => {
     }
     try {
       // Create a Checkout session on the server
-      const response = await fetch(`http://localhost:5000/api/payment/checkout-session-onetime`, {
+      const response = await fetch(`${process.env.REACT_APP_serverUrl}/api/payment/checkout-session-onetime`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

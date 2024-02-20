@@ -183,8 +183,7 @@ const Register = () => {
                   const register = async () => {
                     try {
                       const response = await axios.post(
-                        `https://neighborhue-backend.vercel.app/register/signin`,
-                        decodeduser
+                        `${process.env.REACT_APP_serverUrl}/register/signin`,                        decodeduser
                       );
                       console.log("response after fetch: ", response);
                       const user = {
