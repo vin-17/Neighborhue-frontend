@@ -41,8 +41,6 @@ const Footer = () => {
                         <h3 className="footerHeading">Connect</h3>
                         <div className="footerLinkContainer">
                             <a href="#" target='_blank' className="footerLink">Instagram</a>
-                            <a href="#" className="footerLink">Facebook</a>
-                            <a href="#" target='_blank' className="footerLink">Youtube</a>
                             <a href="#" target='_blank' className="footerLink">Linkedin</a>
                             {/* <span className="footerLink">Twitter</span> */}
                         </div>
