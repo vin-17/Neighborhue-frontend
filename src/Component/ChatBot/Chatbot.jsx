@@ -198,7 +198,7 @@ const Chatbot = () => {
 
         <Suggestion suggestions={suggestions} />
 
-        <Suggestion suggestions={suggestions} />
+        {/* <Suggestion suggestions={suggestions} /> */}
         <div className="chatbotContainer-textarea">
           <textarea
             value={formData.problem}
