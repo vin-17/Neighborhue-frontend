@@ -52,15 +52,15 @@ const Chatbot = () => {
   // const user = useSelector((state) => state.user);
   console.log("User in chatbot:", user);
 
-  let suggestions=[{
-    sno:"1",
-    suggestion:"Recommend me a neighbourhood known for street art"
+  let suggestions = [{
+    sno: "1",
+    suggestion: "Recommend me a neighbourhood known for street art"
   },
   {
-    sno:"2",
-    suggestion:"Where is the best nightlife"
+    sno: "2",
+    suggestion: "Where is the best nightlife"
   }
-]
+  ]
 
   const serverURL = "https://neighborhue-backend.vercel.app";
   const devUrl = "http://localhost:5000";
@@ -137,7 +137,7 @@ const Chatbot = () => {
           <img src={neo} alt="neo-logo" />
           <div className="chatbotContainer-top-content">
             <p>Hue</p>
-            <p>Online</p>
+            <p><i class="fa-solid fa-circle" style={{ color: "#2de639", fontSize: "small" }}></i> Online</p>
           </div>
           <div className="locationSearch">
             <i class="fa-solid fa-location-dot fa-lg" style={{ color: "#DD6745" }}></i>
@@ -168,8 +168,8 @@ const Chatbot = () => {
           )}
 
         </div>
-        
-          <Suggestion suggestions={suggestions}/>
+
+        <Suggestion suggestions={suggestions} />
         <div className="chatbotContainer-textarea">
           <textarea
             value={formData.problem}
@@ -194,24 +194,24 @@ const Chatbot = () => {
           <div className="tokens_available chatbotContainer-bottom">
             <p>You have unlimited tokens as part of your premium plan.</p>
             <div className="chat-history">
-                  <img src={clock} alt="chat History" />
-                  <Link to="/chathistory">
-                    <p>chat History</p>
-                  </Link>
+              <img src={clock} alt="chat History" />
+              <Link to="/chathistory">
+                <p>chat History</p>
+              </Link>
             </div>
           </div>
         ) : (
           <div className="tokens_available chatbotContainer-bottom">
-          <div style={{display:"flex",gap:"50px"}}>
-            <p >Daily tokens available : {user.user.daily_tokens_available}</p>
-            <p >Purchased tokens available : {user.user.purchased_tokens_available}</p>
-          </div>
-                <div className="chat-history">
-                  <img src={clock} alt="chat History" />
-                  <Link to="/chathistory">
-                    <p>chat History</p>
-                  </Link>
-                </div>
+            <div style={{ display: "flex", gap: "50px" }}>
+              <p >Daily tokens available : {user.user.daily_tokens_available}</p>
+              <p >Purchased tokens available : {user.user.purchased_tokens_available}</p>
+            </div>
+            <div className="chat-history">
+              <img src={clock} alt="chat History" />
+              <Link to="/chathistory">
+                <p>chat History</p>
+              </Link>
+            </div>
           </div>
         )) : (
           <div className="chatbotContainer-bottom">
@@ -256,9 +256,9 @@ const Chatbot = () => {
           <div className="chatbotContainer-bottom">
             <p className="chatbotContainer-bottom-title">
               {/* In the Demo chat, you have 2 messages left. Register now and get: */}
-              {/* Please log in to chat with Hue */}
-            {/* </p> */}
-            {/* <div>
+        {/* Please log in to chat with Hue */}
+        {/* </p> */}
+        {/* <div>
               <div style={{ display: "flex" }}>
                 <div>
                   <img src={message} alt="" />
