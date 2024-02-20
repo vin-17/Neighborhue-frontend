@@ -10,7 +10,7 @@ import './ContactUsForm.css'
 
 
 const About = () => {
-    
+
 
 
     return (
@@ -19,66 +19,32 @@ const About = () => {
             <div className="abouts">
                 <h2>About Neighborhue</h2>
                 <p className='trust'>
-                    “ Lorem ipsum dolor sit amet ”
+                    “ Hue AI ”
                 </p>
                 <p className='aboutDetail'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint
+                    Hue AI is a generative model that combines vast online sources and geographical data analytics to determine which neighborhoods are best for various purposes.The model focuses on understanding the intersection between preferences and locations to best produce recommendations based on what the user is seeking most in an area.
                 </p>
             </div>
             <div className="abouts">
                 <h3 className="aboutSubHeading">Our Mission</h3>
                 <p className="aboutDetail">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint
+                    At neighborhue, we are dedicated to helping individuals find their perfect neighborhood by leveraging the power of Hue AI, a generative model that combines vast online sources and geographical data analytics. Whether you are relocating or visiting a new city, our platform provides personalized recommendations based on your specific preferences. By focusing on the intersection between user preferences and locations, we aim to alleviate the stress of decision-making and enhance the overall experience of discovering and settling into a new area. Our commitment is to empower users with in-depth locational knowledge, making neighborhue the go-to resource for informed and tailored neighborhood exploration.
                 </p>
             </div>
             <div className="abouts">
                 <h3 className="aboutSubHeading">Why Choose Us?</h3>
                 <ul className="aboutDetail">
                     <li className='aboutList'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        The perfect generative AI model for finding amazing neighborhoods
                     </li>
                     <li className='aboutList'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Leverage expert locational knowledge with the use of Hue AI
                     </li>
                     <li className='aboutList'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Avoid uncertainty next time you travel with the perfect travel itinerary
                     </li>
                     <li className='aboutList'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </li>
-                </ul>
-            </div>
-            <div className="abouts">
-                <h3 className="aboutSubHeading">Meet our Team</h3>
-                <ul className="aboutDetail">
-                    <li className='aboutList'>
-                        <a href="https://www.linkedin.com/" target='_blank'>
-                            ABC
-                        </a>
-                        - Co-founder, Marketing & Operation Head
-                    </li>
-                    <li className='aboutList'>
-                        <a href="https://www.linkedin.com/" target='_blank'>
-                            XYZ
-                        </a>
-                        - Co-founder & Executive Head
-                    </li>
-                    <li className='aboutList'>
-                        <a href="https://www.linkedin.com/" target='_blank'>
-                            DEF
-                        </a> - Mentor and Guide
-                    </li>
-                    <li className='aboutList'>
-                        <a href="https://www.linkedin.com/" target='_blank'>
-                            GHI
-                        </a>
-                        - Tech Head
-                    </li>
-                    <li className='aboutList'>
-                        <a href="https://www.linkedin.com/" target='_blank'>
-                            JKL
-                        </a>
-                        - Tech Developer
+                        Find a new neighborhood you can call home after researching with neighborhue
                     </li>
                 </ul>
             </div>
@@ -93,75 +59,45 @@ const ContactUsForm = () => {
     const [userEmail, setUserEmail] = useState("");
     const [loading, setLoading] = useState(false);
 
-    // const submitHandler = async (e) => {
-    //     e.preventDefault();
-    //     try {
-    //       setLoading(true);
-    //       const { data } = await axios.post(
-    //         `http://localhost/api/inquiry/send-inquiry`,
-    //         {
-    //           username,
-    //           userEmail,
-    //           problemDescription,
-    //         },
-    //         // {
-    //         //   withCredentials: true,
-    //         //   headers: {
-    //         //     "Content-Type": "application/json",
-    //         //   },
-    //         // }
-    //       );
-    
-    //       setUsername("");
-    //       setProblemDescription("");
-    //       setUserEmail("");
-    //       toast.success(data.message);
-    //       setLoading(false);
-    //     //   setRefresh((prev) => !prev);
-    //     } catch (error) {
-    //       toast.error(error.response.data.message);
-    //       setLoading(false);
-    //     }
-    //   };
 
     const serverURL = "https://neighborhue-backend.vercel.app";
     const devUrl = "http://localhost:5000";
-    
+
     const submitHandler = async (e) => {
         e.preventDefault();
         try {
-          setLoading(true);
-          const response = await axios.post(
-            `${process.env.REACT_APP_serverUrl}/api/inquiry/send-inquiry`,
-            {
-              username,
-              userEmail,
-              problemDescription,
-            },
-          );
-      
-          console.log("Server Response:", response); // Log the response
-      
-          if (response.data) {
-            setUsername("");
-            setProblemDescription("");
-            setUserEmail("");
-            toast.success(response.data.message);
-          } else {
-            toast.error("Unexpected response from server");
-          }
-      
-          setLoading(false);
+            setLoading(true);
+            const response = await axios.post(
+                `${process.env.REACT_APP_serverUrl}/api/inquiry/send-inquiry`,
+                {
+                    username,
+                    userEmail,
+                    problemDescription,
+                },
+            );
+
+            console.log("Server Response:", response); // Log the response
+
+            if (response.data) {
+                setUsername("");
+                setProblemDescription("");
+                setUserEmail("");
+                toast.success(response.data.message);
+            } else {
+                toast.error("Unexpected response from server");
+            }
+
+            setLoading(false);
         } catch (error) {
-          console.error("Error in submitHandler:", error);
-          toast.error(error.response?.data?.message || "An error occurred");
-          setLoading(false);
+            console.error("Error in submitHandler:", error);
+            toast.error(error.response?.data?.message || "An error occurred");
+            setLoading(false);
         }
-      };
+    };
 
     return (
         <div className='ContactFormContainer'>
-            <img src={bg} alt="" className="formBg" />
+            <img src={bg} alt="" className="formBg" loading="lazy" />
             <div className="formAboutContainer">
                 <div className="formContainer">
                     <div className="formHeader">
@@ -172,7 +108,7 @@ const ContactUsForm = () => {
                         <input type="text" name="" id="" placeholder='Your name' value={username} onChange={(e) => setUsername(e.target.value)} required />
                         <input type="email" name="" id="" placeholder='Your @Email ID' value={userEmail} onChange={(e) => setUserEmail(e.target.value)} required />
                         <input type="text" name="" id="" placeholder='Tell us your problem' value={problemDescription} onChange={(e) => setProblemDescription(e.target.value)} className='formFeedback' required />
-                        <button type="submit">{loading ? <Loader /> : "Submit now"}<img src={send} alt="" className='submitIcon' /></button>
+                        <button type="submit">{loading ? <Loader /> : "Submit now"}<img src={send} alt="" className='submitIcon' loading="lazy" /></button>
                     </form>
                 </div>
 

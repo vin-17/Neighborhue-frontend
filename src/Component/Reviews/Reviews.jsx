@@ -17,6 +17,8 @@ import reviewer12 from '../../Assets/reviewer8.png'
 import './Reviews.css'
 
 const Reviews = () => {
+    let review1 = "Hue AI helped me find my ream neighborhood by recommending the best area for what I personally like the most. Moving to a new home was so intimidating, given how little I knew about where I was going. Thanks to neighborhue, I was able to figure out where to move and eliminate all my moving anxiety.";
+    let review2 = "I was planning a visit to New York and had no idea where to visit before asking Hue. It provided me with all the most local recommendations besides the main tourist spots and gave me a great itinerary for my trip. Such a great tool to use if you are going somewhere new for the first time.";
     return (
         <div className='reviewerConatainer'>
 
@@ -24,39 +26,39 @@ const Reviews = () => {
             <p className="reviewerSubHeading">Here are few response from our beta program</p>
             <div className="reviewerMain">
                 <div className="reviewerLeftItem">
-                    <p className="review">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium</p>
+                    <p className="review">{review1}</p>
                     <p className="reviewer">Great Website</p>
                     <div className="rating">
-                        <img src={StarYellow} alt="" className='star'/>
-                        <img src={StarYellow} alt="" className='star'/>
-                        <img src={StarYellow} alt="" className='star'/>
-                        <img src={StarYellow} alt="" className='star'/>
-                        <img src={StarGray} alt="" className='star'/>
+                        <img src={StarYellow} alt="" className='star' />
+                        <img src={StarYellow} alt="" className='star' />
+                        <img src={StarYellow} alt="" className='star' />
+                        <img src={StarYellow} alt="" className='star' />
+                        <img src={StarGray} alt="" className='star' />
                     </div>
 
-                    <p className="review">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium</p>
+                    <p className="review">{review2}</p>
                     <p className="reviewer">Amazing Functionality</p>
                     <div className="rating">
-                        <img src={StarYellow} alt="" className='star'/>
-                        <img src={StarYellow} alt="" className='star'/>
-                        <img src={StarYellow} alt="" className='star'/>
-                        <img src={StarYellow} alt="" className='star'/>
-                        <img src={StarGray} alt="" className='star'/>
+                        <img src={StarYellow} alt="" className='star' />
+                        <img src={StarYellow} alt="" className='star' />
+                        <img src={StarYellow} alt="" className='star' />
+                        <img src={StarYellow} alt="" className='star' />
+                        <img src={StarYellow} alt="" className='star' />
                     </div>
                 </div>
                 <div className="reviewerRightItem">
-                    <img src={reviewer1} alt="" className='reviewerImg'/>
-                    <img src={reviewer2} alt="" className='reviewerImg'/>
-                    <img src={reviewer3} alt="" className='reviewerImg'/>
-                    <img src={reviewer4} alt="" className='reviewerImg'/>
-                    <img src={reviewer5} alt="" className='reviewerImg'/>
-                    <img src={reviewer6} alt="" className='reviewerImg'/>
-                    <img src={reviewer7} alt="" className='reviewerImg'/>
-                    <img src={reviewer8} alt="" className='reviewerImg'/>
-                    <img src={reviewer9} alt="" className='reviewerImg'/>
-                    <img src={reviewer10} alt="" className='reviewerImg'/>
-                    <img src={reviewer11} alt="" className='reviewerImg'/>
-                    <img src={reviewer12} alt="" className='reviewerImg'/>
+                    <img src={reviewer1} alt="" className='reviewerImg' />
+                    <img src={reviewer2} alt="" className='reviewerImg' />
+                    <img src={reviewer3} alt="" className='reviewerImg' />
+                    <img src={reviewer4} alt="" className='reviewerImg' />
+                    <img src={reviewer5} alt="" className='reviewerImg' />
+                    <img src={reviewer6} alt="" className='reviewerImg' />
+                    <img src={reviewer7} alt="" className='reviewerImg' />
+                    <img src={reviewer8} alt="" className='reviewerImg' />
+                    <img src={reviewer9} alt="" className='reviewerImg' />
+                    <img src={reviewer10} alt="" className='reviewerImg' />
+                    <img src={reviewer11} alt="" className='reviewerImg' />
+                    <img src={reviewer12} alt="" className='reviewerImg' />
                 </div>
             </div>
         </div>

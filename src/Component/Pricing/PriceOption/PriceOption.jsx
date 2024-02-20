@@ -17,7 +17,7 @@ import './PriceOption.css'
 
 const PriceOption = () => {
 
-    const freeToken = 7;
+    const freeToken = 5;
     const discount = 15;
     const plans = {
         '1cr': 5,
@@ -59,7 +59,7 @@ const PriceOption = () => {
     return (
         <div className='planContainer'>
             <h1 className='planHeading'>Choose Your Plan</h1>
-            <p className="token"><span className='tokenRem'>{`${freeToken} Free `}</span>Lorem ipsum dolor<br /> sit amet consectetur</p>
+            <p className="token"><span className='tokenRem'>{`${freeToken} Free `}</span>Chat recommendations<br />when you sign up</p>
             <div className="planCardContainer">
                 <div className="basePlanContainer planCard">
                     <div className="basePlanHeader">

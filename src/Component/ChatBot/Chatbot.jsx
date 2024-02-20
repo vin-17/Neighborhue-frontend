@@ -153,18 +153,17 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="chatbotSectionContainer" id="chatBot">
-      <h2 className="chatbotSectionHeader">Meet with Hue</h2>
+    <div className="chatbotSectionContainer" id='chatBot'>
+      <h2 className="chatbotSectionHeader">Meet Hue</h2>
       <p className="chatbotIntro">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-        mollitia,molestiae quas vel sint commodi repudiandae
+        Discover Your ideal neighborhood with Hue AI. Give your area preferences and let the geo-data model recommend the perfect neighborhood in your city
       </p>
       <div className="chatbotContainer">
         <div className="chatbotContainer-top">
           <img src={neo} alt="neo-logo" />
           <div className="chatbotContainer-top-content">
             <p>Hue</p>
-            <p>Online</p>
+            <p><i class="fa-solid fa-circle" style={{ color: "#2de639", fontSize: "clamp(8px,1vw,12px)" }}></i> Online</p>
           </div>
           <div className="locationSearch">
             <i
@@ -174,7 +173,7 @@ const Chatbot = () => {
             <input
               type="text"
               name="search"
-              placeholder="Your Location"
+              placeholder="Your City"
               value={formData.location}
               onChange={(e) => handleChange("location", e.target.value)}
             ></input>
@@ -196,6 +195,8 @@ const Chatbot = () => {
             </div>
           )}
         </div>
+
+        <Suggestion suggestions={suggestions} />
 
         <Suggestion suggestions={suggestions} />
         <div className="chatbotContainer-textarea">
@@ -295,6 +296,9 @@ const Chatbot = () => {
           <div className="chatbotContainer-bottom">
             <p className="chatbotContainer-bottom-title">
               {/* In the Demo chat, you have 2 messages left. Register now and get: */}
+        {/* Please log in to chat with Hue */}
+        {/* </p> */}
+        {/* <div>
         {/* Please log in to chat with Hue */}
         {/* </p> */}
         {/* <div>

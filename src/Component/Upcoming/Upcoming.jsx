@@ -39,7 +39,7 @@ const Upcoming = () => {
             <img src={neighbour} alt="" loading='lazy' />
             <div className="upcomingText">
                 <p id='upcomingHeading'>Learn more about the city, read our blogs</p>
-                <p id='upcomingMain'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentiumoptio, eaque rerum!</p>
+                <p id='upcomingMain'>Whether you’re moving to a new place or just visiting on vacation, you can use neighborhue to learn the most about what you will enjoy in the city. After asking Hue AI to give you a few recommendations, you can visit the website’s Blog page to learn even more about the rest of the city. Find new neighborhoods and discover new environments as you read through!</p>
                 <div className='button'>
                 <Link to="/blogs#blog-top" id='comingSoon'>
                     <button className='comingBtn'>

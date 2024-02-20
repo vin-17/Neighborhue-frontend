@@ -12,7 +12,7 @@ const Solutions = () => {
 
                 <div className="solutionIntro">
                     <p className='boldSolutionIntro'>How to use the <br /> <span className='boldSolutionIntro boldSolutionIntroBg'>Hue AI model</span></p>
-                    <p className='lightSolutionIntro'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium</p>
+                    <p className='lightSolutionIntro'>Start by entering your desired city in the location text box. Once your location is set, continue by asking Hue AI for a neighborhood recommendation based on the preferences you find most important. Hue will respond with the best area based on your request. Ask where the best restaurant scene is, where to find amazing jazz music, or which neighborhoods are affordable in the city!</p>
                     <p id="lightSolutionMobile">Experience our AI chatbot's instant, personalized excellence, loved by 86% of users</p>
                 </div>
 
