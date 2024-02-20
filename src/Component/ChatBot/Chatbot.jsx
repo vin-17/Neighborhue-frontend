@@ -130,7 +130,7 @@ const Chatbot = () => {
     <div className="chatbotSectionContainer" id='chatBot'>
       <h2 className="chatbotSectionHeader">Meet Hue</h2>
       <p className="chatbotIntro">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae
+        Discover Your ideal neighborhood with Hue AI. Give your area preferences and let the geo-data model recommend the perfect neighborhood in your city
       </p>
       <div className="chatbotContainer">
         <div className="chatbotContainer-top">
