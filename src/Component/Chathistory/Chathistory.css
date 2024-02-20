@@ -65,6 +65,9 @@
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 .registerButton {
   border: none;
