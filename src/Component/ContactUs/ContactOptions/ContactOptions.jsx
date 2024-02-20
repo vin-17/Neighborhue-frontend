@@ -17,7 +17,7 @@ const ContactOptions = () => {
             <div className="contactHolder">
                 <div className="contactCard">
                     <div className="iconHolder">
-                        <img src={chat} alt="" className="icon" />
+                        <img src={chat} alt="" className="icon" loading='lazy' />
                     </div>
                     <h2 className="contactCardHeading">Chat with us</h2>
                     <p className="contactCardInfo">Direct message on whatsapp!</p>
@@ -25,7 +25,7 @@ const ContactOptions = () => {
                 </div>
                 <div className="contactCard">
                     <div className="iconHolder">
-                        <img src={mail} alt="" className="icon" />
+                        <img src={mail} alt="" className="icon" loading='lazy'/>
                     </div>
                     <h2 className="contactCardHeading">Contact with Email</h2>
                     <p className="contactCardInfo">Support team will help you.</p>
