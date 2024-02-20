@@ -137,7 +137,7 @@ const Chatbot = () => {
           <img src={neo} alt="neo-logo" />
           <div className="chatbotContainer-top-content">
             <p>Hue</p>
-            <p><i class="fa-solid fa-circle" style={{ color: "#2de639", fontSize: "small" }}></i> Online</p>
+            <p><i class="fa-solid fa-circle" style={{ color: "#2de639", fontSize: "clamp(8px,1vw,12px)" }}></i> Online</p>
           </div>
           <div className="locationSearch">
             <i class="fa-solid fa-location-dot fa-lg" style={{ color: "#DD6745" }}></i>
