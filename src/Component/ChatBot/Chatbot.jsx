@@ -144,7 +144,7 @@ const Chatbot = () => {
             <input
               type="text"
               name="search"
-              placeholder="Your Location"
+              placeholder="Your City"
               value={formData.location}
               onChange={(e) => handleChange("location", e.target.value)}
             ></input>
