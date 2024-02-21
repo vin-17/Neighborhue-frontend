@@ -44,7 +44,9 @@ const Blog = () => {
           {currentBlogs.map((blog) => (
             <div className="blog-cards" key={blog.id}>
               <Link to={`/blogs/${blog.id}/${encodeURIComponent(blog.title)}`} className="blog">
-                <img src={blog.imageUrl} alt={`Blog ${blog.id}`} />
+              <div className="blog-image">
+              <img src={blog.imageUrl} alt={`Blog ${blog.id}`} />
+              </div>
                 <div className="blog-content">
                   <h3>{blog.title}</h3>
                   <p>{blog.content.substring(0, 100)}...</p>
