@@ -171,7 +171,6 @@ const Register = () => {
               <hr />
               <GoogleLogin
                 onSuccess={(credentialResponse) => {
-                  // console.log(credentialResponse);
                   const decoded = jwt_decode(credentialResponse.credential);
 
                   const decodeduser = {
@@ -184,8 +183,7 @@ const Register = () => {
                   const register = async () => {
                     try {
                       const response = await axios.post(
-                        `${process.env.REACT_APP_serverUrl}/register/signin`,
-                        decodeduser
+                        `${process.env.REACT_APP_serverUrl}/register/signin`,                        decodeduser
                       );
                       console.log("response after fetch: ", response);
                       const user = {
@@ -215,34 +213,17 @@ const Register = () => {
                       localStorage.setItem("reduxState", JSON.stringify(store.getState()));
                       window.location.href = "/";
                     } catch (error) {
+                      console.log(error.message)
                       console.error("Error sending data:", error.message);
                       seterrormessage(error.response.data);
                     }
                   };
                   register();
-                  // dispatch(
-                  //   saveuser({
-                  //     email: decodeduser.email,
-                  //     username: decodeduser.username,
-                  //     profilePicture: decodeduser.profilePic,
-                  //     daily_tokens_available: 12,
-                  //     purchased_tokens_available: 1,
-                  //     tokens_used: 1,
-                  //     is_premium: false,
-                  //   })
-                  // );
                 }}
                 onError={() => {
                   seterrormessage("signup failed");
                 }}
               />
-
-
-
-              {/* trial of googleauth */}
-
-              {/* <GoogleLoginButton /> */}
-
 
               {/* <div className="googleButton" onClick={google}>
             <img src={google_logo}/>

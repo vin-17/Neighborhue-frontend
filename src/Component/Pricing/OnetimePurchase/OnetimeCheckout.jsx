@@ -6,6 +6,7 @@ import OnetimePaymentForm from './OnetimePaymentForm';
 // import './Checkout.css'; // Import CSS file
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
+// console.log(process.env.REACT_APP_NEW)
 
 const OnetimeCheckout = () => {
   return (
