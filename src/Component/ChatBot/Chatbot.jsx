@@ -282,7 +282,7 @@ const Chatbot = () => {
               </div>
             ) : (
               <p>
-                you have {free_tokens ? <span>{free_tokens}</span> : `no`} free tokens
+                you have {free_tokens>=0 ? <span>{free_tokens}</span> : `no`} free tokens
                 available
               </p>
             )}
