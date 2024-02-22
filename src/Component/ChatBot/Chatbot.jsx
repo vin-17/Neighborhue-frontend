@@ -69,7 +69,7 @@ const Chatbot = () => {
   const devUrl = "http://localhost:5000";
 
   const onSubmit = async () => {
-    if (free_tokens == null ) {
+    if (free_tokens <= 0 ) {
       alert("No more Free tokens. Please log in to chat with Hue");
       window.location.href = "/register";
       return;
