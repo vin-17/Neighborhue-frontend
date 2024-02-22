@@ -7,6 +7,7 @@ const BlogDetail = () => {
   const parsedBlogId = parseInt(id, 10);
 
   const blog = blogsData.find((blog) => blog.id === parsedBlogId);
+  
 
   if (!blog) {
     return <div>Blog not found</div>;
