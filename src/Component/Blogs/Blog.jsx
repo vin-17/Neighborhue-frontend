@@ -36,6 +36,7 @@ const Blog = () => {
       setCurrentPage(currentPage - 1);
     }
   };
+
   return (
     <div className="blog-container" id="blog-top">
       <h1>Your Blogs</h1>
@@ -44,12 +45,12 @@ const Blog = () => {
           {currentBlogs.map((blog) => (
             <div className="blog-cards" key={blog.id}>
               <Link to={`/blogs/${blog.id}/${encodeURIComponent(blog.title)}`} className="blog">
-              <div className="blog-image">
-              <img src={blog.imageUrl} alt={`Blog ${blog.id}`} />
-              </div>
+                <div className="blog-image">
+                  <img src={blog.imageUrl} alt={`Blog ${blog.id}`} />
+                </div>
                 <div className="blog-content">
                   <h3>{blog.title}</h3>
-                  <p>{blog.content.substring(0,200)}...</p>
+                  <p>{blog.title_content}...</p>
                 </div>
               </Link>
             </div>
@@ -71,13 +72,13 @@ const Blog = () => {
           <div class="rBlogTopicsHolder">
             <h4>See more Topic Suggestions</h4>
             <div class="rBlogTags">
-            <span className="rTag">History</span>
-            <span className="rTag">Lifestyle</span>
-            <span className="rTag">Heritage</span>
-            <span className="rTag">Science</span>
-            <span className="rTag">Social</span>
-            <span className="rTag">Technology</span>
-            <span className="rTag">Artificial Intellegence</span>
+              <span className="rTag">History</span>
+              <span className="rTag">Lifestyle</span>
+              <span className="rTag">Heritage</span>
+              <span className="rTag">Science</span>
+              <span className="rTag">Social</span>
+              <span className="rTag">Technology</span>
+              <span className="rTag">Artificial Intellegence</span>
             </div>
           </div>
 

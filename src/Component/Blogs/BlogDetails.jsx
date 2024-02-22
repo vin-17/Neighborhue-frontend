@@ -7,7 +7,7 @@ const BlogDetail = () => {
   const parsedBlogId = parseInt(id, 10);
 
   const blog = blogsData.find((blog) => blog.id === parsedBlogId);
-  
+
 
   if (!blog) {
     return <div>Blog not found</div>;
@@ -19,22 +19,23 @@ const BlogDetail = () => {
     <div className="blog-detail-container">
       <div className="blog-detail">
         <div className="blog-img">
-        <img src={blog.imageUrl} alt={`Blog ${blog.id}`} />
+          <img src={blog.imageUrl} alt={`Blog ${blog.id}`} />
         </div>
         <h1>{blog.title}</h1>
         <div className="content-detail">
-        <div className="author">
-          <h4>By {blog.author} </h4>
-          <h5> . {blog.publish_date}</h5>
+          <div className="author">
+            <h4>By {blog.author} </h4>
+            <h5> . {blog.publish_date}</h5>
+          </div>
+          <div className="share">
+            <h5>Share Now</h5>
+            <Link to={"#"}>
+              <i className="fa-solid fa-share-nodes fa-lg" style={{ color: "#DC6745" }}></i>
+            </Link>
+          </div>
         </div>
-        <div className="share">
-          <h5>Share Now</h5>
-          <Link to={"#"}>
-          <i className="fa-solid fa-share-nodes fa-lg" style={{ color: "#DC6745" }}></i>
-          </Link>
-        </div>
-        </div>
-        <p>{blog.content}</p>
+        {blog.content}
+        {/* <p>{blog.content}</p> */}
       </div>
       <div className="recommended">
         <h3 style={{ color: "#7E49CC" }}>Recommended For You</h3>
