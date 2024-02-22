@@ -17,7 +17,7 @@ import './PriceOption.css'
 
 const PriceOption = () => {
 
-    const freeToken = 5;
+    const freeToken = 2;
     const discount = 15;
     const plans = {
         '1cr': 5,
