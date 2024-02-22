@@ -282,13 +282,13 @@ const Chatbot = () => {
               </div>
             ) : (
               <p>
-                you have {free_tokens && <span>{free_tokens}</span>} free tokens
+                you have {free_tokens ? <span>{free_tokens}</span> : `no`} free tokens
                 available
               </p>
             )}
           </>
         )}
-
+        console.log({free_tokens});
         {/* {user.user.email ? (
           <div className="chatbotContainer-bottom">
             <Link to="/chathistory">History</Link>
