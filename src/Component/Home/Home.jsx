@@ -65,7 +65,7 @@ const Home = () => {
     const free_tokens = localStorage.getItem("free_tokens");
 
     if (!free_tokens) {
-      localStorage.setItem("free_tokens", JSON.stringify(2));
+      localStorage.setItem("free_tokens", 2);
     }
   }, []);
 

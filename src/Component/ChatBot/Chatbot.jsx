@@ -29,7 +29,7 @@ const Chatbot = () => {
   const dispatch = useDispatch();
   const notify = () => toast(error);
   let free_tokens = localStorage.getItem("free_tokens");
-  console.log(free_tokens);
+  // console.log("", free_tokens);
   const [chatHistory, setChatHistory] = useState([
     { role: "chatbot", content: "How may i assist you ?" },
   ]);
@@ -70,7 +70,8 @@ const Chatbot = () => {
 
   const onSubmit = async () => {
     if (free_tokens === 0) {
-      alert("Please log in to chat with Hue");
+      alert("No more Free tokens. Please log in to chat with Hue");
+      window.location.href = "/register";
       return;
     }
     if (!formData.problem) {
@@ -81,9 +82,9 @@ const Chatbot = () => {
       alert("Please provide your location.");
       return;
     }
-    console.log("free_tokens", free_tokens);
+    console.log(" free tokens consoled on submit chatbox --- > ", free_tokens);
     if (
-      free_tokens <= 0 &&
+      user.user.email &&
       user.user.daily_tokens_available <= 0 &&
       user.user.purchased_tokens_available <= 0
     ) {
@@ -103,7 +104,7 @@ const Chatbot = () => {
       } else {
         is_free_token = false;
       }
-      localStorage.setItem("free_tokens", JSON.stringify(free_tokens));
+      localStorage.setItem("free_tokens", free_tokens);
       const response = await axios.post(
         `https://neighborhue-backend.vercel.app/api/ai-chat/chatbot`,
         {
