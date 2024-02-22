@@ -128,7 +128,7 @@ const Chatbot = () => {
         setChatReply(response.data.message);
 
         handleChange("problem", "");
-        if (!free_tokens) {
+        if (user.user.email) {
           dispatch(
             saveuser({
               email: user.user.email,
