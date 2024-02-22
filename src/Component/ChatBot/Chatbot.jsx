@@ -288,7 +288,7 @@ const Chatbot = () => {
             )}
           </>
         )}
-        console.log({free_tokens});
+        {/* console.log({free_tokens}); */}
         {/* {user.user.email ? (
           <div className="chatbotContainer-bottom">
             <Link to="/chathistory">History</Link>
