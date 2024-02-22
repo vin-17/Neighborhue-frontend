@@ -49,7 +49,7 @@ const Blog = () => {
               </div>
                 <div className="blog-content">
                   <h3>{blog.title}</h3>
-                  <p>{blog.content.substring(0, 200)}...</p>
+                  <p>{blog.content.substring(0,200)}...</p>
                 </div>
               </Link>
             </div>
