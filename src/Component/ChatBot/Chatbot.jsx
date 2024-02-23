@@ -69,7 +69,7 @@ const Chatbot = () => {
   const devUrl = "http://localhost:5000";
 
   const onSubmit = async () => {
-    if (free_tokens <= 0 ) {
+    if (free_tokens <= 0) {
       alert("No more Free tokens. Please log in to chat with Hue");
       window.location.href = "/register";
       return;
@@ -153,6 +153,13 @@ const Chatbot = () => {
     }
   };
 
+  const handleSuggestionClick = (suggestion) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      problem: suggestion,
+    }));
+  };
+
   return (
     <div className="chatbotSectionContainer" id='chatBot'>
       <h2 className="chatbotSectionHeader">Meet Hue</h2>
@@ -197,7 +204,7 @@ const Chatbot = () => {
           )}
         </div>
 
-        <Suggestion suggestions={suggestions} />
+        <Suggestion suggestions={suggestions} handleSuggestionClick={handleSuggestionClick} />
 
         {/* <Suggestion suggestions={suggestions} /> */}
         <div className="chatbotContainer-textarea">
@@ -282,7 +289,7 @@ const Chatbot = () => {
               </div>
             ) : (
               <p>
-                you have {free_tokens>=0 ? <span>{free_tokens}</span> : `no`} free tokens
+                you have {free_tokens >= 0 ? <span>{free_tokens}</span> : `no`} free tokens
                 available
               </p>
             )}
