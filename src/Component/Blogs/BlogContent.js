@@ -104,7 +104,7 @@ const blogs = [
         <p>The West End, historically an immigrant neighborhood, has undergone urban renewal and now offers a mix of modern residences and commercial spaces. The neighborhood provides views of Beacon Hill and the Charles River. TD Garden, home to the Boston Celtics and Bruins, is a major landmark. The West End attracts a diverse mix of residents and professionals seeking urban living with a mix of historic and contemporary elements.</p><br />
       </div>
     ),
-    imageUrl: "https://images.unsplash.com/photo-1444723121867-7a241cacace9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGxvcyUyMGFuZ2VsZXN8ZW58MHx8MHx8fDA%3D",
+    imageUrl: "https://images.unsplash.com/photo-1548182880-8b7b2af2caa2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     author: "xyz",
     publish_date: "Jan 12,2024",
     category: "Heritage"
