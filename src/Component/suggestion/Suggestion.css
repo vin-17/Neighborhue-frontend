@@ -21,8 +21,8 @@
 .sug_outer {
   display: flex;
   flex-wrap: wrap;
-  /* align-items: start; */
-  justify-content: start;
+   /* // eslint-disable-next-line */
+  justify-content: flex-start;
   width: 90%;
   animation: popout 0.2s ease-out forwards;
   opacity: 0;
