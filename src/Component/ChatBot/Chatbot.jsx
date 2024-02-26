@@ -248,7 +248,7 @@ const Chatbot = () => {
               <div className="chat-history">
                 <img src={clock} alt="chat History" />
                 <Link to="/chathistory">
-                  <p>chat History</p>
+                  <p>Chat history</p>
                 </Link>
               </div>
             </div>
