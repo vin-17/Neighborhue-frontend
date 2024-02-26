@@ -26,7 +26,7 @@ const Intro = () => {
                                 <HashLink smooth to="/#chatBot" className='introActions'>
                                     <button>Speak To Hue</button>
                                 </HashLink>
-                                <button >Watch Demo</button>
+
                             </div>
 
                             <div className="socialMedia">
