@@ -31,7 +31,7 @@ const Chatbot = () => {
   let free_tokens = localStorage.getItem("free_tokens");
   // console.log("", free_tokens);
   const [chatHistory, setChatHistory] = useState([
-    { role: "chatbot", content: "How may i assist you ?" },
+    { role: "chatbot", content: "Hi there! I am Hue, your neighborhood assistant. How can I help you today?" },
   ]);
   const [formData, setFormData] = useState({
     problem: "",
