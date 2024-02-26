@@ -212,7 +212,7 @@ const Chatbot = () => {
             value={formData.problem}
             onChange={(e) => handleChange("problem", e.target.value)}
             required
-            placeholder="Eg: type here about your problem"
+            placeholder="Hue: type your neighborhood preferences here"
           />
 
           <button type="button" onClick={onSubmit} className="app-submitbutton">
