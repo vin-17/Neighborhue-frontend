@@ -43,7 +43,7 @@ const Upcoming = () => {
                 <div className='button'>
                 <Link to="/blogs#blog-top" id='comingSoon'>
                     <button className='comingBtn'>
-                        Coming Soon
+                        Blog Page
                         <i class="fa-solid fa-arrow-right fa-rotate-by fa-lg" style={{rotate:"-45deg"}}></i>
                     </button>
                 </Link>
