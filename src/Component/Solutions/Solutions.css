@@ -36,7 +36,8 @@
 .lightSolutionIntro {
     text-align: justify;
     color: rgba(0, 0, 0, 0.8);
-    width: 70%;
+    max-width: 100%;
+    width: fit-content;
     padding-left: 5%;
 
     /* font-family: Inter; */
