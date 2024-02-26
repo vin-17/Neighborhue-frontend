@@ -238,7 +238,7 @@ const Chatbot = () => {
             <div className="tokens_available chatbotContainer-bottom">
               <div style={{ display: "flex", gap: "50px" }}>
                 <p>
-                  Daily tokens available : {user.user.daily_tokens_available}
+                  Tokens available : {user.user.daily_tokens_available}
                 </p>
                 <p>
                   Purchased tokens available :{" "}
