@@ -1,0 +1,15 @@
+.terms_main {
+  margin: 30px;
+
+  > span {
+    color: rgb(106, 106, 106);
+    font-weight: 600;
+    margin-top: 10px;
+  }
+}
+.agreement {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
