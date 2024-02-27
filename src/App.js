@@ -43,6 +43,7 @@ import "./App.css";
 import { useDispatch } from "react-redux";
 import { saveuser } from "./features/User";
 import { useSelector } from "react-redux";
+import Terms from "./Component/Terms_of_use/Terms";
 
 function App() {
   const location = useLocation();
@@ -88,6 +89,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/signin' element={<SignIn />} />
         <Route path="/chathistory" element={<Chathistory />} />
+        <Route path='/terms_of_use' element={<Terms />} />
         {/* <Route path='/login' element={<Login />} /> */}
         <Route path='*' element={<div>404! Page Not Found</div>} />
       </Routes>
