@@ -37,9 +37,9 @@ const Intro = () => {
                                 <div className="socialMediaContainer">
                                     <p>Our Social Media</p>
                                     <div id="socialMediaLinks">
-                                        <a href="#" target='_blank'><i class="fa-brands fa-square-instagram fa-2xl" style={{ color: "#DD6745" }}></i></a>
-                                        <a href="#" target='_blank'><i class="fa-brands fa-tiktok fa-2xl" style={{ color: "#DD6745" }}></i></a>
-                                        <a href="#" target='_blank'><i class="fa-brands fa-linkedin fa-2xl" style={{ color: "#DD6745" }}></i></a>
+                                        <a href="https://www.instagram.com/neighborhue_ai?igsh=MWFuN2M3cDlqNjE2eg%3D%3D&utm_source=qr " target='_blank' rel='noreferrer'><i class="fa-brands fa-square-instagram fa-2xl" style={{ color: "#DD6745" }}></i></a>
+                                        <a href="https://www.tiktok.com/@neighborhue?_t=8kEOxkT1K09&_r=1 " target='_blank'rel='noreferrer'><i class="fa-brands fa-tiktok fa-2xl" style={{ color: "#DD6745" }}></i></a>
+                                        <a href="https://www.linkedin.com/company/neighborhue/ " target='_blank' rel='noreferrer'><i class="fa-brands fa-linkedin fa-2xl" style={{ color: "#DD6745" }}></i></a>
                                     </div>
                                 </div>
                             </div>
