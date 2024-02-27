@@ -22,8 +22,8 @@ const Reviews = () => {
     return (
         <div className='reviewerConatainer'>
 
-            <h2 className="reviewerHeading">Check out what our users are saying?</h2>
-            <p className="reviewerSubHeading">Here are few response from our beta program</p>
+            <h2 className="reviewerHeading">Check out what our users are saying</h2>
+            <p className="reviewerSubHeading">Here are a few responses from our beta program</p>
             <div className="reviewerMain">
                 <div className="reviewerLeftItem">
                     <p className="review">{review1}</p>
