@@ -20,12 +20,12 @@ const ContactOptions = () => {
                         <img src={chat} alt="" className="icon" loading='lazy' />
                     </div>
                     <h2 className="contactCardHeading">Chat with us</h2>
-                    <p className="contactCardInfo">Direct message on whatsapp!</p>
+                    <p className="contactCardInfo">Direct message on Instagram</p>
                     <a href='https://wa.me/' target='_blank' rel='noreferrer' className="contactLink">+91 000XXX0000</a>
                 </div>
                 <div className="contactCard">
                     <div className="iconHolder">
-                        <img src={mail} alt="" className="icon" loading='lazy'/>
+                        <img src={mail} alt="" className="icon" loading='lazy' />
                     </div>
                     <h2 className="contactCardHeading">Contact with Email</h2>
                     <p className="contactCardInfo">Support team will help you.</p>
