@@ -30,8 +30,8 @@ const Footer = () => {
                     <div className="footerItem" >
                         <h3 className="footerHeading">Trust</h3>
                         <div className="footerLinkContainer">
-                            <a href="/terms_of_use" target='_blank' className="footerLink">Terms of Use</a>
-                            <a href="#" target='_blank' className="footerLink">Privacy Policy</a>
+                            <a href="/terms_of_use" className="footerLink">Terms of Use</a>
+                            <a href="/privacy_policy" className="footerLink">Privacy Policy</a>
                             {/* <a href="" className="footerLink">Cookie Policy</a> */}
 
                         </div>
