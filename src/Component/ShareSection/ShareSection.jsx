@@ -37,6 +37,8 @@ const ShareSection = () => {
         }
     };
     const clipboard = () => {
+        let url = window.location.href;
+        navigator.clipboard.writeText(url);
         toast.success('Link copied in your clipboard!', {
             position: "top-right",
             autoClose: 1500,
