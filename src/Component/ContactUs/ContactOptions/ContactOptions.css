@@ -51,6 +51,12 @@
 .iconHolder {
   height: 25%;
 }
+.iconHolder i{
+  color: #7e49ec;
+  border: 2px solid #C5AFEA;
+  border-radius: 8px;
+  padding: 25px 10px; 
+}
 
 .icon {
   padding: 0.693vw;
