@@ -21,7 +21,7 @@ const ContactOptions = () => {
                     </div>
                     <h2 className="contactCardHeading">Chat with us</h2>
                     <p className="contactCardInfo">Direct message on Instagram</p>
-                    <a href='https://wa.me/' target='_blank' rel='noreferrer' className="contactLink">+91 000XXX0000</a>
+                    <a href='https://www.instagram.com/neighborhue_ai?igsh=MWFuN2M3cDlqNjE2eg%3D%3D&utm_source=qr ' target='_blank' rel='noreferrer' className="contactLink">+91 000XXX0000</a>
                 </div>
                 <div className="contactCard">
                     <div className="iconHolder">
