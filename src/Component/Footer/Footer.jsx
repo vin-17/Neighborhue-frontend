@@ -13,7 +13,6 @@ const Footer = () => {
                         <h3 className="footerHeading">Platform</h3>
                         <div className="footerLinkContainer">
                             <a href="/" className="footerLink">Home</a>
-                            <a href="/meetneo" className="footerLink">Meet With Hue</a>
                             <a href="/pricing" className="footerLink">Pricing</a>
                             <a href="/blogs" className="footerLink">Blogs</a>
                         </div>
