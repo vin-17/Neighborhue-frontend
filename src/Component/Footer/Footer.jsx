@@ -23,6 +23,7 @@ const Footer = () => {
                         <div className="footerLinkContainer">
                             <HashLink smooth to='/contact#aboutUs' className="footerLink">About Us</HashLink>
                             <a href="/contact" className="footerLink">Contact Us</a>
+                            <a href="https://equirenter.com" target='_blank' rel="noreferrer" className="footerLink">Equirenter.com</a>
                         </div>
 
                     </div>
