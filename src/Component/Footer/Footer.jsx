@@ -40,8 +40,9 @@ const Footer = () => {
                     <div className="footerItem">
                         <h3 className="footerHeading">Connect</h3>
                         <div className="footerLinkContainer">
-                            <a href="#" target='_blank' className="footerLink">Instagram</a>
-                            <a href="#" target='_blank' className="footerLink">Linkedin</a>
+                            <a href="https://www.instagram.com/neighborhue_ai?igsh=MWFuN2M3cDlqNjE2eg%3D%3D&utm_source=qr " target='_blank' rel='noreferrer' className="footerLink">Instagram</a>
+                            <a href="https://www.linkedin.com/company/neighborhue/ " target='_blank' rel='noreferrer' className="footerLink">Linkedin</a>
+                            <a href="https://www.tiktok.com/@neighborhue?_t=8kEOxkT1K09&_r=1" target='_blank' rel='noreferrer' className="footerLink">TikTok</a>
                             {/* <span className="footerLink">Twitter</span> */}
                         </div>
                     </div>
