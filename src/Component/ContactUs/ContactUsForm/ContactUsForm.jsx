@@ -102,7 +102,7 @@ const ContactUsForm = () => {
                 <div className="formContainer">
                     <div className="formHeader">
                         <h2>Facing any trouble? We are here to help.</h2>
-                        <p>Tell us more about yourself and what you’re got in my mind</p>
+                        <p>Tell us more about yourself and what you've got in my mind</p>
                     </div>
                     <form action="" onSubmit={submitHandler}>
                         <input type="text" name="" id="" placeholder='Your name' value={username} onChange={(e) => setUsername(e.target.value)} required />
