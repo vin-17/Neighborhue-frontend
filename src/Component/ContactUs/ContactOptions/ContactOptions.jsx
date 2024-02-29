@@ -17,7 +17,7 @@ const ContactOptions = () => {
             <div className="contactHolder">
                 <div className="contactCard">
                     <div className="iconHolder">
-                        <i class="fa-solid fa-comment fa-2xl"></i>
+                        <i class="fa-brands fa-square-instagram fa-2xl"></i>
                     </div>
                     <h2 className="contactCardHeading">Chat with us</h2>
                     <p className="contactCardInfo">Direct message on Instagram</p>
@@ -25,7 +25,7 @@ const ContactOptions = () => {
                 </div>
                 <div className="contactCard">
                     <div className="iconHolder">
-                    <i class="fa-solid fa-envelope fa-2xl"></i>
+                        <i class="fa-solid fa-envelope fa-2xl"></i>
                     </div>
                     <h2 className="contactCardHeading">Contact with Email</h2>
                     <p className="contactCardInfo">Support team will help you.</p>
