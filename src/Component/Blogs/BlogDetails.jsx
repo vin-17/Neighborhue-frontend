@@ -34,7 +34,10 @@ const BlogDetail = () => {
             </Link>
           </div>
         </div>
-        {blog.content}
+        <div dangerouslySetInnerHTML={{__html: blog.content}}>
+
+        </div>
+        
         {/* <p>{blog.content}</p> */}
       </div>
       <div className="recommended">
