@@ -34,7 +34,7 @@ const BlogDetail = () => {
             </Link>
           </div>
         </div>
-        <div dangerouslySetInnerHTML={{__html: blog.content}}>
+        <div className='blog_div_content' dangerouslySetInnerHTML={{__html: blog.content}}>
 
         </div>
         
