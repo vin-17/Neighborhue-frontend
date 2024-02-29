@@ -193,33 +193,147 @@ const blogs = [
   {
     id: 2,
     title: 'Chicago',
-    title_content: "Charlestown, with its red-brick townhouses and naval history, is a historic neighborhood with a strong sense of community. The USS Constitution Museum and the Bunker Hill Monument showcase the area's maritime and revolutionary past",
-    content: (
-      <div>
-        <p><b>Charlestown: Naval History and Waterfront Views</b></p><br />
-        <p>Charlestown, with its red-brick townhouses and naval history, is a historic neighborhood with a strong sense of community. The USS Constitution Museum and the Bunker Hill Monument showcase the area's maritime and revolutionary past. The neighborhood offers stunning waterfront views of Boston Harbor and the city skyline. Charlestown attracts history enthusiasts, families, and those seeking a close-knit community with a nod to Boston's storied past.</p><br />
+    title_content: "Lincoln Park, situated along Lake Michigan, is a neighborhood characterized by lakeside serenity and cultural enclaves. The expansive Lincoln Park itself offers green spaces, a zoo, and a conservatory. The neighborhood's streets are lined with",
+    content:`<h3>Lincoln Park: Lakeside Serenity and Cultural Enclaves</h3>
 
-        <p><b>Dorchester: Diversity and Historical Landmarks</b></p><br />
+    <p>Lincoln Park, situated along Lake Michigan, is a neighborhood characterized by lakeside serenity and cultural enclaves. The expansive Lincoln Park itself offers green spaces, a zoo, and a conservatory. The neighborhood's streets are lined with historic brownstones and offer a mix of dining, shopping, and cultural institutions. Lincoln Park attracts a diverse community seeking a blend of waterfront tranquility and urban amenities.</p>
+    <br/>
 
-        <p>Dorchester, Boston's largest neighborhood, is a diverse and historically rich area with a mix of residential and commercial districts. The JFK Presidential Library and Museum and the Dorchester Heights Monument are notable landmarks. Uphams Corner and Fields Corner provide vibrant commercial hubs. Dorchester attracts a diverse population and those seeking a neighborhood with historical significance and cultural diversity.</p><br />
+    <h3>Wicker Park: Artistic Vibes and Trendy Hotspots</h3>
 
-        <p><b>East Boston: Harborfront Living and Airport Access</b></p><br />
+    <p>Wicker Park, located northwest of downtown, is a neighborhood renowned for its artistic vibes and trendy hotspots. Historic architecture mingles with street art, and the area's streets are lined with boutiques, galleries, and music venues. The iconic Flat Iron Arts Building stands as a symbol of the neighborhood's creative spirit. Wicker Park attracts artists, musicians, and those who appreciate a vibrant mix of culture and nightlife.</p>
+    <br/>
 
-        <p>East Boston, situated across Boston Harbor, offers harborfront living with convenient access to Logan International Airport. Piers Park and the East Boston Greenway provide outdoor spaces for recreation. The neighborhood's diverse culinary scene reflects its multicultural community. East Boston attracts professionals, families, and those seeking a waterfront lifestyle with easy access to transportation.</p><br />
+    <h3>The Loop: Urban Pulse and Architectural Marvels</h3>
 
-        <p><b>Roxbury: Cultural Heritage and Community Resilience</b></p><br />
+    <p>The Loop, Chicago's central business district, is a neighborhood synonymous with the urban pulse and architectural marvels. Skyscrapers, including the Willis Tower and the John Hancock Center, define the skyline. Millennium Park, with its iconic Cloud Gate sculpture, adds a touch of greenery. The Loop is a hub for commerce, cultural institutions, and entertainment, attracting professionals and those seeking the energy of downtown living.</p>
+    <br/>
 
-        <p>Roxbury, a historically significant neighborhood, is known for its cultural heritage and community resilience. The Museum of the National Center of Afro-American Artists and the Shirley-Eustis House highlight the area's cultural and architectural importance. Roxbury has undergone revitalization efforts, attracting a mix of residents proud of their community's history and those excited about its future.</p><br />
+    <h3>Lakeview: Sporting Spirit and Diverse Communities</h3>
 
-        <p><b>South Boston (Southie): Irish Heritage and Waterfront Living</b></p><br />
+    <p>Lakeview, situated along the shores of Lake Michigan, is a neighborhood with a sporting spirit and diverse communities. Wrigley Field, home of the Chicago Cubs, is a focal point, surrounded by a lively atmosphere of bars and restaurants. The neighborhood offers a mix of historic architecture and modern developments. Lakeview attracts sports enthusiasts, young professionals, and those seeking a variety of entertainment options within a welcoming community.</p>
+    <br/>
 
-        <p>South Boston, commonly known as Southie, is a neighborhood with a strong Irish heritage and a blend of traditional and modern living. The neighborhood boasts waterfront parks like Castle Island and the vibrant Broadway commercial district. South Boston attracts a mix of young professionals, families, and those seeking a neighborhood with a tight-knit community feel and a touch of Irish charm.</p><br />
+    <h3>Bucktown: Artistic Expression and Bohemian Flair</h3>
 
-        <p><b>West Roxbury: Suburban Tranquility and Green Spaces</b></p><br />
+    <p>Bucktown, located northwest of the Loop, is a neighborhood characterized by artistic expression and bohemian flair. Formerly an industrial area, it now boasts a thriving arts scene, with galleries, theaters, and street art contributing to its creative atmosphere. The neighborhood's streets are lined with historic homes, boutiques, and diverse dining options. Bucktown attracts artists, creatives, and those who appreciate a blend of cultural richness and urban grit.</p>
+    <br/>
 
-        <p>West Roxbury, located southwest of downtown, offers suburban tranquility with tree-lined streets and green spaces. Millennium Park and the West Roxbury Parkway provide outdoor recreation opportunities. The neighborhood features a mix of single-family homes and local businesses. West Roxbury attracts families and those seeking a peaceful residential enclave within the city.</p><br />
-      </div>
-    ),
+    <h3>West Loop: Culinary Capital and Industrial Chic</h3>
+
+    <p>West Loop, once an industrial district, has transformed into a culinary capital and a showcase of industrial chic. Randolph Street's Restaurant Row is a mecca for food enthusiasts, featuring a diverse range of eateries. Former warehouses now house trendy lofts, art galleries, and tech offices. West Loop attracts foodies, professionals, and those interested in the intersection of culinary innovation and urban development.</p>
+    <br/>
+
+    <h3>Hyde Park: Academic Prestige and Cultural Legacy</h3>
+
+    <p>Hyde Park, located on the South Side, is a neighborhood synonymous with academic prestige and cultural legacy. The University of Chicago campus is a focal point, surrounded by historic architecture and green spaces. The Museum of Science and Industry and Frank Lloyd Wright's Robie House contribute to the neighborhood's cultural richness. Hyde Park attracts academics, students, and those seeking a mix of intellectual vibrancy and historic charm.</p>
+    <br/>
+
+    <h3>Logan Square: Trendy Retreat and Hipster Haven</h3>
+    <p>Logan Square, northwest of downtown, is a trendy retreat and hipster haven known for its historic boulevards and lively atmosphere. The neighborhood's iconic square is surrounded by historic homes, trendy boutiques, and a mix of ethnic restaurants. Logan Square's tree-lined streets and vibrant arts scene make it a popular choice for young professionals, artists, and those who appreciate a diverse and creative community.</p>
+    <br/>
+
+    <h3>South Loop: Urban Renewal and Museum Campus</h3>
+
+    <p>South Loop, south of the Loop, is a neighborhood undergoing urban renewal and home to Chicago's Museum Campus. Iconic structures like Soldier Field and the Shedd Aquarium define the area. Formerly an industrial district, South Loop now boasts a mix of modern developments and historic buildings. The neighborhood attracts professionals, museum enthusiasts, and those seeking a dynamic blend of urban living and cultural amenities.</p>
+    <br/>
+
+    <h3>Uptown: Historic Charm and Entertainment Legacy</h3>
+
+    <p>Uptown, located on the North Side, is a neighborhood with historic charm and an entertainment legacy. The Uptown Theatre, once a vaudeville venue, stands as a testament to the area's rich history. Streets are lined with vintage architecture, diverse eateries, and music venues. Uptown attracts a mix of artists, performers, and those interested in the neighborhood's cultural heritage.</p>
+    <br/>
+
+    <h3>Pilsen: Cultural Diversity and Artistic Expression</h3>
+
+    <p>Pilsen, southwest of downtown, is a neighborhood known for its cultural diversity and artistic expression. Vibrant murals, galleries, and community art projects contribute to the area's creative atmosphere. Historic architecture, including colorful row houses, reflects the neighborhood's immigrant history. Pilsen attracts artists, activists, and those who appreciate a community that celebrates cultural richness and creative energy.</p>
+    <br/>
+
+    <h3>Bronzeville: Historic Legacy and Community Resilience</h3>
+
+    <p>Bronzeville, located on the South Side, is a neighborhood with a historic legacy and community resilience. Once known as the "Black Metropolis," Bronzeville played a vital role in African-American culture and commerce. Historic landmarks, such as the Victory Monument, reflect the neighborhood's significance. Bronzeville attracts history enthusiasts, artists, and those who appreciate a community with a strong sense of identity and pride.</p>
+    <br/>
+
+    <h3>Bridgeport: Working-Class Roots and Cultural Heritage</h3>
+
+    <p>Bridgeport, southwest of downtown, is a neighborhood with working-class roots and a rich cultural heritage. Historic bungalows and two-flats line the streets, reflecting the neighborhood's architectural charm. Bridgeport is known for its ties to the Daley political dynasty and its cultural institutions like the Bridgeport Art Center. The neighborhood attracts families, artists, and those who appreciate a tight-knit community with a blend of history and creativity.</p>
+    <br/>
+
+    <h3>Ravenswood: Tree-Lined Streets and Artistic Ambiance</h3>
+
+    <p>Ravenswood, situated on the North Side, is a neighborhood with tree-lined streets and an artistic ambiance. The Ravenswood Corridor is home to a mix of studios, galleries, and creative spaces. Historic mansions and vintage apartments contribute to the neighborhood's charm. Ravenswood attracts artists, professionals, and those seeking a residential enclave with a blend of classic architecture and creative energy.</p>
+    <br/>
+
+    <h3>Albany Park: Cultural Mosaic and Culinary Diversity</h3>
+
+    <p>Albany Park, on the Northwest Side, is a neighborhood known for its cultural mosaic and culinary diversity. The area is home to a mix of ethnic communities, reflected in its diverse dining scene and markets. Historic architecture and spacious parks add to the neighborhood's appeal. Albany Park attracts families, food enthusiasts, and those interested in a multicultural community with a rich tapestry of traditions.</p>
+    <br/>
+
+    <h3>Edison Park: Suburban Tranquility within the City</h3>
+
+    <p>Edison Park, on the Northwest Side, offers suburban tranquility within the city limits. Historic homes, tree-lined streets, and a small-town atmosphere define this residential enclave. Parks, golf courses, and locally-owned businesses contribute to the neighborhood's charm. Edison Park attracts families, professionals, and those seeking a peaceful retreat with a touch of suburban living in an urban setting.</p>
+    <br/>
+
+    <h3>Roscoe Village: Family-Friendly Charm and Boutique Appeal</h3>
+
+    <p>Roscoe Village, located on the North Side, is a family-friendly neighborhood with tree-lined streets and boutique appeal. Roscoe Street's mix of shops, cafes, and restaurants creates a lively atmosphere. Historic homes and classic architecture add to the neighborhood's charm. Roscoe Village attracts families, young professionals, and those who appreciate a residential enclave with a blend of classic charm and modern amenities.</p>
+    <br/>
+
+    <h3>Chinatown: Cultural Heritage and Culinary Delights</h3>
+
+    <p>Chinatown, situated on the South Side, is a neighborhood with a rich cultural heritage and culinary delights. Colorful street markets, traditional architecture, and vibrant celebrations contribute to the area's lively atmosphere. Authentic restaurants and bakeries line the streets, making Chinatown a destination for food enthusiasts and those interested in experiencing a vibrant cultural enclave within the city.</p>
+    <br/>
+
+    <h3>Andersonville: LGBTQ+ Pride and Eclectic Living</h3>
+
+    <p>Andersonville, located on the North Side, is a neighborhood with LGBTQ+ pride and eclectic living. Historic architecture, locally-owned boutiques, and a diverse dining scene define the area. Clark Street is a vibrant strip with a mix of shops and entertainment options. Andersonville attracts a diverse community, including members of the LGBTQ+ community, artists, and those seeking a welcoming and inclusive neighborhood.</p>
+    <br/>
+
+    <h3>Streeterville: Lakeside Luxury and Cultural Attractions</h3>
+
+    <p>Streeterville, situated along Lake Michigan, is a neighborhood synonymous with lakeside luxury and cultural attractions. The Magnificent Mile, a renowned shopping district, runs through the area. Navy Pier, with its entertainment and dining options, is a focal point. High-rise condominiums and luxury hotels contribute to Streeterville's upscale ambiance. The neighborhood attracts professionals, tourists, and those seeking a mix of urban luxury and lakeside allure.</p>
+    <br/>
+
+    <h3>River North: Artistic Vibes and Urban Sophistication</h3>
+
+    <p>River North, located just north of the Loop, is a dynamic neighborhood that seamlessly blends artistic vibes with urban sophistication. The area is home to a plethora of galleries, design studios, and creative spaces, making it a haven for art enthusiasts. Trendy restaurants, upscale boutiques, and luxurious residential buildings contribute to the neighborhood's chic atmosphere. River North attracts professionals, creatives, and those seeking a vibrant urban lifestyle with a touch of artistic flair.</p>
+    <br/>
+
+    <h3>Old Town: Historic Charm and Bohemian Spirit</h3>
+
+    <p>Old Town, situated just north of downtown, is a neighborhood rich in historic charm and bohemian spirit. Cobblestone streets, Victorian-era homes, and charming boutiques create a quaint and inviting atmosphere. The iconic Second City comedy club has long been a cultural cornerstone, attracting both locals and visitors. Old Town appeals to those who appreciate a mix of historic architecture, artistic expression, and a close-knit community with a distinctive character.</p>
+    <br/>
+
+    <h3>Gold Coast: Opulence and Historic Grandeur</h3>
+
+    <p>Gold Coast, one of Chicago's most affluent neighborhoods, exudes opulence and historic grandeur. The area boasts stately mansions, luxury high-rises, and tree-lined streets. Oak Street and Rush Street are renowned for high-end shopping and dining, making Gold Coast a destination for those with a taste for the finer things in life. The neighborhood's proximity to Lake Shore Drive and Lake Michigan adds to its allure, attracting affluent residents and visitors seeking a luxurious urban lifestyle.</p>
+    <br/>
+
+    <h3>The Loop: Chicago's Downtown Epicenter</h3>
+
+    <p>The Loop, Chicago's central business district, is a bustling neighborhood and the epicenter of the city's downtown activity. Skyscrapers, iconic architecture, and the Chicago River define the skyline. Millennium Park and the Art Institute of Chicago add cultural richness to the area. The Loop attracts professionals, tourists, and those seeking the energy of downtown living with easy access to commerce, entertainment, and cultural amenities.</p>
+    <br/>
+
+    <h3>Bridgeport: Historic Roots and Community Pride</h3>
+
+    <p>Bridgeport, southwest of downtown, is a neighborhood with deep historic roots and strong community pride. The area is known for its working-class heritage and ties to the Daley political dynasty. Historic bungalows and two-flats line the streets, reflecting the neighborhood's architectural charm. Bridgeport attracts families, artists, and those who appreciate a tight-knit community with a blend of history and resilience.</p>
+    <br/>
+
+    <h3>Near North Side: Urban Elegance and Cultural Diversity</h3>
+
+    <p>The Near North Side, encompassing neighborhoods like River North and Gold Coast, is a diverse and vibrant area that exudes urban elegance and cultural diversity. The Magnificent Mile, Navy Pier, and a mix of residential high-rises and historic brownstones characterize the neighborhood. Upscale dining, shopping, and entertainment options make the Near North Side a desirable location for those seeking a sophisticated urban experience with a blend of modern luxury and historic charm.</p>
+    <br/>
+
+    <h3>Uptown: Historic Streets and Cultural Legacy</h3>
+
+    <p>Uptown, located on the North Side, is a neighborhood with historic streets and a cultural legacy. The Uptown Theatre, once a vaudeville venue, stands as a testament to the area's rich history. Streets are lined with vintage architecture, diverse eateries, and music venues. Uptown attracts a mix of artists, performers, and those interested in the neighborhood's cultural heritage. The area has experienced a revitalization in recent years, attracting new residents while maintaining its distinctive character.</p>
+    <br/>
+
+    <h3>Roscoe Village: Family-Friendly Charm and Boutique Appeal</h3>
+
+    <p>Roscoe Village, located on the North Side, is a family-friendly neighborhood with tree-lined streets and boutique appeal. Roscoe Street's mix of shops, cafes, and restaurants creates a lively atmosphere. Historic homes and classic architecture add to the neighborhood's charm. Roscoe Village attracts families, young professionals, and those who appreciate a residential enclave with a blend of classic charm and modern amenities. The neighborhood's welcoming atmosphere and community events contribute to its popularity among those seeking a close-knit and family-oriented environment.</p>
+
+
+    `,
     imageUrl: "https://images.unsplash.com/photo-1494522358652-f30e61a60313?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     author: "Hue",
     publish_date: "Jan 12,2024",
