@@ -259,7 +259,7 @@
 }
 @media (min-width: 1400px) {
   .blog-image img {
-    max-width: 100%; /* Limiting image size on larger screens */
+    /* max-width: 100%; */
     min-width: 300px;
   }
   .blog-img {
