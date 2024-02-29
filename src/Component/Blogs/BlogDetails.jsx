@@ -15,6 +15,17 @@ const BlogDetail = () => {
 
   const recommendedBlogs = blogsData.slice(0, 6);
 
+  const sharebtn=async()=>{
+    let weburl = window.location.href;
+    try {
+        await navigator.share({
+          url: weburl
+        })
+      } catch (error) {
+        console.log('Sharing failed!', error)
+      }
+  }
+
   return (
     <div className="blog-detail-container">
       <div className="blog-detail">
@@ -27,17 +38,18 @@ const BlogDetail = () => {
             <h4>By {blog.author} </h4>
             <h5> . {blog.publish_date}</h5>
           </div>
-          <div className="share">
+          <button onClick={sharebtn} className='share'><i className="fa-solid fa-share-nodes fa-lg" style={{ color: "#DC6745" }}></i>Share Now</button>
+          {/* <div className="share">
             <h5>Share Now</h5>
             <Link to={"#"}>
               <i className="fa-solid fa-share-nodes fa-lg" style={{ color: "#DC6745" }}></i>
             </Link>
-          </div>
+          </div> */}
         </div>
-        <div className='blog_div_content' dangerouslySetInnerHTML={{__html: blog.content}}>
+        <div className='blog_div_content' dangerouslySetInnerHTML={{ __html: blog.content }}>
 
         </div>
-        
+
         {/* <p>{blog.content}</p> */}
       </div>
       <div className="recommended">

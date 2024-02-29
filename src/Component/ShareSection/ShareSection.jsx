@@ -54,7 +54,6 @@ const ShareSection = () => {
         let weburl = window.location.href;
         try {
             await navigator.share({
-              text: 'Follow me to get more web development content.',
               url: weburl
             })
           } catch (error) {

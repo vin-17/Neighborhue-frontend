@@ -20,7 +20,7 @@
 .blogs {
   width: 70%;
 }
-.blog_div_content{
+.blog_div_content {
   text-align: justify;
 }
 
@@ -198,6 +198,9 @@
   align-items: center;
   cursor: pointer;
   gap: 5px;
+  padding: 10px;
+  border: none;
+  background: none;
 }
 .active {
   color: #dd6745;
