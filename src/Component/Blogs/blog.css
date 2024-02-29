@@ -20,6 +20,9 @@
 .blogs {
   width: 70%;
 }
+.blog_div_content{
+  text-align: justify;
+}
 
 .blog-cards {
   padding: 10px;
