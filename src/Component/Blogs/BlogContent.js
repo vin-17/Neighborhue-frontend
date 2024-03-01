@@ -1,6 +1,3 @@
-import img4 from "../../Assets/blog4.svg";
-
-
 const blogs = [
   {
     id: 1,
