@@ -176,7 +176,7 @@ const Chatbot = () => {
         });
 
         const adContainer = document.querySelector(
-          `.advertisement[data-key="${id}"]`
+          `.ads[data-key="${id}"]`
         );
         if (!adContainer) {
           throw new Error(`Advertisement container not found for ID ${id}.`);
@@ -196,14 +196,14 @@ const Chatbot = () => {
 
     const scriptIds = ["7b7419ab06b5166d1896d5652ed008fc"];
     scriptIds.forEach((id, index) => {
-      const delay = 3000; // Adding delay for the second script
+      const delay = 100; // Adding delay for the second script
       setTimeout(() => {
         loadScript(id);
       }, delay);
     });
 
     return () => {
-      const adContainers = document.querySelectorAll(".advertisement");
+      const adContainers = document.querySelectorAll(".ads");
       adContainers.forEach((adContainer) => {
         adContainer.innerHTML = "";
         console.log(adContainer);
@@ -228,7 +228,7 @@ const Chatbot = () => {
         <div className="advertisement-p">
           <div
             data-icon="X"
-            class="advertisement"
+            class="ads"
             data-key="7b7419ab06b5166d1896d5652ed008fc"
             onClick={handleClose}
           ></div>
