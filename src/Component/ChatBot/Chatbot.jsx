@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Chatbot.css";
 import "./Loader.css";
+import Swal from "sweetalert2";
 import OpenAI from "openai";
 import neo from "../../Assets/neoLogo.png";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
@@ -31,7 +32,11 @@ const Chatbot = () => {
   let free_tokens = localStorage.getItem("free_tokens");
   // console.log("", free_tokens);
   const [chatHistory, setChatHistory] = useState([
-    { role: "chatbot", content: "Hi there! I am Hue, your neighborhood assistant. How can I help you today?" },
+    {
+      role: "chatbot",
+      content:
+        "Hi there! I am Hue, your neighborhood assistant. How can I help you today?",
+    },
   ]);
   const [formData, setFormData] = useState({
     problem: "",
@@ -68,6 +73,14 @@ const Chatbot = () => {
   const serverURL = "https://neighborhue-backend.vercel.app";
   const devUrl = "http://localhost:5000";
 
+  // -----useState for ads-------------
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleClose = () => {
+    console.log("click close");
+    setIsVisible(false);
+  };
+
   const onSubmit = async () => {
     if (free_tokens <= 0) {
       alert("No more Free tokens. Please log in to chat with Hue");
@@ -82,6 +95,7 @@ const Chatbot = () => {
       alert("Please provide your location.");
       return;
     }
+    setIsVisible(true);
     console.log(" free tokens consoled on submit chatbox --- > ", free_tokens);
     if (
       user.user.email &&
@@ -151,6 +165,61 @@ const Chatbot = () => {
     } finally {
       setLoading(false); // Set loading to false, regardless of success or failure
     }
+
+    // ---------advertisement function for trigger after clicking on button--------
+    const loadScript = async (id, delay) => {
+      try {
+        const script = document.createElement("script");
+        script.src = `//www.topcreativeformat.com/${id}/invoke.js`;
+        script.async = true;
+
+        window.atOptions = {
+          key: id,
+          format: "iframe",
+          height: 60,
+          width: 468,
+          params: {},
+        };
+
+        const scriptLoaded = new Promise((resolve, reject) => {
+          script.onload = resolve;
+          script.onerror = reject;
+        });
+
+        const adContainer = document.querySelector(
+          `.advertisement[data-key="${id}"]`
+        );
+        if (!adContainer) {
+          throw new Error(`Advertisement container not found for ID ${id}.`);
+        }
+
+        adContainer.appendChild(script);
+
+        await scriptLoaded;
+        console.log(`Script for ID ${id} loaded successfully.`);
+      } catch (error) {
+        console.error(
+          `An error occurred while loading the ad script for ID ${id}:`,
+          error
+        );
+      }
+    };
+
+    const scriptIds = ["7b7419ab06b5166d1896d5652ed008fc"];
+    scriptIds.forEach((id, index) => {
+      const delay = 3000; // Adding delay for the second script
+      setTimeout(() => {
+        loadScript(id);
+      }, delay);
+    });
+
+    return () => {
+      const adContainers = document.querySelectorAll(".advertisement");
+      adContainers.forEach((adContainer) => {
+        adContainer.innerHTML = "";
+        console.log(adContainer);
+      });
+    };
   };
 
   const handleSuggestionClick = (suggestion) => {
@@ -161,17 +230,35 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="chatbotSectionContainer" id='chatBot'>
+    <div className="chatbotSectionContainer" id="chatBot">
+      {isVisible && (
+        <div className="advertisement-p">
+          <div
+            data-icon="X"
+            class="advertisement"
+            data-key="7b7419ab06b5166d1896d5652ed008fc"
+            onClick={handleClose}
+          ></div>
+        </div>
+      )}
       <h2 className="chatbotSectionHeader">Meet Hue</h2>
       <p className="chatbotIntro">
-        Discover Your ideal neighborhood with Hue AI. Give your area preferences and let the geo-data model recommend the perfect neighborhood in your city
+        Discover Your ideal neighborhood with Hue AI. Give your area preferences
+        and let the geo-data model recommend the perfect neighborhood in your
+        city
       </p>
       <div className="chatbotContainer">
         <div className="chatbotContainer-top">
           <img src={neo} alt="neo-logo" />
           <div className="chatbotContainer-top-content">
             <p>Hue</p>
-            <p><i class="fa-solid fa-circle" style={{ color: "#2de639", fontSize: "clamp(8px,1vw,12px)" }}></i> Online</p>
+            <p>
+              <i
+                class="fa-solid fa-circle"
+                style={{ color: "#2de639", fontSize: "clamp(8px,1vw,12px)" }}
+              ></i>{" "}
+              Online
+            </p>
           </div>
           <div className="locationSearch">
             <i
@@ -204,7 +291,10 @@ const Chatbot = () => {
           )}
         </div>
 
-        <Suggestion suggestions={suggestions} handleSuggestionClick={handleSuggestionClick} />
+        <Suggestion
+          suggestions={suggestions}
+          handleSuggestionClick={handleSuggestionClick}
+        />
 
         {/* <Suggestion suggestions={suggestions} /> */}
         <div className="chatbotContainer-textarea">
@@ -237,9 +327,7 @@ const Chatbot = () => {
           ) : (
             <div className="tokens_available chatbotContainer-bottom">
               <div style={{ display: "flex", gap: "50px" }}>
-                <p>
-                  Tokens available : {user.user.daily_tokens_available}
-                </p>
+                <p>Tokens available : {user.user.daily_tokens_available}</p>
                 <p>
                   Purchased tokens available :{" "}
                   {user.user.purchased_tokens_available}
@@ -289,8 +377,8 @@ const Chatbot = () => {
               </div>
             ) : (
               <p>
-                you have {free_tokens >= 0 ? <span>{free_tokens}</span> : `no`} free tokens
-                available
+                you have {free_tokens >= 0 ? <span>{free_tokens}</span> : `no`}{" "}
+                free tokens available
               </p>
             )}
           </>
