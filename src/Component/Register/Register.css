@@ -79,6 +79,7 @@
 ul.list_style {
   list-style-type: "👉 ";
   padding-left: 20px;
+  margin-top: 40px;
 }
 ul.list_style li {
   margin-bottom: 10px;
