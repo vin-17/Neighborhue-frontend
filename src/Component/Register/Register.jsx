@@ -295,11 +295,13 @@ const Register = () => {
 
           <div>
             <ul className="list_style">
-              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius
+              <li>Discover Your ideal neighborhood with Hue AI. Give your area preferences and let the geo-data model recommend the perfect neighborhood in your city
               </li>
-              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius
+              <br/>
+              <li>Ask Hue to help find the perfect neighborhood based on what you find most important
               </li>
-              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius
+              <br/>
+              <li>Whether you’re moving to a new place or just visiting on vacation, you can use neighborhue to learn the most about what you will enjoy in the city.
               </li>
             </ul>
           </div>
