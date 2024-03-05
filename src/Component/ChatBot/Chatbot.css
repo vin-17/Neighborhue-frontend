@@ -35,13 +35,13 @@
   background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
   z-index: 1;
 }
-.advertisement {
+.ads {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.advertisement::before {
+.ads::before {
   content: attr(data-icon);
   position: absolute;
   cursor: pointer;
