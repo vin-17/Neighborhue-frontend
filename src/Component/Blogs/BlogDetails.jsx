@@ -59,7 +59,6 @@ const BlogDetail = () => {
       "51f70286ee8007c59a5524115eb39b2b",
       "3526b65a30eb8d7a220e9bd24f29d078",
       "d511188106489e0a85d177d75dd6e1d4",
-      
     ];
     scriptIds.forEach((id, index) => {
       const delay = index === 0 ? 0 : 3000 * index; // Adding delay for the second script
@@ -105,9 +104,7 @@ const BlogDetail = () => {
         <div className="blog-img">
           <img src={blog.imageUrl} alt={`Blog ${blog.id}`} />
         </div>
-        <div
-          className="blog-head"
-        >
+        <div className="blog-head">
           <h1>{blog.title}</h1>
           <div
             className="advertisement"
