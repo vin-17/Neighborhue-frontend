@@ -98,20 +98,7 @@ function App() {
 
       {shouldRenderFooter && <Footer />} {/* Conditionally render the footer */}
 
-      {/* ======= */}
-      {/* <Route path="/" element={<Home />} />
-        <Route path="/meetneo" element={<MeetNeo />} />
-        <Route path="/pricing" element={<Pricing />} />
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/chathistory" element={<Chathistory />} />
-        {/* <Route path='/login' element={<Login />} /> */}
-      {/* <Route path="*" element={<div>404! Page Not Found</div>} />
-      </Routes>
-      {shouldRenderFooter && <Footer />} Conditionally render the footer */}
-      {/* // >>>>>>> 0914021175b667caf2bffeb3c66fb886b8a68867 */}
+      
     </>
   );
 }

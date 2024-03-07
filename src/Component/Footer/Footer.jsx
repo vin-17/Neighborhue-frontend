@@ -47,17 +47,6 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* <div className="footerItem" id='newsLetter'>
-                        <h3 className="footerHeading" id='newsLetterHeading'>Stay Updated</h3>
-                        <div className="newsLetter">
-                            <input type="email" name="" id="" className='newsLetterEmailInput' placeholder='Email address...' />
-                            <button className='newsLetterBtn'>
-                                Subscribe Now
-                                <img src={arrow} alt="" />
-                            </button>
-                        </div>
-                        <p className="newsLetterText">You will receives some occasionally email from team . You will get unsubscribe option in each mail.</p>
-                    </div> */}
                     
                 </div>
                 <div className="lowerFooter">© 2024 Neighborhue. All rights reserved.</div>

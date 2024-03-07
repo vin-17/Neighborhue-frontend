@@ -25,7 +25,7 @@ import { store } from "./app/store.js";
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const clientId = "816962704603-frbb8go67f7htmtkto57e5rned6m2d49.apps.googleusercontent.com";
+const clientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 root.render(
   <Router>
     <GoogleOAuthProvider clientId={clientId}>
@@ -37,4 +37,4 @@ root.render(
     </GoogleOAuthProvider>
   </Router>
 );
-// >>>>>>> 0914021175b667caf2bffeb3c66fb886b8a68867
+
