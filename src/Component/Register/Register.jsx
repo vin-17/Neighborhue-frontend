@@ -157,6 +157,7 @@ const Register = () => {
   //   window.open("http://localhost:5000/auth/google", "_self");
   // };
 
+  const clientID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
   const serverUrl = "https://neighborhue-backend.vercel.app";
   const devUrl = "http://localhost:5000";
 
@@ -170,6 +171,7 @@ const Register = () => {
             <div className="or">
               <hr />
               <GoogleLogin
+                clientId={clientID}
                 onSuccess={(credentialResponse) => {
                   const decoded = jwt_decode(credentialResponse.credential);
 
