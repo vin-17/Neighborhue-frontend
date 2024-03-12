@@ -29,6 +29,7 @@ const OnetimePaymentForm = () => {
       });
 
       const { sessionId } = await response.json();
+      console.log(" session id frontend ---- ", sessionId);
 
       // Redirect to Stripe Checkout
       const { error } = await stripe.redirectToCheckout({
